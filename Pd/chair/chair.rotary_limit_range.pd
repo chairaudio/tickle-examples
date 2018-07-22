@@ -11,7 +11,7 @@
 #X obj 205 95 t f f;
 #X msg 153 177 1;
 #X msg 169 148 1;
-#X obj 71 19 inlet;
+#X obj 70 19 inlet;
 #X obj 233 123 < \$1;
 #X obj 71 274 / \$1;
 #X obj 71 302 outlet;
