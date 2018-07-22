@@ -1,0 +1,22 @@
+#N canvas 2784 173 978 716 10;
+#X obj 160 252 chair.hex-mapping;
+#X obj 163 145 hsl 99 20 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 9800 1;
+#X obj 265 64 vsl 20 99 1 0 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 160 219 pack f f;
+#X floatatom 160 291 5 0 0 0 - - -, f 5;
+#X obj 178 193 t b f;
+#X text 342 127 Converts x and y positions on the Tickle hexagon pattern
+to IDs of the fields.;
+#X text 346 164 The 14 fields have IDs which start at 0;
+#X floatatom 268 172 5 0 0 0 - - -, f 5;
+#X floatatom 166 170 5 0 0 0 - - -, f 5;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 1 0 9 0;
+#X connect 2 0 5 0;
+#X connect 2 0 8 0;
+#X connect 3 0 0 0;
+#X connect 5 0 3 0;
+#X connect 5 1 3 1;

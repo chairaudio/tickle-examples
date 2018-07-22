@@ -1,0 +1,3 @@
+#N canvas 2258 146 785 630 10;
+#X obj 157 286 chair.gain~;
+#X coords 0 630 1 629 71 33 0;
