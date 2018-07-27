@@ -1,6 +1,6 @@
-#N canvas 2258 146 785 630 10;
-#X obj 103 116 hsl 66 17 -30 30 0 0 \$0-gain \$0-gain-r 6_dB 5 8 2
-10 -166441 -262144 -262144 3983 1;
+#N canvas 2523 226 785 630 10;
+#X obj 103 116 hsl 66 17 -30 30 0 0 \$0-gain \$0-gain-r 19.846_dB 5
+8 1 10 -166441 -262144 -1 5400 1;
 #X obj 70 179 inlet~;
 #X obj 71 526 outlet~;
 #X obj 122 393 line~;
@@ -25,11 +25,11 @@
 #X obj 116 39 loadbang;
 #X msg 117 61 -20;
 #X msg 317 332 label \$1_dB;
-#X obj 317 204 * 100;
 #X obj 317 232 int;
-#X obj 317 258 / 100;
 #X msg 396 384 color 1 0 0;
 #X msg 395 353 color 13 0 0;
+#X obj 317 204 * 10;
+#X obj 317 258 / 10;
 #X connect 1 0 5 0;
 #X connect 3 0 5 1;
 #X connect 4 0 3 0;
@@ -52,13 +52,13 @@
 #X connect 15 0 16 0;
 #X connect 16 0 18 0;
 #X connect 21 0 7 0;
-#X connect 21 0 25 0;
+#X connect 21 0 28 0;
 #X connect 22 0 23 0;
 #X connect 23 0 0 0;
 #X connect 24 0 20 0;
-#X connect 25 0 26 0;
-#X connect 26 0 27 0;
-#X connect 27 0 24 0;
-#X connect 28 0 20 0;
-#X connect 29 0 20 0;
+#X connect 25 0 29 0;
+#X connect 26 0 20 0;
+#X connect 27 0 20 0;
+#X connect 28 0 25 0;
+#X connect 29 0 24 0;
 #X coords 0 -1 1 1 71 33 1 100 100;
