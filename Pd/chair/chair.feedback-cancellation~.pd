@@ -1,0 +1,33 @@
+#N canvas 2582 409 762 298 10;
+#X obj 27 41 inlet~;
+#X obj 28 234 outlet~;
+#X obj 62 92 hilbert~;
+#X floatatom 130 99 5 0 0 0 - - -, f 5;
+#X obj 61 120 complex-mod~;
+#X msg 130 76 50;
+#X obj 130 53 loadbang;
+#X obj 204 50 inlet;
+#X obj 28 203 *~ 1;
+#X obj 62 203 *~ 0;
+#X obj 120 173 == 0;
+#X text 280 179 hilbert~ and complex-mod~ are abstractions which come
+with Vanilla Pd. You can find them in the "extra" folder of Pd.;
+#X text 279 83 If there is acoustc feedback \, activate this subpatch.
+;
+#X text 280 126 It performs a uniform frequency shift (not a pitch
+shift) which is efficiently removing feedback.;
+#X text 278 42 The audio output through speakers may be picked up by
+the Tickle and sometimes issues with feedback occur.;
+#X connect 0 0 2 0;
+#X connect 0 0 8 0;
+#X connect 2 0 4 0;
+#X connect 2 1 4 1;
+#X connect 3 0 4 2;
+#X connect 4 0 9 0;
+#X connect 5 0 3 0;
+#X connect 6 0 5 0;
+#X connect 7 0 9 1;
+#X connect 7 0 10 0;
+#X connect 8 0 1 0;
+#X connect 9 0 1 0;
+#X connect 10 0 8 1;

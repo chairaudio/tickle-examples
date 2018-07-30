@@ -9,10 +9,11 @@
 #X msg 298 116 resize 14;
 #X obj 88 213 array get \$0-tuning 0 1;
 #X obj 266 254 array define \$0-tuning;
-#X obj 410 105 inlet;
+#X obj 410 78 inlet;
 #X msg 410 170 read \$1;
 #X obj 410 147 makefilename %s.txt;
 #X obj 410 125 symbol;
+#X obj 410 101 list trim;
 #X connect 1 0 2 0;
 #X connect 2 0 5 0;
 #X connect 2 1 7 0;
@@ -22,7 +23,8 @@
 #X connect 7 0 9 0;
 #X connect 8 0 0 0;
 #X connect 8 0 3 0;
-#X connect 10 0 13 0;
+#X connect 10 0 14 0;
 #X connect 11 0 9 0;
 #X connect 12 0 11 0;
 #X connect 13 0 12 0;
+#X connect 14 0 13 0;
