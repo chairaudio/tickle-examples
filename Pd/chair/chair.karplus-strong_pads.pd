@@ -1,4 +1,4 @@
-#N canvas 2808 467 902 688 10;
+#N canvas 2938 458 902 688 10;
 #X obj 206 426 *~ 0.5;
 #X obj 264 442 *~ 0.5;
 #X obj 339 210 /;
@@ -9,20 +9,20 @@
 #X obj 207 339 +~;
 #X obj 205 266 osc~;
 #X obj 205 241 * 1;
-#X obj 488 443 hsl 101 15 0 10000 0 1 empty empty lop 4100 5 8 0 10
+#X obj 485 430 hsl 101 15 0 10000 0 1 empty empty lop 4100 5 8 0 10
 -262144 -1 -1 4100 1;
-#X obj 488 460 hsl 101 15 0 10000 0 1 empty empty bp 5000 5 8 0 10
--262144 -1 -1 5000 1;
-#X obj 488 477 hsl 101 15 1 100 1 1 empty empty Q 14.4544 5 8 0 10
+#X obj 485 447 hsl 101 15 0 10000 0 1 empty empty bp 8375 5 8 0 10
+-262144 -1 -1 8375 1;
+#X obj 485 464 hsl 101 15 1 100 1 1 empty empty Q 14.4544 5 8 0 10
 -262144 -1 -1 5800 1;
 #X obj 421 -19 inlet;
-#X obj 488 426 hsl 101 15 0 2 0 1 empty empty FM amount 0.04 5 8
+#X obj 485 413 hsl 101 15 0 2 0 1 empty empty FM amount 0.04 5 8
 0 10 -262144 -1 -1 200 1;
-#X obj 488 409 hsl 101 15 0 10 0 1 empty empty FM harmonic 3 5 8
+#X obj 484 394 hsl 101 15 0 10 0 1 empty empty FM harmonic 3 5 8
 0 10 -262144 -1 -1 3700 1;
 #X obj 205 130 int;
 #X obj 205 154 change;
-#X obj 364 502 sqrt;
+#X obj 315 443 sqrt;
 #X obj 205 555 outlet~;
 #N canvas 462 164 450 300 zd 0;
 #X obj 135 79 inlet~;
@@ -35,23 +35,23 @@
 #X connect 4 0 1 0;
 #X restore 264 417 pd zd;
 #X obj 205 290 -~ 1;
-#X msg 635 396 label FM harmonic \$1;
+#X msg 632 381 label FM harmonic \$1;
 #X obj 205 179 t b f f;
-#X msg 635 436 label lop \$1;
-#X msg 635 456 label bp \$1;
-#X msg 635 476 label Q \$1;
+#X msg 632 423 label lop \$1;
+#X msg 632 443 label bp \$1;
+#X msg 632 463 label Q \$1;
 #X text 248 505 Karplus Strong;
 #X text 251 270 FM;
-#X msg 635 416 label FM amount \$1;
-#X obj 206 480 *~;
-#X obj 138 583 delwrite~ \$0-bo 128;
+#X msg 632 403 label FM amount \$1;
+#X obj 206 508 *~;
+#X obj 36 554 delwrite~ \$0-bo 128;
 #X obj 206 363 vd~ \$0-bo 128;
 #X text 445 585 (c) Liam Goodacre 2016 \, liam.goodacre@gmail.com;
 #X obj 36 230 inlet~;
-#X floatatom 642 332 5 0 0 0 - - -, f 5;
-#X obj 364 443 r \$2-feedback;
-#X obj 322 303 r \$2-fm-amount;
-#X floatatom 330 340 5 0 0 0 - - -, f 5;
+#X floatatom 358 376 5 0 0 0 - - -, f 5;
+#X obj 315 422 r \$2-feedback;
+#X obj 315 279 r \$2-fm-amount;
+#X floatatom 315 303 5 0 0 0 - - -, f 5;
 #X obj 35 454 *~;
 #X obj 51 324 == \$1;
 #X obj 51 421 line~;
@@ -61,8 +61,8 @@
 #X obj 51 292 r \$2-current;
 #X text 457 567 Based on:;
 #X obj 206 314 *~ 0;
-#X obj 641 302 r \$2-timbre;
-#N canvas 2033 702 790 453 octave-switch 1;
+#X obj 357 346 r \$2-timbre;
+#N canvas 2033 702 790 453 octave-switch 0;
 #X obj 102 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 167 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144

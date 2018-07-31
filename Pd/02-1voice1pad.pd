@@ -1,10 +1,10 @@
-#N canvas 2183 387 745 713 10;
+#N canvas 2163 431 745 713 10;
 #X declare -path chair;
 #X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 31 124 tickle~;
 #X floatatom 382 336 5 0 0 0 - - -, f 5;
-#N canvas 1256 202 664 838 rotaries 0;
+#N canvas 1252 202 664 838 rotaries 0;
 #X obj 102 25 inlet;
 #X floatatom 138 275 5 0 0 0 - - -, f 5;
 #X obj 286 192 sqrt;
@@ -24,12 +24,12 @@
 #X obj 105 298 s \$0-fm-amount;
 #X obj 105 232 * 2;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 142 1;
+-1 -1 425 1;
 #X obj 102 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 283 1;
+-1 -1 567 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 283 1;
+-1 -1 2125 1;
 #X obj 468 306 s \$0-timbre;
 #X obj 287 16 loadbang;
 #X msg 288 45 0.5;
@@ -102,7 +102,6 @@
 #X obj 47 433 line~;
 #X obj 32 276 chair.gain~;
 #X obj 355 381 s \$0-current;
-#X obj 32 578 chair.gain~;
 #X obj 355 357 f;
 #X text 498 297 In this variation we have one voice per pad (14 in
 total) each voice keeps its tuning as long as the scale or octave isn't
@@ -111,10 +110,11 @@ changed., f 34;
 #X msg 396 432 hmoll;
 #X msg 355 496 all \$1;
 #X obj 355 469 symbol;
-#X obj 32 538 clone chair.karplus-strong_pads 14 \$0;
 #X obj 196 338 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 31 362 chair.feedback-cancellation~;
+#X obj 32 538 clone chair.karplus-strong_pads 14 \$0;
+#X obj 32 578 chair.gain~;
 #X connect 0 0 1 0;
 #X connect 1 0 25 0;
 #X connect 1 1 5 0;
@@ -124,27 +124,27 @@ changed., f 34;
 #X connect 5 2 13 0;
 #X connect 5 3 11 0;
 #X connect 6 0 1 0;
-#X connect 7 0 36 0;
+#X connect 7 0 34 0;
 #X connect 8 0 7 0;
-#X connect 10 0 28 0;
+#X connect 10 0 27 0;
 #X connect 12 0 20 0;
 #X connect 14 0 10 0;
 #X connect 16 0 1 0;
-#X connect 18 0 34 0;
+#X connect 18 0 35 0;
 #X connect 20 0 2 0;
-#X connect 20 0 28 1;
+#X connect 20 0 27 1;
 #X connect 21 0 19 0;
 #X connect 22 0 23 0;
 #X connect 23 0 24 0;
 #X connect 24 0 21 1;
 #X connect 25 0 8 0;
-#X connect 27 0 17 0;
-#X connect 27 0 17 1;
-#X connect 28 0 26 0;
-#X connect 30 0 33 0;
-#X connect 31 0 33 0;
-#X connect 32 0 34 1;
-#X connect 33 0 32 0;
-#X connect 34 0 27 0;
-#X connect 35 0 36 1;
-#X connect 36 0 21 0;
+#X connect 27 0 26 0;
+#X connect 29 0 32 0;
+#X connect 30 0 32 0;
+#X connect 31 0 35 1;
+#X connect 32 0 31 0;
+#X connect 33 0 34 1;
+#X connect 34 0 21 0;
+#X connect 35 0 36 0;
+#X connect 36 0 17 0;
+#X connect 36 0 17 1;
