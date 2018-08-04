@@ -24,12 +24,12 @@
 #X obj 105 298 s \$0-fm-amount;
 #X obj 105 232 * 2;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 142 1;
 #X obj 102 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1417 1;
+-1 -1 1700 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1842 1;
+-1 -1 142 1;
 #X obj 468 306 s \$0-timbre;
 #X obj 287 16 loadbang;
 #X msg 288 45 0.5;
@@ -175,8 +175,8 @@ changed., f 34;
 #X obj 527 329 loadbang;
 #X obj 723 463 t b a;
 #X msg 693 405 g_major;
-#X msg 758 406 b minor;
 #X obj 32 578 chair.gain~;
+#X msg 758 406 b_minor;
 #X connect 0 0 1 0;
 #X connect 1 0 25 0;
 #X connect 1 1 5 0;
@@ -212,7 +212,7 @@ changed., f 34;
 #X connect 35 1 36 0;
 #X connect 36 0 33 1;
 #X connect 37 0 38 1;
-#X connect 38 0 47 0;
+#X connect 38 0 46 0;
 #X connect 39 0 37 1;
 #X connect 39 1 35 0;
 #X connect 41 0 39 0;
@@ -223,6 +223,6 @@ changed., f 34;
 #X connect 44 0 35 0;
 #X connect 44 1 41 1;
 #X connect 45 0 44 0;
-#X connect 46 0 44 0;
-#X connect 47 0 17 0;
-#X connect 47 0 17 1;
+#X connect 46 0 17 0;
+#X connect 46 0 17 1;
+#X connect 47 0 44 0;
