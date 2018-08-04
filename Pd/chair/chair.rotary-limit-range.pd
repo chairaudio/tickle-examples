@@ -1,6 +1,6 @@
-#N canvas 2425 661 450 427 10;
+#N canvas 2422 672 450 427 10;
 #X obj 70 245 + 1;
-#X obj 70 209 f;
+#X obj 70 217 f;
 #X obj 70 48 t b f;
 #X obj 120 93 t f f;
 #X obj 147 121 sel -1 1;
@@ -14,6 +14,7 @@
 #X obj 246 175 < \$1;
 #X obj 70 274 / \$1;
 #X obj 70 302 outlet;
+#X obj 120 20 inlet;
 #X connect 0 0 1 1;
 #X connect 0 0 8 0;
 #X connect 0 0 13 0;
@@ -34,3 +35,4 @@
 #X connect 11 0 2 0;
 #X connect 12 0 7 1;
 #X connect 13 0 14 0;
+#X connect 15 0 1 1;

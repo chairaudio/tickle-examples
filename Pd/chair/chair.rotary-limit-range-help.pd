@@ -1,4 +1,4 @@
-#N canvas 2425 661 541 427 10;
+#N canvas 2425 661 664 427 10;
 #X obj 71 151 chair.rotary-limit-range 24;
 #X text 260 148 Must have argument!;
 #X msg 66 114 -1;
@@ -9,6 +9,12 @@
 #X text 102 31 Useful abstraction for the rotary encoders.;
 #X text 102 49 Increments to minimum/maximum;
 #X text 103 66 Reverses immediately when direction is changed;
+#X msg 230 120 12;
+#X obj 230 96 loadbang;
+#X text 288 93 second inlet for setting start value \, must be smaller
+then maximum value, f 29;
 #X connect 0 0 4 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
+#X connect 10 0 0 1;
+#X connect 11 0 10 0;
