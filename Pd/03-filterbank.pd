@@ -1,6 +1,6 @@
 #N canvas 314 281 834 669 10;
 #X declare -path chair;
-#X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 31 124 tickle~;
 #X floatatom 414 260 5 0 0 0 - - -, f 5;
@@ -10,12 +10,12 @@
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1700 1;
+-1 -1 0 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 425 1;
+-1 -1 1700 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3400 1;
+-1 -1 0 1;
 #X obj 289 11 loadbang;
 #X msg 289 40 0.5;
 #X obj 103 73 chair.rotary-limit-range 24;
@@ -86,10 +86,10 @@
 #X text 461 57 In this variation we have one voice per pad (14 in total)
 each voice keeps its tuning as long as the scale or octave isn't changed.
 , f 34;
-#X obj 196 338 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 196 338 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 31 362 chair.feedback-cancellation~;
-#N canvas 3050 566 790 453 octave-switch 0;
+#N canvas 3046 566 790 453 octave-switch 0;
 #X obj 102 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 167 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -106,7 +106,7 @@ each voice keeps its tuning as long as the scale or octave isn't changed.
 #X obj 167 76 sel 1;
 #X obj 102 36 route down up;
 #X obj 102 6 r \$0-updown;
-#X obj 135 255 s \$0-octave;
+#X obj 132 255 s \$0-octave;
 #X obj 229 38 r \$0-octave;
 #X obj 198 216 + 1;
 #X obj 132 216 - 1;
@@ -117,9 +117,7 @@ each voice keeps its tuning as long as the scale or octave isn't changed.
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 2 0 21 0;
-#X connect 3 0 14 0;
 #X connect 3 0 16 0;
-#X connect 4 0 14 0;
 #X connect 4 0 17 0;
 #X connect 5 0 7 1;
 #X connect 6 0 7 0;
@@ -132,7 +130,9 @@ each voice keeps its tuning as long as the scale or octave isn't changed.
 #X connect 13 0 12 0;
 #X connect 15 0 18 0;
 #X connect 16 0 3 1;
+#X connect 16 0 14 0;
 #X connect 17 0 4 1;
+#X connect 17 0 14 0;
 #X connect 18 0 2 0;
 #X connect 19 0 2 0;
 #X connect 21 0 20 0;
