@@ -1,4 +1,4 @@
-#N canvas 623 119 628 713 10;
+#N canvas 2583 308 665 677 10;
 #X declare -path chair;
 #X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
@@ -24,12 +24,12 @@
 #X obj 105 298 s \$0-fm-amount;
 #X obj 105 232 * 2;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 708 1;
 #X obj 102 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 1133 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 142 1;
+-1 -1 850 1;
 #X obj 468 306 s \$0-timbre;
 #X obj 287 16 loadbang;
 #X msg 288 45 0.5;
@@ -158,7 +158,6 @@
 #X obj 341 83 chair.hex-mapping;
 #X obj 31 456 *~;
 #X obj 47 387 r \$0-touch;
-#X obj 47 410 \$1 5;
 #X obj 47 433 line~;
 #X obj 32 276 chair.gain~;
 #X obj 260 454 s \$0-current;
@@ -166,8 +165,11 @@
 #X obj 32 578 chair.gain~;
 #X text 378 378 In this example \, every touch down event iterates
 to the next voice even when the hit is on the same pad., f 38;
+#X msg 47 408 \$1 5;
+#X text 377 428 This allows you to build up seperate parallel voices
+onf the same note., f 38;
 #X connect 0 0 1 0;
-#X connect 1 0 36 0;
+#X connect 1 0 35 0;
 #X connect 1 1 9 0;
 #X connect 5 0 4 0;
 #X connect 5 0 7 0;
@@ -183,24 +185,24 @@ to the next voice even when the hit is on the same pad., f 38;
 #X connect 15 0 16 0;
 #X connect 15 0 17 0;
 #X connect 15 0 22 0;
-#X connect 15 0 37 0;
+#X connect 15 0 36 0;
 #X connect 16 0 27 0;
-#X connect 17 0 38 1;
+#X connect 17 0 37 1;
 #X connect 18 0 15 0;
 #X connect 20 0 31 0;
 #X connect 23 0 18 0;
 #X connect 25 0 1 0;
 #X connect 27 0 15 1;
-#X connect 28 0 38 0;
+#X connect 28 0 37 0;
 #X connect 30 0 5 0;
 #X connect 30 0 6 0;
 #X connect 31 0 2 0;
 #X connect 31 0 30 0;
 #X connect 32 0 29 0;
-#X connect 33 0 34 0;
-#X connect 34 0 35 0;
-#X connect 35 0 32 1;
-#X connect 36 0 12 0;
-#X connect 38 0 39 0;
-#X connect 39 0 26 0;
-#X connect 39 0 26 1;
+#X connect 33 0 40 0;
+#X connect 34 0 32 1;
+#X connect 35 0 12 0;
+#X connect 37 0 38 0;
+#X connect 38 0 26 0;
+#X connect 38 0 26 1;
+#X connect 40 0 34 0;

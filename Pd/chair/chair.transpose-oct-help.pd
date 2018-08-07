@@ -1,0 +1,2 @@
+#N canvas 2459 609 450 300 10;
+#X obj 110 120 chair.transpose-oct;
