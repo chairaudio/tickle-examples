@@ -1,9 +1,9 @@
-#N canvas 2075 148 1551 901 10;
+#N canvas 2059 162 1551 901 10;
 #X declare -path chair;
 #X declare -lib tkwidgets;
 #X declare -lib moonlib;
 #X declare -lib ggee;
-#X obj 822 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 822 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 822 145 tickle~;
 #X floatatom 932 461 5 0 0 0 - - -, f 5;
@@ -53,7 +53,7 @@
 #X obj 838 408 r \$0-touch;
 #X obj 838 454 line~;
 #X obj 823 297 chair.gain~;
-#X obj 987 359 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 987 359 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 822 383 chair.feedback-cancellation~;
 #N canvas 3046 566 790 453 octave-switch 0;
@@ -119,7 +119,7 @@
 #X obj 401 323 moonlib/image tickle.gif 0;
 #X obj 979 59 declare -lib moonlib;
 #X obj 979 82 declare -lib ggee;
-#X obj 286 408 bng 25 250 50 0 empty digit empty 17 7 0 10 -262140
+#X obj 440 413 bng 25 250 50 0 empty digit empty 17 7 0 10 -262140
 -53251 -262144;
 #X msg 1165 700 \; digit pos \$1 \$2;
 #X obj 1165 674 pack f f;

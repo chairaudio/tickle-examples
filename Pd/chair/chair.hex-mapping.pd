@@ -1,213 +1,104 @@
-#N canvas 942 207 978 833 10;
+#N canvas 2532 248 573 793 10;
+#X obj 50 30 inlet;
+#X obj 50 762 outlet;
+#X text 214 36 nearest neighbor search;
+#X obj 50 469 chair.distance;
+#X obj 50 152 until;
+#X msg 50 126 14;
+#X msg 93 152 0, f 2;
+#X obj 50 184 f;
+#X obj 81 185 + 1;
+#X obj 50 209 t f f;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-triangle 256 float 3;
-#A 0 0 0.03125 0.0625 0.09375 0.125 0.15625 0.1875 0.21875 0.25 0.28125
-0.3125 0.34375 0.375 0.40625 0.4375 0.46875 0.5 0.53125 0.5625 0.59375
-0.625 0.65625 0.6875 0.71875 0.75 0.78125 0.8125 0.84375 0.875 0.90625
-0.9375 0.96875 1 0.96875 0.9375 0.90625 0.875 0.84375 0.8125 0.78125
-0.75 0.71875 0.6875 0.65625 0.625 0.59375 0.5625 0.53125 0.5 0.46875
-0.4375 0.40625 0.375 0.34375 0.3125 0.28125 0.25 0.21875 0.1875 0.15625
-0.125 0.09375 0.0625 0.03125 0 0.03125 0.0625 0.09375 0.125 0.15625
-0.1875 0.21875 0.25 0.28125 0.3125 0.34375 0.375 0.40625 0.4375 0.46875
-0.5 0.53125 0.5625 0.59375 0.625 0.65625 0.6875 0.71875 0.75 0.78125
-0.8125 0.84375 0.875 0.90625 0.9375 0.96875 1 0.96875 0.9375 0.90625
-0.875 0.84375 0.8125 0.78125 0.75 0.71875 0.6875 0.65625 0.625 0.59375
-0.5625 0.53125 0.5 0.46875 0.4375 0.40625 0.375 0.34375 0.3125 0.28125
-0.25 0.21875 0.1875 0.15625 0.125 0.09375 0.0625 0.03125 0 0.03125
-0.0625 0.09375 0.125 0.15625 0.1875 0.21875 0.25 0.28125 0.3125 0.34375
-0.375 0.40625 0.4375 0.46875 0.5 0.53125 0.5625 0.59375 0.625 0.65625
-0.6875 0.71875 0.75 0.78125 0.8125 0.84375 0.875 0.90625 0.9375 0.96875
-1 0.96875 0.9375 0.90625 0.875 0.84375 0.8125 0.78125 0.75 0.71875
-0.6875 0.65625 0.625 0.59375 0.5625 0.53125 0.5 0.46875 0.4375 0.40625
-0.375 0.34375 0.3125 0.28125 0.25 0.21875 0.1875 0.15625 0.125 0.09375
-0.0625 0.03125 0 0.03125 0.0625 0.09375 0.125 0.15625 0.1875 0.21875
-0.25 0.28125 0.3125 0.34375 0.375 0.40625 0.4375 0.46875 0.5 0.53125
-0.5625 0.59375 0.625 0.65625 0.6875 0.71875 0.75 0.78125 0.8125 0.84375
-0.875 0.90625 0.9375 0.96875 1 0.96875 0.9375 0.90625 0.875 0.84375
-0.8125 0.78125 0.75 0.71875 0.6875 0.65625 0.625 0.59375 0.5625 0.53125
-0.5 0.46875 0.4375 0.40625 0.375 0.34375 0.3125 0.28125 0.25 0.21875
-0.1875 0.15625 0.125 0.09375 0.0625 0.03125;
-#X coords 0 1 256 0 255 140 1 0 0;
-#X restore 379 165 graph;
-#X obj 23 92 * 255;
-#X obj 23 118 list prepend 0;
-#X obj 112 68 * 255;
-#X obj 112 88 expr if($f1<=64 \, 0 \, if($f1>64&$f1<=96 \, 1 \, if($f1>96&$f1<=160
-\, 2 \, if($f1>160&$f1<=192 \, 3 \, 4))));
-#X obj 23 137 route 0 1 2 3 4;
-#X floatatom 23 347 5 0 0 0 - - -, f 5;
-#N canvas 809 616 684 553 map_array 0;
-#X obj 205 23 inlet;
-#X obj 588 71 - 64;
-#X obj 588 92 / 32;
-#X obj 588 113 clip 0 1;
-#X obj 205 44 t f f;
-#X obj 588 53 * 255;
-#X obj 496 129 <;
-#X obj 136 110 moses 64;
-#X obj 181 181 - 64;
-#X obj 181 202 moses 64;
-#X obj 136 462 outlet;
-#X obj 227 259 - 64;
-#X floatatom 108 79 5 0 0 0 - - -, f 5;
-#X obj 227 280 moses 64;
-#X obj 272 348 - 64;
-#X obj 455 86 tabread \$0-triangle;
-#X obj 136 149 expr if($f1<=32&$f2 \, 0 \, if($f1>33&$f1<=64&$f2 \,
-1 \, 5));
-#X obj 181 236 expr if($f1<=32&$f2 \, 1 \, if($f1>33&$f1<=64&$f2 \,
-2 \, 6));
-#X obj 227 316 expr if($f1<=32&$f2 \, 2 \, if($f1>33&$f1<=64&$f2 \,
-3 \, 7));
-#X obj 272 370 expr if($f1<=32&$f2 \, 3 \, if($f1>33&$f1<=64&$f2 \,
-4 \, 8));
-#X obj 588 13 r xy;
-#X obj 591 32 unpack f f;
-#X connect 0 0 4 0;
-#X connect 1 0 2 0;
-#X connect 2 0 3 0;
-#X connect 3 0 6 1;
+#X array \$0-distances 14 float 3;
+#A 0 0.825139 0.723703 0.701169 0.764546 0.889554 0.451002 0.329841
+0.373078 0.542752 0.442221 0.196091 0.0796489 0.315018 0.553184;
+#X coords 0 1.4 14 0 200 140 1 0 0;
+#X restore 205 590 graph;
+#X obj 65 511 tabwrite \$0-distances;
+#X obj 50 265 sel 0 1 2 3 4 5 6 7 8 9 10 11 12 13;
+#X obj 50 55 t b b l;
+#X msg 50 321 0 0.125;
+#X msg 105 321 0.25 0.125;
+#X msg 177 322 0.5 0.125;
+#X msg 251 321 0.75 0.125;
+#X msg 323 322 0.99 0.125;
+#X obj 89 82 s \$0-pos;
+#X obj 131 446 r \$0-pos;
+#X obj 77 236 s \$0-index;
+#X obj 188 486 r \$0-index;
+#X msg 52 383 0 0.875;
+#X msg 107 383 0.25 0.875;
+#X msg 183 384 0.5 0.875;
+#X msg 253 383 0.75 0.875;
+#X msg 325 384 0.99 0.875;
+#X msg 72 354 0.125 0.5;
+#X msg 144 355 0.375 0.5;
+#X msg 218 354 0.625 0.5;
+#X msg 290 355 0.875 0.5;
+#X obj 50 627 t f;
+#X obj 50 650 change;
+#X obj 50 600 min;
+#X obj 50 678 t b;
+#X obj 50 731 f;
+#X obj 69 104 s \$0-reset;
+#X obj 93 128 r \$0-reset;
+#X obj 65 551 r \$0-reset;
+#X obj 65 704 r \$0-index;
+#X msg 65 575 1.5;
+#X text 402 356 center points of hexpads;
+#X text 190 447 pythagoras to get the distance;
+#X text 31 490 connect for vizualization;
+#X connect 0 0 13 0;
+#X connect 3 0 34 0;
 #X connect 4 0 7 0;
-#X connect 4 1 15 0;
-#X connect 5 0 1 0;
-#X connect 6 0 16 1;
-#X connect 6 0 17 1;
-#X connect 6 0 18 1;
-#X connect 6 0 19 1;
-#X connect 7 0 16 0;
-#X connect 7 1 8 0;
-#X connect 8 0 9 0;
-#X connect 9 0 17 0;
-#X connect 9 1 11 0;
-#X connect 11 0 13 0;
-#X connect 12 0 7 0;
-#X connect 13 0 18 0;
-#X connect 13 1 14 0;
-#X connect 14 0 19 0;
-#X connect 15 0 6 0;
-#X connect 16 0 10 0;
-#X connect 17 0 10 0;
-#X connect 18 0 10 0;
-#X connect 19 0 10 0;
-#X connect 20 0 21 0;
-#X connect 21 1 5 0;
-#X restore 80 239 pd map_array;
-#N canvas 594 174 684 553 map_array 0;
-#X obj 205 23 inlet;
-#X obj 591 78 / 32;
-#X obj 591 99 clip 0 1;
-#X obj 205 44 t f f;
-#X obj 591 36 * 255;
-#X obj 136 110 moses 64;
-#X obj 181 181 - 64;
-#X obj 181 202 moses 64;
-#X obj 136 462 outlet;
-#X obj 227 259 - 64;
-#X obj 227 280 moses 64;
-#X obj 272 348 - 64;
-#X obj 591 57 - 160;
-#X obj 496 115 <;
-#X obj 445 82 tabread \$0-triangle;
-#X obj 136 149 expr if($f1<=32&$f2 \, 9 \, if($f1>33&$f1<=64&$f2 \,
-10 \, 5));
-#X obj 181 229 expr if($f1<=32&$f2 \, 10 \, if($f1>33&$f1<=64&$f2 \,
-11 \, 6));
-#X obj 227 316 expr if($f1<=32&$f2 \, 11 \, if($f1>33&$f1<=64&$f2 \,
-12 \, 7));
-#X obj 272 370 expr if($f1<=32&$f2 \, 12 \, if($f1>33&$f1<=64&$f2 \,
-13 \, 8));
-#X obj 587 -4 r xy;
-#X obj 590 15 unpack f f;
-#X connect 0 0 3 0;
-#X connect 1 0 2 0;
-#X connect 2 0 13 1;
-#X connect 3 0 5 0;
-#X connect 3 1 14 0;
-#X connect 4 0 12 0;
-#X connect 5 0 15 0;
-#X connect 5 1 6 0;
-#X connect 6 0 7 0;
-#X connect 7 0 16 0;
-#X connect 7 1 9 0;
-#X connect 9 0 10 0;
-#X connect 10 0 17 0;
-#X connect 10 1 11 0;
-#X connect 11 0 18 0;
-#X connect 12 0 1 0;
-#X connect 13 0 15 1;
-#X connect 13 0 16 1;
-#X connect 13 0 17 1;
-#X connect 13 0 18 1;
-#X connect 14 0 13 0;
-#X connect 15 0 8 0;
-#X connect 16 0 8 0;
-#X connect 17 0 8 0;
-#X connect 18 0 8 0;
-#X connect 19 0 20 0;
-#X connect 20 1 4 0;
-#X restore 232 236 pd map_array;
-#X obj 686 145 until;
-#X obj 686 178 f;
-#X obj 723 178 + 1;
-#X obj 686 109 t f b f;
-#X msg 686 87 256;
-#X obj 686 200 t f f;
-#X obj 686 274 moses 1;
-#X obj 701 309 expr 1-($f1-1);
-#X msg 737 143 0;
-#X obj 686 225 mod 64;
-#X obj 686 249 / 32;
-#X obj 686 66 loadbang;
-#X obj 686 350 tabwrite \$0-triangle;
-#X obj 23 261 div 64;
-#X obj 23 241 - 32;
-#X obj 23 282 + 1;
-#X obj 177 247 div 64;
-#X obj 177 268 + 5;
-#X obj 315 255 div 64;
-#X obj 315 235 - 32;
-#X obj 315 276 + 10;
-#X obj 22 367 outlet;
-#X obj 23 14 inlet;
-#X obj 121 120 s \$0-map_row;
-#X obj 23 42 unpack f f;
-#X connect 1 0 2 0;
-#X connect 2 0 5 0;
-#X connect 3 0 4 0;
-#X connect 4 0 2 1;
-#X connect 4 0 32 0;
-#X connect 5 0 23 0;
-#X connect 5 1 7 0;
-#X connect 5 2 25 0;
-#X connect 5 3 8 0;
-#X connect 5 4 28 0;
-#X connect 6 0 30 0;
-#X connect 7 0 6 0;
-#X connect 8 0 6 0;
-#X connect 9 0 10 0;
-#X connect 10 0 11 0;
-#X connect 10 0 14 0;
-#X connect 11 0 10 1;
-#X connect 12 0 9 0;
-#X connect 12 1 17 0;
-#X connect 13 0 12 0;
-#X connect 14 0 18 0;
-#X connect 14 1 21 1;
-#X connect 15 0 21 0;
-#X connect 15 1 16 0;
-#X connect 16 0 21 0;
-#X connect 17 0 10 1;
-#X connect 18 0 19 0;
-#X connect 19 0 15 0;
-#X connect 20 0 13 0;
-#X connect 22 0 24 0;
-#X connect 23 0 22 0;
-#X connect 24 0 6 0;
-#X connect 25 0 26 0;
-#X connect 26 0 6 0;
-#X connect 27 0 29 0;
-#X connect 28 0 27 0;
-#X connect 29 0 6 0;
-#X connect 31 0 33 0;
-#X connect 33 0 1 0;
-#X connect 33 1 3 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 1;
+#X connect 7 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 1;
+#X connect 9 0 12 0;
+#X connect 9 1 21 0;
+#X connect 12 0 14 0;
+#X connect 12 1 15 0;
+#X connect 12 2 16 0;
+#X connect 12 3 17 0;
+#X connect 12 4 18 0;
+#X connect 12 5 28 0;
+#X connect 12 6 29 0;
+#X connect 12 7 30 0;
+#X connect 12 8 31 0;
+#X connect 12 9 23 0;
+#X connect 12 10 24 0;
+#X connect 12 11 25 0;
+#X connect 12 12 26 0;
+#X connect 12 13 27 0;
+#X connect 13 0 5 0;
+#X connect 13 1 37 0;
+#X connect 13 2 19 0;
+#X connect 14 0 3 0;
+#X connect 15 0 3 0;
+#X connect 16 0 3 0;
+#X connect 17 0 3 0;
+#X connect 18 0 3 0;
+#X connect 20 0 3 1;
+#X connect 22 0 11 1;
+#X connect 23 0 3 0;
+#X connect 24 0 3 0;
+#X connect 25 0 3 0;
+#X connect 26 0 3 0;
+#X connect 27 0 3 0;
+#X connect 28 0 3 0;
+#X connect 29 0 3 0;
+#X connect 30 0 3 0;
+#X connect 31 0 3 0;
+#X connect 32 0 33 0;
+#X connect 32 0 34 1;
+#X connect 33 0 35 0;
+#X connect 34 0 32 0;
+#X connect 35 0 36 0;
+#X connect 36 0 1 0;
+#X connect 38 0 6 0;
+#X connect 39 0 41 0;
+#X connect 40 0 36 1;
+#X connect 41 0 34 1;
