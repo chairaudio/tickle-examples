@@ -1,9 +1,9 @@
-#N canvas 2861 218 882 825 10;
+#N canvas 1994 340 882 825 10;
 #X declare -lib Gem;
 #X declare -path chair;
 #X floatatom 313 258 5 0 0 0 x - -, f 5;
 #X floatatom 370 258 5 0 0 0 y - -, f 5;
-#X obj 22 28 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 22 28 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 681 36 declare -lib Gem;
 #X msg 403 39 0 \, destroy;
@@ -309,9 +309,7 @@
 #X connect 22 0 4 0;
 #X restore 468 287 pd hexpad-viz;
 #X obj 354 283 * -5.6;
-#X obj 574 498 chair.hex-mapping;
-#X obj 576 471 chair.hex-mapping2;
-#X obj 417 256 chair.hex-mapping3;
+#X obj 417 256 chair.hex-mapping;
 #X connect 2 0 6 0;
 #X connect 4 0 18 0;
 #X connect 5 0 11 0;
@@ -350,8 +348,8 @@
 #X connect 40 0 18 0;
 #X connect 41 0 33 0;
 #X connect 42 0 41 1;
-#X connect 43 0 49 0;
+#X connect 43 0 47 0;
 #X connect 46 0 13 0;
-#X connect 49 0 29 0;
-#X connect 49 0 15 0;
-#X connect 49 0 45 0;
+#X connect 47 0 29 0;
+#X connect 47 0 15 0;
+#X connect 47 0 45 0;
