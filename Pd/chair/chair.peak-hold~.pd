@@ -1,0 +1,24 @@
+#N canvas 2582 460 535 323 10;
+#X obj 29 146 abs~;
+#X obj 270 54 loadbang;
+#X msg 205 82 0;
+#X obj 29 181 fexpr~ if ($x1[0] > xmax_\$0 \, xmax_\$0 = $x1[0] \,
+xmax_\$0=xmax_\$0*decay_\$0);
+#X obj 206 113 v xmax_\$0;
+#X obj 270 112 v decay_\$0;
+#X obj 331 31 inlet;
+#X obj 331 54 clip 0.0001 0.9999;
+#X obj 338 83 f \$1;
+#X obj 29 113 inlet~;
+#X obj 30 226 outlet~;
+#X msg 270 79 0.995;
+#X text 48 15 Peak-hold envelope generator;
+#X connect 0 0 3 0;
+#X connect 1 0 11 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 10 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 9 0 0 0;
+#X connect 11 0 5 0;
