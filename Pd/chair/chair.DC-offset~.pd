@@ -1,14 +1,17 @@
-#N canvas 3020 179 450 467 10;
+#N canvas 3020 179 463 467 10;
 #X obj 36 36 inlet~;
-#X obj 39 294 outlet~;
-#X obj 249 289 outlet~;
-#X obj 250 197 -~;
+#X obj 40 334 outlet~;
+#X obj 324 332 outlet~;
+#X obj 325 240 -~;
 #X obj 37 86 hip~ 4;
 #X obj 38 114 hip~ 4;
 #X obj 39 141 hip~ 4;
 #X obj 39 170 hip~ 4;
-#X obj 250 221 lop~ 100;
-#X obj 249 254 *~ 25;
+#X obj 325 264 lop~ 100;
+#X obj 324 297 *~ 25;
+#X text 20 359 "Clean" signal with DC-offset removed, f 22;
+#X text 289 356 DC-offset amplified to be used as an evelope, f 23
+;
 #X connect 0 0 4 0;
 #X connect 0 0 3 1;
 #X connect 3 0 8 0;
