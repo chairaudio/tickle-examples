@@ -1,21 +1,21 @@
-#N canvas 2059 162 1551 901 10;
+#N canvas 2059 162 1473 835 10;
 #X declare -path chair;
 #X declare -lib tkwidgets;
 #X declare -lib moonlib;
 #X declare -lib ggee;
-#X obj 822 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X obj 822 145 tickle~;
-#X floatatom 932 461 5 0 0 0 - - -, f 5;
-#X obj 861 243 route 0;
-#X msg 841 82 info;
-#X obj 822 358 lop~ 10000;
-#X obj 822 335 hip~ 4;
-#X obj 861 264 s \$0-xy;
-#X obj 947 194 s \$0-touch;
-#X obj 920 409 r \$0-xy;
-#X obj 904 215 s \$0-updown;
-#X obj 978 15 declare -path chair;
+#X obj 822 7 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 822 96 tickle~;
+#X floatatom 932 412 5 0 0 0 - - -, f 5;
+#X obj 861 194 route 0;
+#X msg 841 33 info;
+#X obj 822 309 lop~ 10000;
+#X obj 822 286 hip~ 4;
+#X obj 861 215 s \$0-xy;
+#X obj 947 145 s \$0-touch;
+#X obj 920 360 r \$0-xy;
+#X obj 904 166 s \$0-updown;
+#X obj 1150 11 declare -path chair;
 #N canvas 2698 771 676 343 LED 0;
 #X obj 69 185 outlet;
 #X obj 35 14 r \$0-led0;
@@ -46,29 +46,29 @@
 #X connect 13 0 12 0;
 #X connect 13 0 11 0;
 #X connect 13 0 10 0;
-#X restore 853 114 pd LED;
-#X obj 824 842 dac~;
-#X obj 920 431 chair.hex-mapping;
-#X obj 822 477 *~;
-#X obj 838 408 r \$0-touch;
-#X obj 838 454 line~;
-#X obj 823 297 chair.gain~;
-#X obj 987 359 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X restore 853 65 pd LED;
+#X obj 824 793 dac~;
+#X obj 920 382 chair.hex-mapping;
+#X obj 822 428 *~;
+#X obj 838 359 r \$0-touch;
+#X obj 838 405 line~;
+#X obj 823 248 chair.gain~;
+#X obj 987 310 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 822 383 chair.feedback-cancellation~;
-#X floatatom 932 517 5 0 0 0 - - -, f 5;
-#X obj 920 494 chair.hex-tuning;
-#X msg 1013 455 g_major;
-#X obj 825 790 chair.gain~;
-#X msg 1074 456 b_minor;
-#X obj 920 639 mtof;
-#X obj 920 586 change;
-#X obj 978 37 declare -lib tkwidgets;
+#X obj 822 334 chair.feedback-cancellation~;
+#X floatatom 932 468 5 0 0 0 - - -, f 5;
+#X obj 920 445 chair.hex-tuning;
+#X msg 1013 406 g_major;
+#X obj 825 741 chair.gain~;
+#X msg 1074 407 b_minor;
+#X obj 920 590 mtof;
+#X obj 920 537 change;
+#X obj 1150 33 declare -lib tkwidgets;
 #X obj 401 323 moonlib/image tickle.gif 0;
-#X obj 979 59 declare -lib moonlib;
-#X obj 979 82 declare -lib ggee;
-#X obj 677 395 bng 25 250 50 0 empty digit empty 17 7 0 10 -262140
--53251 -262144;
+#X obj 1151 55 declare -lib moonlib;
+#X obj 1151 78 declare -lib ggee;
+#X obj 67 374 bng 25 250 50 0 empty digit empty 17 7 0 10 -262140 -53251
+-262144;
 #X msg 1165 700 \; digit pos \$1 \$2;
 #X obj 1165 674 pack f f;
 #X obj 1165 545 r \$0-xy;
@@ -80,23 +80,23 @@
 #X msg 1164 448 -1.0816e+07 -3.60449e+06 0;
 #X msg 1164 499 \; digit color \$1 \$2 \$3;
 #X msg 1184 472 -1.67772e+07 -3.60449e+06 0;
-#X obj 874 693 osc~;
-#X obj 823 729 *~;
-#X obj 856 739 osc~;
-#X obj 824 762 *~;
-#X obj 957 662 mtof;
-#X obj 957 639 + 2;
-#X obj 861 172 route pos button touch;
+#X obj 874 644 osc~;
+#X obj 823 680 *~;
+#X obj 856 690 osc~;
+#X obj 824 713 *~;
+#X obj 957 613 mtof;
+#X obj 957 590 + 2;
+#X obj 861 123 route pos button touch;
 #X obj 1164 395 r \$0-touch;
-#X text 1039 169 This visualization provides a visual feedback for
+#X text 1049 196 This visualization provides a visual feedback for
 the x and y data of the touchpad.;
-#X msg 838 431 \$1 5;
-#X obj 920 607 t f f;
-#X obj 857 663 osc~;
-#X obj 823 698 *~;
-#X obj 920 538 chair.transpose-oct -2;
-#X obj 1049 517 r \$0-updown;
-#X text 1038 217 Library ggee has an image object to load gifs into
+#X msg 838 382 \$1 5;
+#X obj 920 558 t f f;
+#X obj 857 614 osc~;
+#X obj 823 649 *~;
+#X obj 920 489 chair.transpose-oct -2;
+#X obj 1049 468 r \$0-updown;
+#X text 1048 244 Library ggee has an image object to load gifs into
 the patcher window. An updated version of [image] is in moonlib.;
 #X connect 0 0 1 0;
 #X connect 1 0 18 0;
