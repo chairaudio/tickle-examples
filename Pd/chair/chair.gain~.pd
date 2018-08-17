@@ -1,12 +1,12 @@
 #N canvas 2523 226 672 624 10;
-#X obj 103 116 hsl 66 17 -30 30 0 0 \$0-gain \$0-gain-r -5_dB 5 8 1
-10 -166441 -262144 -262144 2700 0;
+#X obj 103 116 hsl 66 17 -30 30 0 0 \$0-gain \$0-gain-r 30_dB 5 8 1
+10 -166441 -262144 -262144 6500 0;
 #X obj 70 179 inlet~;
 #X obj 71 526 outlet~;
 #X obj 122 393 line~;
 #X msg 122 370 \$1 10;
 #X obj 69 426 *~;
-#X obj 122 180 inlet;
+#X obj 163 35 inlet;
 #X obj 122 213 / 20;
 #X obj 122 235 t b f;
 #X obj 122 281 pow;
@@ -31,12 +31,13 @@
 #X obj 231 503 threshold~ 0 100 0 100;
 #X text 352 232 Reduce to one number after the decimal divider;
 #X text 230 555 Clipping warner;
+#X connect 0 0 7 0;
 #X connect 1 0 5 0;
 #X connect 3 0 5 1;
 #X connect 4 0 3 0;
 #X connect 5 0 11 0;
 #X connect 5 0 15 1;
-#X connect 6 0 7 0;
+#X connect 6 0 0 0;
 #X connect 7 0 8 0;
 #X connect 8 0 10 0;
 #X connect 8 1 9 1;
@@ -51,7 +52,6 @@
 #X connect 14 0 4 0;
 #X connect 14 0 17 0;
 #X connect 15 0 28 0;
-#X connect 19 0 7 0;
 #X connect 19 0 26 0;
 #X connect 20 0 21 0;
 #X connect 21 0 0 0;
