@@ -17,12 +17,12 @@
 #X obj 467 169 s \$0-led2;
 #X obj 110 169 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2833 1;
+-1 -1 2125 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 708 1;
+-1 -1 0 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3400 1;
+-1 -1 142 1;
 #X obj 442 9 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X msg 442 44 12;
@@ -82,7 +82,7 @@
 #X obj 47 387 r \$0-touch;
 #X obj 47 466 line~;
 #X obj 473 353 s \$0-current;
-#X obj 196 338 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 196 338 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 31 362 chair.feedback-cancellation~;
 #X obj 298 319 until;
@@ -97,9 +97,9 @@
 #X obj 298 379 t f f;
 #X obj 309 222 loadbang;
 #X obj 409 223 t b a;
-#X msg 409 142 g_major;
+#X msg 409 122 g_major;
 #X obj 32 610 chair.gain~;
-#X msg 425 166 b_minor;
+#X msg 425 146 b_minor;
 #X obj 473 329 change;
 #X obj 343 452 chair.transpose-oct -2;
 #X obj 472 404 r \$0-updown;
@@ -107,7 +107,7 @@
 #X msg 95 440 1 2;
 #X msg 47 440 0 20;
 #X obj 626 509 s \$0-masses;
-#X msg 440 190 chromatic;
+#X msg 440 170 chromatic;
 #X obj 32 276 chair.gain~;
 #X obj 96 254 r \$0-invol;
 #X obj 32 565 clone circular-string 14 \$0;

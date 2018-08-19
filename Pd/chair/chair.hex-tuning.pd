@@ -14,6 +14,7 @@
 #X msg 203 105 read g_major.txt;
 #X msg 233 130 read b_minor.txt;
 #X msg 244 155 read chromatic.txt;
+#X msg 251 179 read janko.txt;
 #X connect 0 0 1 0;
 #X connect 1 0 12 0;
 #X connect 1 1 4 0;
@@ -28,3 +29,4 @@
 #X connect 12 0 6 0;
 #X connect 13 0 6 0;
 #X connect 14 0 6 0;
+#X connect 15 0 6 0;

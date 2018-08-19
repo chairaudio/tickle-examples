@@ -12,6 +12,9 @@
 #X msg 200 69 b_minor;
 #X msg 208 94 chromatic;
 #X text 271 94 starts at MIDI note 60;
+#X msg 212 120 isomorphic;
+#X text 281 120 incomplete isomorphic keyboard \, middle C left bottom
+;
 #X connect 0 0 5 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -19,3 +22,4 @@
 #X connect 7 0 0 1;
 #X connect 8 0 0 1;
 #X connect 9 0 0 1;
+#X connect 11 0 0 1;
