@@ -126,7 +126,7 @@
 #X obj 409 223 t b a;
 #X msg 409 142 g_major;
 #X obj 32 578 chair.gain~;
-#X msg 428 166 b_minor;
+#X msg 425 166 b_minor;
 #X obj 473 329 change;
 #X obj 343 452 chair.transpose-oct -2;
 #X obj 472 404 r \$0-updown;
@@ -134,8 +134,8 @@
 #X msg 95 440 1 2;
 #X msg 47 440 0 20;
 #X obj 645 500 s \$0-masses;
+#X msg 440 190 chromatic;
 #X obj 32 533 clone circular-string 14 \$0;
-#X msg 459 190 chromatic;
 #X connect 2 0 50 0;
 #X connect 3 0 4 0;
 #X connect 4 0 2 0;
@@ -155,7 +155,7 @@
 #X connect 19 0 7 0;
 #X connect 21 0 8 0;
 #X connect 21 0 44 0;
-#X connect 22 0 51 0;
+#X connect 22 0 52 0;
 #X connect 23 0 47 0;
 #X connect 24 0 22 1;
 #X connect 25 0 14 0;
@@ -169,7 +169,7 @@
 #X connect 33 0 30 0;
 #X connect 33 1 34 0;
 #X connect 34 0 31 1;
-#X connect 35 0 51 1;
+#X connect 35 0 52 1;
 #X connect 37 0 36 0;
 #X connect 37 0 45 0;
 #X connect 38 0 35 0;
@@ -189,5 +189,5 @@
 #X connect 47 1 48 0;
 #X connect 48 0 24 0;
 #X connect 49 0 24 0;
-#X connect 51 0 42 0;
-#X connect 52 0 40 0;
+#X connect 51 0 40 0;
+#X connect 52 0 42 0;

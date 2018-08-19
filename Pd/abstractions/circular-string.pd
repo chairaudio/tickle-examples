@@ -1,6 +1,6 @@
 #N canvas 2112 209 674 871 10;
 #X obj 33 658 pmpd~ 1 1;
-#X msg 360 620 reset;
+#X msg 359 620 reset;
 #X obj 222 467 + 1;
 #X text 453 89 number of masss on the string;
 #X obj 255 260 until;
@@ -23,9 +23,9 @@
 #X msg 152 600 outPos 0 1 1 \, inForce 0 5 1;
 #X msg 203 541 link \$1 \$2 \$3 0.02;
 #X obj 34 727 outlet~;
-#X obj 152 24 inlet;
+#X obj 152 59 inlet;
 #X obj 292 426 f;
-#X obj 33 213 inlet~;
+#X obj 34 58 inlet~;
 #X obj 34 454 *~;
 #X obj 50 324 == \$1;
 #X obj 50 421 line~;
