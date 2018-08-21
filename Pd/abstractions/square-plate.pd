@@ -42,7 +42,7 @@
 #X obj 625 268 pow 2;
 #X obj 475 773 send \$0-recursion;
 #X obj 570 514 receive \$0-recursion;
-#X text 387 814 0.3;
+#X text 316 792 0.3;
 #X obj 153 34 inlet;
 #X obj 23 942 outlet~;
 #X obj 378 627 f;
@@ -71,7 +71,7 @@ via the \$2 argument.;
 #X obj 95 921 hip~ 20;
 #X obj 95 944 outlet~;
 #X obj 95 896 *~ 0.5;
-#X msg 154 830 outPos 0 1 1 \, outPos 1 5 1 \, inForce 0 15 1;
+#X msg 154 830 outPos 0 1 1 \, outPos 1 8 1 \, inForce 0 15 1;
 #X connect 0 0 67 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
