@@ -1,4 +1,4 @@
-#N canvas 2300 469 544 545 10;
+#N canvas 2374 574 544 545 10;
 #X obj 425 249 line~;
 #N canvas 2609 615 450 300 w(0) 0;
 #N canvas 2868 695 450 300 samplerate 0;
@@ -84,7 +84,7 @@
 #X obj 191 71 lop~ 1;
 #X obj 191 49 sig~;
 #X obj 224 47 r \$2-bend;
-#N canvas 2037 647 523 474 readtables 1;
+#N canvas 2037 647 523 474 readtables 0;
 #X obj 53 298 *~;
 #X obj 96 299 *~;
 #X obj 141 298 *~;
@@ -94,7 +94,7 @@
 #X obj 54 380 outlet~;
 #X obj 384 202 line~;
 #X msg 384 180 \$1 100;
-#N canvas 246 583 459 326 fade 1;
+#N canvas 2693 609 459 326 fade 0;
 #X obj 28 58 +~ 1;
 #X obj 27 11 inlet~;
 #X obj 91 265 outlet~;
@@ -212,7 +212,7 @@
 #X connect 15 0 8 0;
 #X restore 91 24 pd readtables;
 #X obj 411 48 lop~ 1;
-#N canvas 1266 409 590 474 readtables 1;
+#N canvas 2938 665 590 474 readtables 0;
 #X obj 53 298 *~;
 #X obj 96 299 *~;
 #X obj 141 298 *~;
@@ -222,7 +222,7 @@
 #X obj 54 379 outlet~;
 #X obj 384 202 line~;
 #X msg 384 180 \$1 100;
-#N canvas 446 220 599 413 fade 1;
+#N canvas 2341 731 599 413 fade 0;
 #X obj 54 71 +~ 1;
 #X obj 53 24 inlet~;
 #X obj 117 278 outlet~;
@@ -341,7 +341,7 @@
 #X restore 410 27 pd readtables;
 #X msg 424 110 \$1 100;
 #X msg 425 228 \$1 100;
-#N canvas 192 160 623 382 biquad 0;
+#N canvas 192 181 623 382 biquad 0;
 #X obj 73 30 inlet~;
 #X obj 164 324 outlet~;
 #X obj 72 70 *~;
@@ -493,7 +493,7 @@
 #X connect 12 0 7 4;
 #X restore 22 446 pd biquad;
 #X f 37;
-#N canvas 4 61 617 300 tobiquad 0;
+#N canvas 4 181 617 300 tobiquad 0;
 #X obj 63 51 inlet~ a1;
 #X obj 128 51 inlet~ a2;
 #X obj 193 51 inlet~ b0;

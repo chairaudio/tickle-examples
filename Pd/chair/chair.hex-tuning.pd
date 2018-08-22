@@ -1,4 +1,4 @@
-#N canvas 2079 545 584 258 10;
+#N canvas 3006 638 584 258 10;
 #X obj 203 28 loadbang;
 #X obj 203 50 t b b;
 #X obj 25 208 outlet;
@@ -14,7 +14,7 @@
 #X msg 203 105 read g_major.txt;
 #X msg 233 130 read b_minor.txt;
 #X msg 244 155 read chromatic.txt;
-#X msg 251 179 read janko.txt;
+#X msg 251 179 read isomorphic.txt;
 #X connect 0 0 1 0;
 #X connect 1 0 12 0;
 #X connect 1 1 4 0;

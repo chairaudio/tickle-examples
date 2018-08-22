@@ -1,4 +1,4 @@
-#N canvas 1924 244 926 716 10;
+#N canvas 2299 288 926 716 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X obj 31 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
@@ -10,12 +10,12 @@
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 850 1;
+-1 -1 2125 1;
 #X obj 103 30 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1558 1;
+-1 -1 2125 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 425 1;
+-1 -1 3400 1;
 #X obj 103 73 chair.rotary-limit-range 24;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X obj 465 73 chair.rotary-limit-range 24;
@@ -188,7 +188,7 @@
 #X restore 229 34 pd init;
 #X floatatom 456 523 8 0 0 0 - - -, f 8;
 #X obj 459 503 hsl 128 15 0 1 0 0 empty \$0-fundamentalhsl empty -2
--8 0 10 -262144 -1 -1 2000 1;
+-8 0 10 -262144 -1 -1 1905 1;
 #X obj 456 547 s \$0-fundamental;
 #X obj 456 282 r \$0-updown;
 #X obj 456 460 / 5;
@@ -206,9 +206,9 @@
 #X obj 545 399 - 1;
 #X obj 487 459 s \$0-recurs;
 #X obj 542 362 r \$0-recurs;
-#X obj 606 404 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 456 368 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 627 401 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 516 366 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 215 522 pack f f f f f f f f;
 #X obj 32 554 clone karplus-double-complex 14;
@@ -258,9 +258,7 @@ one continuous surface for sonic exploration.;
 #X connect 44 0 43 0;
 #X connect 45 0 46 0;
 #X connect 45 1 47 0;
-#X connect 46 0 48 0;
 #X connect 46 0 54 0;
-#X connect 47 0 50 0;
 #X connect 47 0 55 0;
 #X connect 48 0 49 0;
 #X connect 49 0 48 1;
@@ -270,5 +268,7 @@ one continuous surface for sonic exploration.;
 #X connect 51 0 40 0;
 #X connect 53 0 50 1;
 #X connect 53 0 48 1;
+#X connect 54 0 48 0;
+#X connect 55 0 50 0;
 #X connect 56 0 57 1;
 #X connect 57 0 32 0;

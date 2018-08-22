@@ -20,7 +20,7 @@ the Tickle and sometimes issues with feedback occur.;
 #X obj 28 203 *~;
 #X obj 44 175 +~ 1;
 #X obj 44 153 *~ -1;
-#N canvas 3047 278 450 300 arguments 1;
+#N canvas 3047 278 450 300 arguments 0;
 #X obj 33 24 loadbang;
 #X obj 33 220 outlet;
 #X obj 33 70 makefilename .%c1;
