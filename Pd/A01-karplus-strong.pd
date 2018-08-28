@@ -1,13 +1,13 @@
-#N canvas 2583 308 665 677 10;
+#N canvas 452 248 665 677 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 31 124 tickle~;
 #X floatatom 396 179 5 0 0 0 - - -, f 5;
-#N canvas 1256 202 664 838 rotaries 0;
+#N canvas 1252 202 664 369 rotaries 0;
 #X obj 102 25 inlet;
-#X floatatom 138 275 5 0 0 0 - - -, f 5;
+#X floatatom 136 275 5 0 0 0 - - -, f 5;
 #X obj 286 192 sqrt;
 #X obj 286 213 sqrt;
 #X obj 286 234 sqrt;
@@ -22,8 +22,8 @@
 #X obj 467 169 s \$0-led2;
 #X obj 110 169 s \$0-led0;
 #X obj 286 300 s \$0-feedback;
-#X obj 105 298 s \$0-fm-amount;
-#X obj 105 232 * 2;
+#X obj 103 298 s \$0-fm-amount;
+#X obj 103 232 * 2;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 102 49 route 0 1 2;
@@ -124,6 +124,8 @@ onf the same note., f 38;
 #X msg 530 178 b_minor;
 #X obj 379 49 declare -path abstractions;
 #X obj 32 538 clone karplus-strong 8 \$0;
+#X text 119 265 Rotaries:;
+#X text 118 281 Distorsion \, Feedback \, Timbre;
 #X connect 0 0 1 0;
 #X connect 1 0 34 0;
 #X connect 1 1 8 0;

@@ -1,10 +1,10 @@
-#N canvas 2151 287 752 697 10;
+#N canvas 1155 62 752 697 10;
 #X declare -path chair;
 #X declare -path abstractions;
-#X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 31 124 tickle~;
-#X floatatom 438 307 5 0 0 0 - - -, f 5;
+#X floatatom 497 301 5 0 0 0 - - -, f 5;
 #N canvas 1024 175 664 838 rotaries 0;
 #X obj 103 25 inlet;
 #X floatatom 136 275 5 0 0 0 - - -, f 5;
@@ -25,12 +25,12 @@
 #X obj 103 298 s \$0-fm-amount;
 #X obj 103 232 * 2;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 142 1;
+-1 -1 0 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1842 1;
+-1 -1 0 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 142 1;
+-1 -1 0 1;
 #X obj 468 306 s \$0-timbre;
 #X obj 442 9 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
@@ -73,7 +73,7 @@
 #X obj 31 329 hip~ 4;
 #X obj 70 243 s \$0-xy;
 #X obj 228 179 s \$0-touch;
-#X obj 426 255 r \$0-xy;
+#X obj 485 249 r \$0-xy;
 #X obj 155 179 s \$0-updown;
 #X obj 468 29 declare -path chair;
 #N canvas 2698 771 676 343 LED 0;
@@ -98,39 +98,41 @@
 #X connect 9 0 6 0;
 #X restore 62 93 pd LED;
 #X obj 31 630 dac~;
-#X obj 426 277 chair.hex-mapping;
+#X obj 485 271 chair.hex-mapping;
 #X obj 31 505 *~;
 #X obj 47 436 r \$0-touch;
 #X obj 47 459 \$1 5;
 #X obj 47 482 line~;
 #X obj 32 276 chair.gain~;
-#X obj 426 353 s \$0-current;
+#X obj 485 347 s \$0-current;
 #X text 511 145 In this variation we have one voice per pad (14 in
 total) each voice keeps its tuning as long as the scale or octave isn't
 changed., f 34;
 #X obj 196 366 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 31 390 chair.feedback-cancellation~;
-#X obj 251 319 until;
-#X msg 251 296 14;
-#X obj 251 349 f;
-#X obj 282 349 + 1;
-#X obj 251 265 t b b;
-#X msg 300 319 0;
-#X obj 251 500 pack f f;
-#X floatatom 312 428 5 0 0 0 - - -, f 5;
-#X obj 296 404 chair.hex-tuning;
-#X obj 251 379 t f f;
-#X obj 251 219 loadbang;
-#X obj 362 223 t b a;
-#X msg 362 166 g_major;
+#X obj 310 313 until;
+#X msg 310 290 14;
+#X obj 310 343 f;
+#X obj 341 343 + 1;
+#X obj 310 259 t b b;
+#X msg 359 313 0;
+#X obj 310 494 pack f f;
+#X floatatom 371 422 5 0 0 0 - - -, f 5;
+#X obj 355 398 chair.hex-tuning;
+#X obj 310 373 t f f;
+#X obj 310 213 loadbang;
+#X obj 421 217 t b a;
+#X msg 421 160 g_major;
 #X obj 32 578 chair.gain~;
-#X msg 381 190 b_minor;
-#X obj 426 329 change;
-#X obj 296 452 chair.transpose-oct -2;
-#X obj 425 404 r \$0-updown;
+#X msg 440 184 b_minor;
+#X obj 485 323 change;
+#X obj 355 446 chair.transpose-oct -2;
+#X obj 484 398 r \$0-updown;
 #X obj 468 51 declare -path abstractions;
 #X obj 32 538 clone karplus-strong_pads 14 \$0;
+#X text 119 265 Rotaries:;
+#X text 118 281 Distorsion \, Feedback \, Timbre;
 #X connect 0 0 1 0;
 #X connect 1 0 21 0;
 #X connect 1 1 5 0;

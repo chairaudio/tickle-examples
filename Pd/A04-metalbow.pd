@@ -1,21 +1,21 @@
-#N canvas 2299 288 926 716 10;
+#N canvas 994 329 926 716 10;
 #X declare -path chair;
 #X declare -path abstractions;
-#X obj 31 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 31 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 31 104 tickle~;
-#N canvas 2991 295 646 397 rotaries 0;
+#N canvas 1155 62 646 397 rotaries 0;
 #X obj 103 6 inlet;
 #X obj 285 180 s \$0-led1;
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2125 1;
+-1 -1 0 1;
 #X obj 103 30 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2125 1;
+-1 -1 0 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3400 1;
+-1 -1 0 1;
 #X obj 103 73 chair.rotary-limit-range 24;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X obj 465 73 chair.rotary-limit-range 24;
@@ -73,27 +73,27 @@
 #X connect 8 0 5 0;
 #X connect 9 0 6 0;
 #X restore 62 73 pd LED;
-#X obj 31 668 dac~;
+#X obj 31 683 dac~;
 #X obj 31 436 *~;
 #X obj 47 367 r \$0-touch;
 #X obj 47 413 line~;
 #X obj 32 256 chair.gain~;
-#X obj 196 318 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 196 318 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 31 342 chair.feedback-cancellation~;
-#X obj 32 616 chair.gain~;
+#X obj 32 631 chair.gain~;
 #X msg 47 390 \$1 5;
 #X obj 468 51 declare -path abstractions;
-#X obj 215 317 f;
-#X obj 242 317 + 1;
-#X obj 231 344 r \$0-pitch;
-#X obj 248 369 r \$0-lop;
-#X obj 332 493 r \$0-detune;
-#X obj 265 393 r \$0-feedreal;
-#X obj 281 418 r \$0-feedimag;
-#X obj 298 444 r \$0-feedreal2;
-#X obj 315 467 r \$0-feedimag2;
-#X obj 32 582 *~ 0.5;
+#X obj 215 335 f;
+#X obj 242 337 + 1;
+#X obj 231 364 r \$0-pitch;
+#X obj 248 389 r \$0-lop;
+#X obj 332 513 r \$0-detune;
+#X obj 265 413 r \$0-feedreal;
+#X obj 281 438 r \$0-feedimag;
+#X obj 298 464 r \$0-feedreal2;
+#X obj 315 487 r \$0-feedimag2;
+#X obj 32 597 *~ 0.5;
 #N canvas 2349 665 647 368 mapping 0;
 #X obj 150 297 expr $f1*cos($f2);
 #X obj 266 297 expr $f1*sin($f2);
@@ -186,34 +186,36 @@
 #X connect 7 1 5 0;
 #X connect 7 2 3 0;
 #X restore 229 34 pd init;
-#X floatatom 456 523 8 0 0 0 - - -, f 8;
-#X obj 459 503 hsl 128 15 0 1 0 0 empty \$0-fundamentalhsl empty -2
+#X floatatom 524 520 8 0 0 0 - - -, f 8;
+#X obj 527 500 hsl 128 15 0 1 0 0 empty \$0-fundamentalhsl empty -2
 -8 0 10 -262144 -1 -1 1905 1;
-#X obj 456 547 s \$0-fundamental;
-#X obj 456 282 r \$0-updown;
-#X obj 456 460 / 5;
-#X obj 456 429 clip 1 5;
-#X obj 456 481 - 0.1;
-#X obj 269 317 % 14;
-#X obj 215 286 sel 1;
-#X obj 215 264 r \$0-touch;
-#X obj 456 313 route up down;
-#X obj 456 337 sel 1;
-#X obj 516 339 sel 1;
-#X obj 456 399 f;
-#X obj 485 399 + 1;
-#X obj 515 399 f;
-#X obj 545 399 - 1;
-#X obj 487 459 s \$0-recurs;
-#X obj 542 362 r \$0-recurs;
-#X obj 456 368 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 524 544 s \$0-fundamental;
+#X obj 524 279 r \$0-updown;
+#X obj 524 457 / 5;
+#X obj 524 426 clip 1 5;
+#X obj 524 478 - 0.1;
+#X obj 269 337 % 14;
+#X obj 215 306 sel 1;
+#X obj 215 284 r \$0-touch;
+#X obj 524 310 route up down;
+#X obj 524 334 sel 1;
+#X obj 584 336 sel 1;
+#X obj 524 396 f;
+#X obj 553 396 + 1;
+#X obj 583 396 f;
+#X obj 613 396 - 1;
+#X obj 555 456 s \$0-recurs;
+#X obj 610 359 r \$0-recurs;
+#X obj 524 365 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 516 366 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 584 363 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 215 522 pack f f f f f f f f;
-#X obj 32 554 clone karplus-double-complex 14;
+#X obj 215 542 pack f f f f f f f f;
+#X obj 32 569 clone karplus-double-complex 14;
 #X text 342 118 In this example we ignore the hexagon pads and greate
 one continuous surface for sonic exploration.;
+#X text 119 244 Rotaries:;
+#X text 118 260 Distorsion \, Detune \, Subharmonics;
 #X connect 0 0 1 0;
 #X connect 1 0 17 0;
 #X connect 1 1 4 0;

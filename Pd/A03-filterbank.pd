@@ -1,22 +1,22 @@
-#N canvas 2926 381 834 669 10;
+#N canvas 376 283 834 669 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X obj 31 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 31 104 tickle~;
 #X floatatom 327 261 5 0 0 0 - - -, f 5;
-#N canvas 2778 339 664 838 rotaries 0;
+#N canvas 1256 62 664 838 rotaries 0;
 #X obj 103 25 inlet;
 #X obj 285 180 s \$0-led1;
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1133 1;
+-1 -1 1842 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1983 1;
+-1 -1 142 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3400 1;
+-1 -1 142 1;
 #X obj 289 11 loadbang;
 #X msg 289 40 0.5;
 #X obj 103 73 chair.rotary-limit-range 24;
@@ -107,7 +107,7 @@
 #X obj 197 522 +~;
 #X obj 112 424 osc~ 5;
 #X obj 113 460 *~;
-#N canvas 1980 180 1164 430 tables 1;
+#N canvas 0 582 1164 430 tables 0;
 #N canvas 3 50 450 250 (subpatch) 0;
 #X array \$0-freqtab-1 50 float 3;
 #A 0 0 0.0204082 0.0408163 0.0612245 0.0816327 0.102041 0.122449 0.142857
@@ -238,6 +238,8 @@
 #X obj 315 390 - 24;
 #X obj 468 51 declare -path abstractions;
 #X obj 32 544 clone filterbank-reson 50 \$0;
+#X text 120 260 Vibrato \, Q-End \, Fade;
+#X text 120 245 Rotaries:;
 #X connect 0 0 1 0;
 #X connect 1 0 20 0;
 #X connect 1 1 5 0;
