@@ -1,4 +1,4 @@
-#N canvas 555 222 834 767 10;
+#N canvas 532 108 834 937 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X obj 31 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
@@ -11,12 +11,12 @@
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1700 1;
+-1 -1 1983 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1700 1;
+-1 -1 850 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1983 1;
+-1 -1 2267 1;
 #X obj 289 11 loadbang;
 #X msg 289 40 0.5;
 #X obj 103 73 chair.rotary-limit-range 24;
@@ -49,7 +49,7 @@
 #X obj 70 202 route 0;
 #X obj 70 131 route pos rotary button touch;
 #X msg 50 41 info;
-#X obj 32 655 hip~ 4;
+#X obj 31 664 hip~ 4;
 #X obj 70 223 s \$0-xy;
 #X obj 228 159 s \$0-touch;
 #X obj 315 209 r \$0-xy;
@@ -76,13 +76,13 @@
 #X connect 8 0 5 0;
 #X connect 9 0 6 0;
 #X restore 62 73 pd LED;
-#X obj 31 685 dac~;
+#X obj 31 711 dac~;
 #X obj 315 231 chair.hex-mapping;
 #X obj 31 436 *~;
 #X obj 47 367 r \$0-touch;
 #X obj 47 413 line~;
 #X obj 32 256 chair.gain~;
-#X obj 196 318 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 196 318 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 31 342 chair.feedback-cancellation~;
 #X floatatom 327 317 5 0 0 0 - - -, f 5;
@@ -238,11 +238,11 @@
 #X obj 32 544 clone filterbank-reson 50 \$0;
 #X text 120 260 Vibrato \, Q-End \, Fade;
 #X text 120 245 Rotaries:;
-#X obj 32 625 chair.vfreeverb~;
-#X obj 85 657 hip~ 4;
+#X obj 83 664 hip~ 4;
 #X obj 212 475 line~;
 #X msg 212 454 \$1 5;
 #X obj 212 497 *~ 100;
+#X obj 32 627 chair.vfreeverb~;
 #X connect 0 0 1 0;
 #X connect 1 0 19 0;
 #X connect 1 1 5 0;
@@ -266,8 +266,8 @@
 #X connect 23 0 22 0;
 #X connect 23 0 56 0;
 #X connect 24 0 23 1;
-#X connect 25 0 63 0;
-#X connect 25 0 63 1;
+#X connect 25 0 67 0;
+#X connect 25 0 67 1;
 #X connect 26 0 23 1;
 #X connect 30 0 29 0;
 #X connect 32 0 43 1;
@@ -277,7 +277,7 @@
 #X connect 36 0 35 0;
 #X connect 37 0 27 0;
 #X connect 37 0 43 0;
-#X connect 37 0 66 0;
+#X connect 37 0 65 0;
 #X connect 38 0 60 1;
 #X connect 39 0 60 2;
 #X connect 40 0 41 0;
@@ -299,10 +299,10 @@
 #X connect 57 0 56 1;
 #X connect 58 0 54 0;
 #X connect 60 0 25 0;
-#X connect 63 0 7 0;
-#X connect 63 1 64 0;
-#X connect 64 0 14 1;
-#X connect 65 0 38 1;
-#X connect 65 0 67 0;
-#X connect 66 0 65 0;
-#X connect 67 0 39 1;
+#X connect 63 0 14 1;
+#X connect 64 0 38 1;
+#X connect 64 0 66 0;
+#X connect 65 0 64 0;
+#X connect 66 0 39 1;
+#X connect 67 0 7 0;
+#X connect 67 1 63 0;
