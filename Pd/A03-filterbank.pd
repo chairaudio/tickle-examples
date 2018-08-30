@@ -238,7 +238,7 @@
 #X obj 32 544 clone filterbank-reson 50 \$0;
 #X text 120 260 Vibrato \, Q-End \, Fade;
 #X text 120 245 Rotaries:;
-#X obj 32 623 chair.vfreeverb~;
+#X obj 32 625 chair.vfreeverb~;
 #X obj 85 657 hip~ 4;
 #X obj 212 475 line~;
 #X msg 212 454 \$1 5;
