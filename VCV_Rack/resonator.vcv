@@ -1,0 +1,321 @@
+{
+  "version": "0.6.2b",
+  "modules": [
+    {
+      "plugin": "Fundamental",
+      "version": "0.6.1",
+      "model": "VCO2",
+      "params": [
+        {
+          "paramId": 0,
+          "value": 1.0
+        },
+        {
+          "paramId": 1,
+          "value": 1.0
+        },
+        {
+          "paramId": 2,
+          "value": 18.9539986
+        },
+        {
+          "paramId": 3,
+          "value": 1.56750047
+        },
+        {
+          "paramId": 4,
+          "value": 0.271500021
+        }
+      ],
+      "pos": [
+        55,
+        0
+      ]
+    },
+    {
+      "plugin": "Core",
+      "version": "0.6.2b",
+      "model": "AudioInterface",
+      "params": [],
+      "data": {
+        "audio": {
+          "driver": 4,
+          "deviceName": "pure_data",
+          "offset": 0,
+          "maxChannels": 8,
+          "sampleRate": 48000,
+          "blockSize": 64
+        }
+      },
+      "pos": [
+        0,
+        0
+      ]
+    },
+    {
+      "plugin": "Fundamental",
+      "version": "0.6.1",
+      "model": "ADSR",
+      "params": [
+        {
+          "paramId": 0,
+          "value": 0.5
+        },
+        {
+          "paramId": 1,
+          "value": 0.5
+        },
+        {
+          "paramId": 2,
+          "value": 0.5
+        },
+        {
+          "paramId": 3,
+          "value": 0.5
+        }
+      ],
+      "pos": [
+        61,
+        0
+      ]
+    },
+    {
+      "plugin": "AudibleInstruments",
+      "version": "0.6.0",
+      "model": "Rings",
+      "params": [
+        {
+          "paramId": 0,
+          "value": 0.0
+        },
+        {
+          "paramId": 1,
+          "value": 0.0
+        },
+        {
+          "paramId": 2,
+          "value": 27.570015
+        },
+        {
+          "paramId": 3,
+          "value": 0.453499794
+        },
+        {
+          "paramId": 4,
+          "value": 0.5
+        },
+        {
+          "paramId": 5,
+          "value": 0.500499904
+        },
+        {
+          "paramId": 6,
+          "value": 0.504499495
+        },
+        {
+          "paramId": 7,
+          "value": 0.386999905
+        },
+        {
+          "paramId": 8,
+          "value": 0.0170001518
+        },
+        {
+          "paramId": 9,
+          "value": -0.0679999888
+        },
+        {
+          "paramId": 10,
+          "value": 0.0
+        },
+        {
+          "paramId": 11,
+          "value": 1.0
+        }
+      ],
+      "data": {
+        "polyphony": 0,
+        "model": 1,
+        "easterEgg": false
+      },
+      "pos": [
+        10,
+        0
+      ]
+    },
+    {
+      "plugin": "Fundamental",
+      "version": "0.6.1",
+      "model": "Delay",
+      "params": [
+        {
+          "paramId": 0,
+          "value": 0.00649996381
+        },
+        {
+          "paramId": 1,
+          "value": 1.0
+        },
+        {
+          "paramId": 2,
+          "value": 1.0
+        },
+        {
+          "paramId": 3,
+          "value": 1.0
+        }
+      ],
+      "pos": [
+        84,
+        0
+      ]
+    },
+    {
+      "plugin": "AS",
+      "version": "0.6.9",
+      "model": "DelayPlusFx",
+      "params": [
+        {
+          "paramId": 0,
+          "value": 0.349999994
+        },
+        {
+          "paramId": 1,
+          "value": 0.5
+        },
+        {
+          "paramId": 2,
+          "value": 0.5
+        },
+        {
+          "paramId": 3,
+          "value": 0.5
+        },
+        {
+          "paramId": 4,
+          "value": 0.0
+        }
+      ],
+      "data": {
+        "as_FxBypass": [
+          false
+        ]
+      },
+      "pos": [
+        42,
+        1
+      ]
+    },
+    {
+      "plugin": "AS",
+      "version": "0.6.9",
+      "model": "VCA",
+      "params": [
+        {
+          "paramId": 0,
+          "value": 0.5
+        },
+        {
+          "paramId": 1,
+          "value": 0.5
+        },
+        {
+          "paramId": 2,
+          "value": 1.0
+        },
+        {
+          "paramId": 3,
+          "value": 1.0
+        }
+      ],
+      "pos": [
+        24,
+        1
+      ]
+    },
+    {
+      "plugin": "Fundamental",
+      "version": "0.6.1",
+      "model": "VCA-1",
+      "params": [
+        {
+          "paramId": 0,
+          "value": 0.377500117
+        },
+        {
+          "paramId": 1,
+          "value": 0.0
+        }
+      ],
+      "pos": [
+        21,
+        1
+      ]
+    },
+    {
+      "plugin": "Core",
+      "version": "0.6.2b",
+      "model": "MIDIToCVInterface",
+      "params": [],
+      "data": {
+        "divisions": [
+          24,
+          6
+        ],
+        "midi": {
+          "driver": 2,
+          "deviceName": "Pure Data:Pure Data Midi-Out 1 133:0",
+          "channel": -1
+        }
+      },
+      "pos": [
+        24,
+        0
+      ]
+    }
+  ],
+  "wires": [
+    {
+      "color": "#c91847",
+      "outputModuleId": 7,
+      "outputId": 0,
+      "inputModuleId": 1,
+      "inputId": 0
+    },
+    {
+      "color": "#0986ad",
+      "outputModuleId": 1,
+      "outputId": 0,
+      "inputModuleId": 3,
+      "inputId": 7
+    },
+    {
+      "color": "#0c8e15",
+      "outputModuleId": 1,
+      "outputId": 3,
+      "inputModuleId": 3,
+      "inputId": 6
+    },
+    {
+      "color": "#0986ad",
+      "outputModuleId": 1,
+      "outputId": 4,
+      "inputModuleId": 3,
+      "inputId": 3
+    },
+    {
+      "color": "#c9b70e",
+      "outputModuleId": 1,
+      "outputId": 5,
+      "inputModuleId": 3,
+      "inputId": 4
+    },
+    {
+      "color": "#0986ad",
+      "outputModuleId": 3,
+      "outputId": 0,
+      "inputModuleId": 1,
+      "inputId": 1
+    }
+  ]
+}

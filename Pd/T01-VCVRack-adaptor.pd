@@ -1,33 +1,33 @@
-#N canvas 38 222 779 795 10;
+#N canvas 180 222 779 795 10;
 #X declare -path chair;
-#X obj 232 28 declare -path chair;
-#X obj 51 63 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 233 20 declare -path chair;
+#X obj 35 18 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
-#X msg 67 85 info;
-#X obj 52 429 chair.DC-offset~;
-#X obj 246 368 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X msg 51 40 info;
+#X obj 36 384 chair.DC-offset~;
+#X obj 232 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 51 397 chair.feedback-cancellation~ 0 50;
-#X obj 69 530 chair.peak-hold~;
-#X obj 179 426 vsl 15 95 0.99 0.9999 0 0 empty empty empty 0 -9 0 10
--262144 -1 -1 0 1;
-#X floatatom 179 529 7 0 0 0 - - -, f 7;
-#X obj 88 260 route 0;
-#X obj 88 283 unpack f f;
-#X obj 52 332 chair.gain~;
-#X obj 291 383 sig~;
-#X obj 336 385 sig~;
-#X obj 52 616 dac~ 1 2 3 4 5 6;
-#X obj 174 284 sig~;
-#X obj 51 153 tickle~ debug;
-#X floatatom 126 177 5 0 0 0 - - -, f 5;
-#X obj 292 436 /~ 12;
-#X obj 336 436 /~ 12;
-#X text 48 651 excitation \, envelope \, gate \, x \, y \, dc-offset
+#X obj 37 346 chair.feedback-cancellation~ 0 50;
+#X obj 53 485 chair.peak-hold~;
+#X obj 163 381 vsl 15 95 0.99 0.9999 0 0 empty empty empty 0 -9 0 10
+-262144 -1 -1 9400 1;
+#X floatatom 163 484 7 0 0 0 - - -, f 7;
+#X obj 275 340 route 0;
+#X obj 275 438 unpack f f;
+#X obj 36 287 chair.gain~;
+#X obj 275 462 sig~;
+#X obj 332 464 sig~;
+#X obj 36 571 dac~ 1 2 3 4 5 6;
+#X obj 147 204 sig~;
+#X obj 35 108 tickle~ debug;
+#X floatatom 110 132 5 0 0 0 - - -, f 5;
+#X obj 276 489 /~ 12;
+#X obj 331 490 /~ 12;
+#X text 32 606 excitation \, envelope \, gate \, x \, y \, dc-offset
 ;
-#X obj 404 436 ctlout 1;
-#X obj 443 415 ctlout 2;
-#X obj 482 394 ctlout 3;
+#X obj 388 378 ctlout 1;
+#X obj 427 357 ctlout 2;
+#X obj 466 336 ctlout 3;
 #N canvas 2698 771 676 343 LED 0;
 #X obj 69 185 outlet;
 #X obj 35 33 r \$0-led0;
@@ -48,14 +48,14 @@
 #X connect 7 0 4 0;
 #X connect 8 0 5 0;
 #X connect 9 0 6 0;
-#X restore 75 125 pd LED;
+#X restore 59 80 pd LED;
 #N canvas 841 185 664 838 rotaries 0;
 #X obj 103 25 inlet;
 #X obj 285 168 s \$0-led1;
 #X obj 467 169 s \$0-led2;
 #X obj 110 169 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 1580 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
@@ -87,19 +87,29 @@
 #X connect 15 0 6 0;
 #X connect 16 0 7 0;
 #X coords 0 -1 1 1 85 60 1 100 100;
-#X restore 404 316 pd rotaries;
-#X text 374 97 This patch provides the output of the Tickle instrument
+#X restore 388 271 pd rotaries;
+#X text 358 52 This patch provides the output of the Tickle instrument
 to VCV Rack.;
-#X text 376 144 Use Jack (Linux) \, Soundflower (mac) or LoopBe \,
-Rewire (Win) to route the 6 audio channels into VCV Rack., f 45;
-#X obj 88 203 route pos touch rotary button;
-#X obj 405 242 route up down;
-#X obj 405 289 ctlout 4;
-#X obj 442 267 ctlout 5;
+#X text 358 92 Use Jack (Linux) \, Soundflower (mac) or LoopBe \, Rewire
+(Win) to route the 6 audio channels into VCV Rack., f 45;
+#X obj 72 158 route pos touch rotary button;
+#X obj 389 197 route up down;
+#X obj 389 244 ctlout 4;
+#X obj 426 222 ctlout 5;
+#X obj 384 423 chair.hex-mapping;
+#X obj 384 485 chair.hex-tuning;
+#X floatatom 399 456 5 0 0 0 - - -, f 5;
+#X floatatom 408 512 5 0 0 0 - - -, f 5;
+#X obj 384 644 noteout 1;
+#X obj 322 543 env~;
+#X floatatom 322 566 5 0 0 0 - - -, f 5;
+#X obj 384 607 pack f f 1;
+#X floatatom 441 584 3 0 0 1 Channel - -, f 3;
 #X connect 1 0 16 0;
 #X connect 2 0 16 0;
 #X connect 3 0 6 0;
 #X connect 3 0 14 0;
+#X connect 3 0 37 0;
 #X connect 3 1 14 5;
 #X connect 4 0 5 1;
 #X connect 5 0 3 0;
@@ -107,9 +117,10 @@ Rewire (Win) to route the 6 audio channels into VCV Rack., f 45;
 #X connect 7 0 6 1;
 #X connect 7 0 8 0;
 #X connect 9 0 10 0;
+#X connect 9 0 32 0;
 #X connect 10 0 12 0;
 #X connect 10 1 13 0;
-#X connect 11 0 14 0;
+#X connect 11 0 5 0;
 #X connect 12 0 18 0;
 #X connect 13 0 19 0;
 #X connect 15 0 14 2;
@@ -128,3 +139,11 @@ Rewire (Win) to route the 6 audio channels into VCV Rack., f 45;
 #X connect 28 3 29 0;
 #X connect 29 0 30 0;
 #X connect 29 1 31 0;
+#X connect 32 0 33 0;
+#X connect 32 0 34 0;
+#X connect 33 0 35 0;
+#X connect 33 0 39 0;
+#X connect 37 0 38 0;
+#X connect 37 0 39 1;
+#X connect 39 0 36 0;
+#X connect 40 0 39 2;
