@@ -1,0 +1,25 @@
+#N canvas 201 254 850 666 10;
+#X obj 145 58 hsl 128 15 0 1 0 1 empty empty 'roomsize' 20 8 0 10 -262144
+-260097 -1 1700 0;
+#X obj 168 109 hsl 128 15 0 2.4 0 1 empty empty damp 20 8 0 10 -262144
+-260097 -1 2700 0;
+#X floatatom 151 79 5 0 0 0 - - -, f 5;
+#X floatatom 174 129 5 0 0 0 - - -, f 5;
+#X obj 192 161 hsl 128 15 0 1 0 1 empty empty dry/wet 20 8 0 10 -262144
+-260097 -1 9500 0;
+#X floatatom 197 185 5 0 0 0 - - -, f 5;
+#X text 382 328 Katja Vetter May 2012;
+#X text 383 297 Freeverb implemented with Pd vanilla objects;
+#X obj 96 251 chair.vfreeverb~;
+#X obj 96 329 chair.stereogain~;
+#X obj 96 388 dac~;
+#X connect 0 0 2 0;
+#X connect 0 0 8 2;
+#X connect 1 0 3 0;
+#X connect 1 0 8 3;
+#X connect 4 0 5 0;
+#X connect 4 0 8 4;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 9 0 10 0;
+#X connect 9 1 10 1;
