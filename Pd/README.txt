@@ -1,5 +1,3 @@
-
-
 Welcome to the Pure Data examples for the Tickle instrument.
 
 Pure Data (Pd) is a versatile patching audio programming environment by Miller Puckette. It is Free Software and available from 

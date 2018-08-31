@@ -1,4 +1,3 @@
-
 Welcome to the VCV Rack examples for the Tickle instrument.
 
 VCV Rack is a virtual Eurorack modular synthesizer. It is free open source software by Andrew Belt. Many modules already come included with it (the "fundamental" package) and many more are available for free or paid from contributing developers.
