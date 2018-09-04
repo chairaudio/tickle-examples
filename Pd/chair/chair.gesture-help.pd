@@ -1,4 +1,4 @@
-#N canvas 121 226 1473 835 10;
+#N canvas 50 160 1473 835 10;
 #X declare -path chair;
 #X obj 822 7 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
@@ -93,6 +93,7 @@
 #X obj 1151 181 r \$0-xy;
 #X msg 1164 700 \; to_digit pos \$1 \$2;
 #X text 1144 86 Touch-gestures to give additional control;
+#X text 1155 109 outlet: X-offset \, Y-offset \, distance;
 #X connect 0 0 49 0;
 #X connect 2 0 6 0;
 #X connect 3 0 49 0;
