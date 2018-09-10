@@ -1,4 +1,4 @@
-#N canvas 2582 409 762 298 10;
+#N canvas 582 409 762 298 10;
 #X text 280 126 It performs a uniform frequency shift (not a pitch
 shift) which is efficiently removing feedback.;
 #X text 278 42 The audio output through speakers may be picked up by

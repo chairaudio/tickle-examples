@@ -1,4 +1,4 @@
-#N canvas 2784 173 640 343 10;
+#N canvas 784 173 640 343 10;
 #X obj 44 231 chair.hex-mapping;
 #X obj 47 124 hsl 99 20 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;

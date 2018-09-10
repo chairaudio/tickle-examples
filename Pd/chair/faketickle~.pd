@@ -1,4 +1,4 @@
-#N canvas 2602 393 770 752 10;
+#N canvas 575 171 770 752 10;
 #X declare -path chair;
 #X obj 272 53 declare -path chair;
 #X obj 48 480 readsf~ 4;

@@ -1,4 +1,4 @@
-#N canvas 2827 662 492 267 10;
+#N canvas 827 662 492 267 10;
 #X obj 23 109 chair.distance;
 #X text 174 99 Simple calculator for the distance between 2 points
 in a cartesian space. (Pythagoras), f 36;

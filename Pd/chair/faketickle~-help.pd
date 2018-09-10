@@ -1,4 +1,4 @@
-#N canvas 2076 450 518 725 10;
+#N canvas 1076 450 518 725 10;
 #X declare -path chair;
 #X obj 45 23 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;

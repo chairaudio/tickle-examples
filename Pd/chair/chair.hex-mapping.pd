@@ -1,4 +1,4 @@
-#N canvas 3013 304 573 793 10;
+#N canvas 013 304 573 793 10;
 #X obj 50 30 inlet;
 #X obj 50 762 outlet;
 #X obj 50 469 chair.distance;
