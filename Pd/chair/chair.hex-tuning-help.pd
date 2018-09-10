@@ -1,4 +1,4 @@
-#N canvas 2491 461 779 637 10;
+#N canvas 491 461 779 637 10;
 #X obj 69 131 chair.hex-tuning;
 #X text 235 245 Converts from hexagon ID to a tuning defined in a textfile
 ;

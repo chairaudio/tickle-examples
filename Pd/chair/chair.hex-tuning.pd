@@ -1,4 +1,4 @@
-#N canvas 3006 638 584 258 10;
+#N canvas 306 638 584 258 10;
 #X obj 203 28 loadbang;
 #X obj 203 50 t b b;
 #X obj 25 208 outlet;
