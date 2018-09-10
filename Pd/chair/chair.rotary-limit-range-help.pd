@@ -1,4 +1,4 @@
-#N canvas 2425 661 664 427 10;
+#N canvas 425 661 664 427 10;
 #X obj 71 151 chair.rotary-limit-range 24;
 #X msg 66 114 -1;
 #X msg 100 114 1;
