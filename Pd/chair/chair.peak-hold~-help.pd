@@ -1,4 +1,4 @@
-#N canvas 2208 217 683 645 10;
+#N canvas 208 217 683 645 10;
 #X obj 199 157 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #N canvas 0 50 450 250 (subpatch) 0;
