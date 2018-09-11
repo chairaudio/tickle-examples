@@ -1,4 +1,4 @@
-#N canvas 2374 574 544 545 10;
+#N canvas 374 574 544 545 10;
 #X obj 425 249 line~;
 #N canvas 2609 615 450 300 w(0) 0;
 #N canvas 2868 695 450 300 samplerate 0;
