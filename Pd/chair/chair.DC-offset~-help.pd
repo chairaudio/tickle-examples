@@ -1,7 +1,7 @@
-#N canvas 2028 317 582 697 10;
+#N canvas 296 179 582 697 10;
 #X obj 22 93 tickle~;
 #X obj 21 246 chair.gain~;
-#X obj 22 28 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 22 28 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X msg 45 55 info;
 #X obj 23 616 dac~;
@@ -46,7 +46,7 @@
 #X obj 61 183 route 0;
 #X obj 61 205 s \$0-xy;
 #X obj 104 159 s \$0-touch;
-#X floatatom 370 428 5 0 0 0 - - -, f 5;
+#X floatatom 370 428 5 0 0 0 - - -;
 #X obj 354 328 chair.hex-tuning;
 #X obj 354 262 r \$0-xy;
 #X obj 354 452 s \$0-midinote;
@@ -58,10 +58,6 @@
 #X obj 39 490 line~;
 #X msg 39 466 \$1 5;
 #X obj 221 416 osc~;
-#X text 293 90 The piezo sensor produced a DC offset when bent. WHile
-this is undesirable for the audio output \, we can use that to control
-for example a pitch bend. It is more notably in the center of the Tickle
-wherere the piezo microphone is located., f 40;
 #X obj 10 305 cnv 15 120 25 empty empty empty 20 12 0 14 -262130 -66577
 0;
 #X text 293 197 Left outlet: signal without DC-offset;
@@ -71,9 +67,14 @@ wherere the piezo microphone is located., f 40;
 #X obj 236 355 mtof;
 #X obj 354 362 chair.transpose-oct;
 #X obj 61 117 route pos touch button;
+#X text 293 90 The piezo sensor produces a DC offset when bent. While
+this is undesirable for audio output \, we can use it like another
+control parameter \, for example pitch bend. The effect is more notable
+in the center of the Tickle wherere the piezo microphone is located.
+, f 40;
 #X connect 0 0 1 0;
-#X connect 0 1 35 0;
-#X connect 1 0 31 0;
+#X connect 0 1 34 0;
+#X connect 1 0 30 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
 #X connect 5 0 23 0;
@@ -84,21 +85,21 @@ wherere the piezo microphone is located., f 40;
 #X connect 9 0 5 1;
 #X connect 11 0 8 0;
 #X connect 12 0 13 0;
-#X connect 16 0 34 0;
+#X connect 16 0 33 0;
 #X connect 17 0 19 0;
 #X connect 19 0 16 0;
 #X connect 20 0 25 0;
-#X connect 21 0 33 0;
+#X connect 21 0 32 0;
 #X connect 23 0 6 0;
 #X connect 24 0 23 1;
 #X connect 25 0 24 0;
 #X connect 26 0 23 0;
-#X connect 31 0 5 0;
-#X connect 31 1 11 0;
-#X connect 32 0 34 1;
-#X connect 33 0 7 1;
-#X connect 34 0 15 0;
-#X connect 34 0 18 0;
-#X connect 35 0 12 0;
-#X connect 35 1 14 0;
-#X connect 35 2 22 0;
+#X connect 30 0 5 0;
+#X connect 30 1 11 0;
+#X connect 31 0 33 1;
+#X connect 32 0 7 1;
+#X connect 33 0 15 0;
+#X connect 33 0 18 0;
+#X connect 34 0 12 0;
+#X connect 34 1 14 0;
+#X connect 34 2 22 0;

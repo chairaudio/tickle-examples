@@ -43,7 +43,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "" ],
-					"patching_rect" : [ 379.0, 112.0, 46.0, 22.0 ],
+					"patching_rect" : [ 384.0, 112.0, 46.0, 22.0 ],
 					"style" : "",
 					"text" : "sel 0 1"
 				}
@@ -142,14 +142,14 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "activate",
 					"id" : "obj-4",
 					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 372.0, 40.0, 30.0, 30.0 ],
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 384.0, 40.0, 30.0, 30.0 ],
 					"style" : ""
 				}
 
@@ -196,14 +196,14 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "Audio in",
 					"id" : "obj-3",
 					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 104.0, 32.0, 30.0, 30.0 ],
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 83.0, 36.0, 30.0, 30.0 ],
 					"style" : ""
 				}
 

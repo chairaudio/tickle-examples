@@ -55,7 +55,7 @@
 #X obj 315 209 r \$0-xy;
 #X obj 155 159 s \$0-updown;
 #X obj 468 29 declare -path chair;
-#N canvas 2131 777 676 343 LED 0;
+#N canvas 131 777 676 343 LED 0;
 #X obj 69 185 outlet;
 #X obj 35 14 r \$0-led0;
 #X obj 144 14 r \$0-led1;

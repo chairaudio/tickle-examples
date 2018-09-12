@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 693.0, 396.0, 571.0, 612.0 ],
+		"rect" : [ 640.0, -672.0, 571.0, 612.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -55,7 +55,7 @@
 					"maxclass" : "scope~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 255.5, 127.0, 130.0, 130.0 ],
+					"patching_rect" : [ 255.5, 174.0, 231.0, 136.0 ],
 					"style" : ""
 				}
 
@@ -79,7 +79,8 @@
 					"maxclass" : "scope~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 246.5, 420.0, 130.0, 130.0 ],
+					"patching_rect" : [ 255.5, 380.0, 231.0, 118.0 ],
+					"range" : [ 0.0, 1.0 ],
 					"style" : ""
 				}
 
@@ -181,6 +182,13 @@
 				"bootpath" : "C:/chair/tickle-examples/MaxMSP/chair",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "peak-hold.gendsp",
+				"bootpath" : "C:/chair/tickle-examples/MaxMSP/chair",
+				"patcherrelativepath" : ".",
+				"type" : "gDSP",
 				"implicit" : 1
 			}
 , 			{

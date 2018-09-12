@@ -116,7 +116,7 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "set mapping",
 					"id" : "obj-4",
 					"index" : 2,
 					"maxclass" : "inlet",
@@ -140,7 +140,7 @@
 					"patching_rect" : [ 41.0, 277.0, 102.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
-						"name" : "#0-tuning",
+						"name" : "1076-tuning",
 						"parameter_enable" : 0,
 						"range" : 128,
 						"showeditor" : 0,
@@ -168,13 +168,13 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "MIDI note number",
 					"id" : "obj-1",
 					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "float" ],
 					"patching_rect" : [ 41.0, 31.0, 30.0, 30.0 ],
 					"style" : ""
 				}

@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 370.0, 85.0, 800.0, 960.0 ],
+		"rect" : [ 370.0, 82.0, 800.0, 960.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,9 +38,9 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "hexagon index number",
 					"id" : "obj-58",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -69,7 +69,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 168.75, 856.0, 64.0, 22.0 ],
+					"patching_rect" : [ 168.75, 856.0, 76.0, 22.0 ],
 					"style" : "",
 					"text" : "r #0-index"
 				}
@@ -147,7 +147,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 182.5, 645.0, 62.0, 22.0 ],
+					"patching_rect" : [ 182.5, 645.0, 74.0, 22.0 ],
 					"style" : "",
 					"text" : "r #0-reset"
 				}
@@ -248,7 +248,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 243.0, 589.0, 55.0, 22.0 ],
+					"patching_rect" : [ 243.0, 589.0, 67.0, 22.0 ],
 					"style" : "",
 					"text" : "r #0-pos"
 				}
@@ -416,7 +416,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 161.0, 287.0, 66.0, 22.0 ],
+					"patching_rect" : [ 161.0, 287.0, 78.0, 22.0 ],
 					"style" : "",
 					"text" : "s #0-index"
 				}
@@ -481,7 +481,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 182.5, 147.0, 62.0, 22.0 ],
+					"patching_rect" : [ 182.5, 147.0, 74.0, 22.0 ],
 					"style" : "",
 					"text" : "r #0-reset"
 				}
@@ -519,7 +519,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 148.0, 118.0, 64.0, 22.0 ],
+					"patching_rect" : [ 148.0, 118.0, 76.0, 22.0 ],
 					"style" : "",
 					"text" : "s #0-reset"
 				}
@@ -531,7 +531,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 174.0, 87.0, 57.0, 22.0 ],
+					"patching_rect" : [ 174.0, 87.0, 69.0, 22.0 ],
 					"style" : "",
 					"text" : "s #0-pos"
 				}
@@ -552,9 +552,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"comment" : "x+y  float position",
 					"id" : "obj-1",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -933,16 +933,7 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "chair.distance.maxpat",
-				"bootpath" : "C:/chair/tickle-examples/MaxMSP/chair",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
