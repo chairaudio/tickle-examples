@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 1047.0, 179.0, 640.0, 690.0 ],
+		"rect" : [ 692.0, -825.0, 640.0, 690.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -255,9 +255,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
-					"patching_rect" : [ 89.0, 152.0, 68.0, 22.0 ],
+					"patching_rect" : [ 87.0, 153.0, 45.0, 22.0 ],
 					"style" : "",
-					"text" : "faketickle~"
+					"text" : "tickle~"
 				}
 
 			}
@@ -342,13 +342,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
-					"source" : [ "obj-2", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-18", 1 ],
 					"order" : 0,
 					"source" : [ "obj-3", 0 ]
@@ -416,13 +409,6 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "faketickle~.maxpat",
-				"bootpath" : "C:/chair/tickle-examples/MaxMSP/chair",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "chair.gesture.maxpat",
 				"bootpath" : "C:/chair/tickle-examples/MaxMSP/chair",
 				"patcherrelativepath" : ".",
@@ -435,6 +421,10 @@
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "tickle~.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0
