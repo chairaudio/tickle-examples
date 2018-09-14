@@ -1,5 +1,5 @@
-#N canvas 15 697 492 267 10;
-#X floatatom 23 146 5 0 0 0 - - -, f 5;
+#N canvas 1038 355 492 267 10;
+#X floatatom 23 146 8 0 0 0 - - -;
 #X msg 104 78 4 3;
 #X obj 23 109 chair.angle;
 #X msg 23 77 1 0;
