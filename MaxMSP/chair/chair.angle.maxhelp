@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 789.0, -823.0, 474.0, 371.0 ],
+		"rect" : [ 405.0, -973.0, 474.0, 371.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 160.0, 118.5, 245.0, 48.0 ],
 					"style" : "",
-					"text" : "Calculator for the angle between 2 vectors in a cartesian space (scalar product).\nOutput in 360 degrees."
+					"text" : "Calculator for the angle between 2 vectors in a cartesian space (via scalar product).\nOutput in 360 degrees."
 				}
 
 			}
