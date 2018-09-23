@@ -1,0 +1,28 @@
+#N canvas 109 574 836 532 10;
+#X floatatom 75 95 5 0 0 0 - - -;
+#X msg 75 47 440;
+#X obj 75 72 ftom;
+#X floatatom 75 293 5 0 0 0 - - -;
+#X obj 75 256 snapshot~;
+#X obj 25 222 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 113 96 MIDI Note;
+#X text 99 227 (Virtual) Control Voltage;
+#X text 263 47 MIDI to CV conversion https://en.wikipedia.org/wiki/CV/gate#CV
+;
+#X obj 75 198 chair.mtocv~;
+#X text 116 48 Frequency;
+#X msg 193 164 hpv;
+#X msg 194 142 vpo;
+#X text 239 141 Volts per octave (default) \, used by Roland \, Moog
+\, Oberheim \, ARP \, VCV Rack \, Eurorack, f 83;
+#X text 240 162 Hertz per volt \, used by most Korg \, Yamaha Synths.
+;
+#X connect 0 0 9 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 9 0 4 0;
+#X connect 11 0 9 1;
+#X connect 12 0 9 1;

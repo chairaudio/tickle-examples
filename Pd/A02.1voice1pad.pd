@@ -1,20 +1,20 @@
-#N canvas 1092 118 752 727 10;
+#N canvas 1078 343 752 727 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
-#X floatatom 497 301 5 0 0 0 - - -, f 5;
+#X floatatom 497 301 5 0 0 0 - - -;
 #N canvas 1024 175 664 838 rotaries 0;
 #X obj 103 25 inlet;
-#X floatatom 136 275 5 0 0 0 - - -, f 5;
+#X floatatom 136 275 5 0 0 0 - - -;
 #X obj 286 192 sqrt;
 #X obj 286 213 sqrt;
 #X obj 286 234 sqrt;
 #X obj 286 255 clip 0.5 0.99;
-#X floatatom 324 278 5 0 0 0 - - -, f 5;
+#X floatatom 324 278 5 0 0 0 - - -;
 #X obj 468 241 * 9000;
 #X obj 468 262 + 500;
-#X floatatom 479 283 5 0 0 0 - - -, f 5;
+#X floatatom 479 283 5 0 0 0 - - -;
 #X msg 468 198 1 \$1;
 #X obj 468 219 -;
 #X obj 285 168 s \$0-led1;
@@ -29,7 +29,7 @@
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 3400 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1558 1;
+-1 -1 142 1;
 #X obj 468 306 s \$0-timbre;
 #X obj 442 9 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
@@ -106,7 +106,7 @@
 #X text 511 145 In this variation we have one voice per pad (14 in
 total) each voice keeps its tuning as long as the scale or octave isn't
 changed., f 34;
-#X obj 196 366 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 196 366 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 31 390 chair.feedback-cancellation~;
 #X obj 310 313 until;
@@ -116,7 +116,7 @@ changed., f 34;
 #X obj 310 259 t b b;
 #X msg 359 313 0;
 #X obj 310 494 pack f f;
-#X floatatom 371 422 5 0 0 0 - - -, f 5;
+#X floatatom 371 422 5 0 0 0 - - -;
 #X obj 355 398 chair.hex-tuning;
 #X obj 310 373 t f f;
 #X obj 310 213 loadbang;
@@ -131,7 +131,7 @@ changed., f 34;
 #X text 119 265 Rotaries:;
 #X text 118 281 Distorsion \, Feedback \, Timbre;
 #X obj 31 124 tickle~ debug;
-#X floatatom 123 128 5 0 0 0 - - -, f 5;
+#X floatatom 123 128 5 0 0 0 - - -;
 #X obj 32 538 clone karplus-strong_pads 14 \$0;
 #X obj 33 648 chair.vfreeverb~;
 #X connect 0 0 45 0;
@@ -179,7 +179,6 @@ changed., f 34;
 #X connect 41 0 40 1;
 #X connect 45 0 19 0;
 #X connect 45 1 4 0;
-#X connect 45 2 46 0;
 #X connect 47 0 37 0;
 #X connect 48 0 13 0;
 #X connect 48 1 13 1;

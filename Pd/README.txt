@@ -8,9 +8,10 @@ https://puredata.info/
 
 About these examples:
 
-A__ contain synthesis examples for vanilla Pd (without the use of any externals.
-P__ use the physical modelling provided by the pmpd~ external.
-V__ contain examples for the visualization with different externals.
+A__. contain synthesis examples for vanilla Pd (without the use of any externals.
+P__. use the physical modelling provided by the pmpd~ external.
+T__. tools and utilities like adaptors to other applications.
+V__. contain examples for the visualization with different externals.
 
 The folder 'abstractions' contains abstractions used by above examples.
 The folder ’chair’ contains useful helpers and abstractions of general use with the Tickle. They are provided with a testcase/helpfile.

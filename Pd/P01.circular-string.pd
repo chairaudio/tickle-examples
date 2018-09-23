@@ -4,25 +4,25 @@
 #X declare -lib pmpd;
 #X obj 468 29 declare -path chair;
 #X obj 468 51 declare -path abstractions;
-#X floatatom 626 485 5 2 100 0 - - -, f 5;
+#X floatatom 626 485 5 2 100 0 - - -;
 #X obj 608 429 loadbang;
 #X msg 626 460 25;
 #X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 31 113 tickle~;
-#X floatatom 485 307 5 0 0 0 - - -, f 5;
-#N canvas 194 576 652 389 rotaries 0;
+#X floatatom 485 307 5 0 0 0 - - -;
+#N canvas 1097 679 652 389 rotaries 0;
 #X obj 103 25 inlet;
 #X obj 285 168 s \$0-led1;
 #X obj 467 169 s \$0-led2;
 #X obj 110 169 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 1275 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 425 1;
+-1 -1 2125 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1133 1;
+-1 -1 1700 1;
 #X obj 442 9 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X msg 442 44 12;
@@ -96,7 +96,7 @@
 #X obj 47 387 r \$0-touch;
 #X obj 47 466 line~;
 #X obj 473 353 s \$0-current;
-#X obj 196 338 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 196 338 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 31 362 chair.feedback-cancellation~;
 #X obj 298 319 until;
@@ -106,7 +106,7 @@
 #X obj 298 265 t b b;
 #X msg 347 319 0;
 #X obj 298 500 pack f f;
-#X floatatom 359 428 5 0 0 0 - - -, f 5;
+#X floatatom 359 428 5 0 0 0 - - -;
 #X obj 343 404 chair.hex-tuning;
 #X obj 298 379 t f f;
 #X obj 309 222 loadbang;
@@ -115,7 +115,7 @@
 #X msg 425 146 b_minor;
 #X obj 473 329 change;
 #X obj 343 452 chair.transpose-oct -2;
-#X obj 472 404 r \$0-updown;
+#X obj 472 427 r \$0-updown;
 #X obj 47 413 sel 0 1;
 #X msg 95 440 1 2;
 #X msg 47 440 0 20;
@@ -124,9 +124,9 @@
 #X obj 32 296 chair.gain~;
 #X obj 32 546 clone circular-string 14 \$0;
 #X obj 624 643 s \$0-damping;
-#X floatatom 624 615 5 2 100 0 - - -, f 5;
+#X floatatom 624 615 5 2 100 0 - - -;
 #X obj 627 592 hsl 128 15 0.0001 0.5 0 0 empty empty empty -2 -8 0
-10 -262144 -1 -1 1268 1;
+10 -262144 -1 -1 11900 1;
 #X msg 608 566 0.05;
 #X msg 298 119 bang;
 #X obj 468 74 declare -lib pmpd;
@@ -137,9 +137,6 @@ to create pysical simulations of resonators.;
 impossible in reality \, such as a circular string.;
 #X text 608 267 Only the left rotary has a function in this patch.
 ;
-#X text 740 506 you may change these parameter \, but they will only
-have an effect if the networks in the pmpd~ objects are rebuild.,
-f 38;
 #X text 296 100 rebuild networks;
 #X text 121 256 Rotaries:;
 #X obj 31 681 hip~ 4;
@@ -147,9 +144,12 @@ f 38;
 #X obj 80 681 hip~ 4;
 #X obj 172 586 r \$0-drywet;
 #X obj 148 566 r \$0-feedback-gain;
-#X text 120 272 Volume \, Feedback \, Reverb;
 #X obj 32 642 chair.stereogain~;
 #X obj 54 574 r \$0-lop;
+#X text 120 272 Lowpass \, Feedback \, Reverb;
+#X text 740 506 You may change these parameters \, but they will only
+have an effect if the networks in the pmpd~ objects are rebuild.,
+f 38;
 #X connect 2 0 45 0;
 #X connect 3 0 4 0;
 #X connect 3 0 52 0;
@@ -200,18 +200,18 @@ f 38;
 #X connect 44 0 21 0;
 #X connect 46 0 36 0;
 #X connect 47 0 24 0;
-#X connect 48 0 62 0;
+#X connect 48 0 61 0;
 #X connect 50 0 49 0;
 #X connect 51 0 50 0;
 #X connect 52 0 51 0;
 #X connect 53 0 29 0;
-#X connect 61 0 17 0;
-#X connect 62 0 67 0;
-#X connect 62 1 67 1;
-#X connect 63 0 17 1;
-#X connect 64 0 62 6;
-#X connect 65 0 62 5;
-#X connect 67 0 61 0;
-#X connect 67 1 63 0;
-#X connect 68 0 62 1;
-#X connect 68 0 62 3;
+#X connect 60 0 17 0;
+#X connect 61 0 65 0;
+#X connect 61 1 65 1;
+#X connect 62 0 17 1;
+#X connect 63 0 61 6;
+#X connect 64 0 61 5;
+#X connect 65 0 60 0;
+#X connect 65 1 62 0;
+#X connect 66 0 61 1;
+#X connect 66 0 61 3;

@@ -1,4 +1,4 @@
-#N canvas 985 257 665 677 10;
+#N canvas 688 318 665 677 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
@@ -28,9 +28,9 @@
 -1 -1 0 1;
 #X obj 102 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1700 1;
+-1 -1 2550 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3117 1;
 #X obj 468 306 s \$0-timbre;
 #X obj 287 16 loadbang;
 #X msg 288 45 0.5;
