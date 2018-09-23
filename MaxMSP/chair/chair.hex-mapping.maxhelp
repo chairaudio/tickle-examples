@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 121.0, 160.0, 640.0, 546.0 ],
+		"rect" : [ 779.0, 212.0, 640.0, 546.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -98,7 +98,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 187.5, 42.0, 20.0, 140.0 ],
+					"patching_rect" : [ 187.5, 47.0, 20.0, 140.0 ],
 					"size" : 1.0,
 					"style" : ""
 				}
@@ -164,10 +164,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
-					"patching_rect" : [ 173.0, 339.0, 105.0, 22.0 ],
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 173.0, 338.0, 109.0, 22.0 ],
 					"style" : "",
-					"text" : "chair.hexmapping"
+					"text" : "chair.hex-mapping"
 				}
 
 			}
@@ -234,7 +234,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "chair.hexmapping.maxpat",
+				"name" : "chair.hex-mapping.maxpat",
 				"bootpath" : "C:/chair/tickle-examples/MaxMSP/chair",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
