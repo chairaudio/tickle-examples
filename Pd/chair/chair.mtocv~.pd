@@ -1,4 +1,4 @@
-#N canvas 953 574 830 532 10;
+#N canvas 757 169 830 532 10;
 #X obj 56 376 outlet~;
 #X obj 56 237 - 24;
 #X obj 56 270 / 12;
@@ -16,8 +16,8 @@
 #X obj 281 74 sel vpo hpv;
 #X msg 281 98 0;
 #X msg 312 99 1;
-#X text 168 179 Volts per octave or Hertz per Volt;
 #X obj 281 47 symbol;
+#X text 168 179 Volts per octave or Hertz per volt;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -28,9 +28,9 @@
 #X connect 9 1 7 0;
 #X connect 10 0 11 0;
 #X connect 11 0 9 0;
-#X connect 12 0 17 0;
+#X connect 12 0 16 0;
 #X connect 13 0 14 0;
 #X connect 13 1 15 0;
 #X connect 14 0 11 1;
 #X connect 15 0 11 1;
-#X connect 17 0 13 0;
+#X connect 16 0 13 0;
