@@ -1,25 +1,25 @@
-#N canvas 660 112 1036 762 10;
+#N canvas 660 181 1036 762 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X declare -lib pmpd;
 #X obj 468 29 declare -path chair;
 #X obj 468 51 declare -path abstractions;
-#X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 31 113 tickle~;
-#X floatatom 474 282 5 0 0 0 - - -, f 5;
+#X floatatom 474 282 5 0 0 0 - - -;
 #N canvas 1268 656 652 389 rotaries 0;
 #X obj 103 25 inlet;
 #X obj 285 168 s \$0-led1;
 #X obj 467 169 s \$0-led2;
 #X obj 110 169 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2692 1;
+-1 -1 0 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1983 1;
+-1 -1 0 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1842 1;
+-1 -1 0 1;
 #X obj 441 10 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X obj 103 73 chair.rotary-limit-range 24;
@@ -29,7 +29,7 @@
 #X obj 103 264 - 30;
 #X msg 441 38 3;
 #X msg 258 40 12;
-#X floatatom 375 284 7 0 0 0 - - -, f 7;
+#X floatatom 375 284 7 0 0 0 - - -;
 #X obj 284 298 s \$0-damping;
 #X obj 284 267 + 0.011;
 #X obj 284 239 * -0.01;
@@ -57,7 +57,7 @@
 #X restore 122 190 pd rotaries;
 #X obj 70 211 route 0;
 #X obj 70 140 route pos rotary button touch;
-#X msg 50 50 info;
+#X msg 50 55 info;
 #X obj 31 631 hip~ 4;
 #X obj 70 232 s \$0-xy;
 #X obj 228 168 s \$0-touch;
@@ -93,7 +93,7 @@
 #X obj 47 398 r \$0-touch;
 #X obj 47 477 line~;
 #X obj 462 328 s \$0-current;
-#X obj 196 349 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 196 349 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 31 373 chair.feedback-cancellation~;
 #X obj 298 319 until;
@@ -103,7 +103,7 @@
 #X obj 298 265 t b b;
 #X msg 347 319 0;
 #X obj 298 500 pack f f;
-#X floatatom 359 428 5 0 0 0 - - -, f 5;
+#X floatatom 359 428 5 0 0 0 - - -;
 #X obj 343 404 chair.hex-tuning;
 #X obj 298 379 t f f;
 #X obj 309 222 loadbang;

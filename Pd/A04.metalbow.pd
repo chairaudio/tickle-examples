@@ -36,7 +36,7 @@
 #X obj 47 403 r \$0-touch;
 #X obj 47 449 line~;
 #X obj 32 296 chair.gain~;
-#X obj 196 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 196 335 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 31 357 chair.feedback-cancellation~;
 #X msg 47 426 \$1 5;
@@ -132,12 +132,12 @@ one continuous surface for sonic exploration.;
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2692 1;
+-1 -1 1417 1;
 #X obj 103 30 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2267 1;
+-1 -1 1558 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1417 1;
+-1 -1 1133 1;
 #X obj 103 73 chair.rotary-limit-range 24;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X obj 465 73 chair.rotary-limit-range 24;

@@ -1,4 +1,4 @@
-#N canvas 688 318 665 677 10;
+#N canvas 924 336 665 677 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
@@ -28,9 +28,9 @@
 -1 -1 0 1;
 #X obj 102 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2550 1;
+-1 -1 1558 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3117 1;
+-1 -1 3258 1;
 #X obj 468 306 s \$0-timbre;
 #X obj 287 16 loadbang;
 #X msg 288 45 0.5;
@@ -66,7 +66,7 @@
 #X connect 27 0 21 0;
 #X coords 0 -1 1 1 85 60 1 100 100;
 #X restore 122 201 pd rotaries;
-#X obj 381 335 s \$0-midinote;
+#X obj 381 357 s \$0-midinote;
 #X floatatom 398 239 5 0 0 0 - - -;
 #X floatatom 397 311 5 0 0 0 - - -;
 #X obj 70 270 route 0;
@@ -77,7 +77,7 @@
 #X obj 203 421 r \$0-midinote;
 #X obj 194 360 f;
 #X obj 221 361 + 1;
-#X obj 179 500 pack f f;
+#X obj 179 517 pack f f;
 #X obj 194 338 sel 1;
 #X obj 228 179 s \$0-touch;
 #X obj 381 124 r \$0-xy;
@@ -110,11 +110,9 @@
 #X obj 32 338 chair.gain~;
 #X obj 240 392 s \$0-current;
 #X obj 32 562 chair.gain~;
-#X text 378 378 In this example \, every touch down event iterates
+#X text 378 401 In this example \, every touch down event iterates
 to the next voice even when the hit is on the same pad., f 38;
 #X msg 47 409 \$1 5;
-#X text 377 428 This allows you to build up seperate parallel voices
-onf the same note., f 38;
 #X obj 510 238 r \$0-updown;
 #X obj 381 261 chair.transpose-oct -2;
 #X msg 474 178 g_major;
@@ -122,9 +120,12 @@ onf the same note., f 38;
 #X obj 379 49 declare -path abstractions;
 #X text 119 265 Rotaries:;
 #X text 118 281 Distorsion \, Feedback \, Timbre;
-#X obj 32 522 clone karplus-strong 8 \$0;
+#X obj 32 539 clone karplus-strong 8 \$0;
 #X obj 179 476 f;
 #X obj 203 445 t b f;
+#X text 377 451 This allows you to build up seperate parallel voices
+of the same note., f 38;
+#X obj 204 551 print;
 #X connect 0 0 1 0;
 #X connect 1 0 31 0;
 #X connect 1 1 8 0;
@@ -136,34 +137,35 @@ onf the same note., f 38;
 #X connect 9 0 1 0;
 #X connect 10 0 24 0;
 #X connect 10 0 24 1;
-#X connect 12 0 46 0;
+#X connect 12 0 45 0;
 #X connect 13 0 14 0;
 #X connect 13 0 20 0;
 #X connect 13 0 32 0;
-#X connect 13 0 45 1;
+#X connect 13 0 44 1;
 #X connect 14 0 25 0;
-#X connect 15 0 44 1;
+#X connect 15 0 47 0;
+#X connect 15 0 43 1;
 #X connect 16 0 13 0;
 #X connect 18 0 27 0;
 #X connect 21 0 16 0;
 #X connect 23 0 1 0;
 #X connect 25 0 13 1;
 #X connect 26 0 5 0;
-#X connect 26 0 38 0;
+#X connect 26 0 37 0;
 #X connect 27 0 2 0;
 #X connect 27 0 26 0;
-#X connect 28 0 44 0;
+#X connect 28 0 43 0;
 #X connect 29 0 35 0;
 #X connect 30 0 28 1;
 #X connect 31 0 28 0;
 #X connect 33 0 10 0;
 #X connect 35 0 30 0;
-#X connect 37 0 38 1;
-#X connect 38 0 4 0;
-#X connect 38 0 6 0;
+#X connect 36 0 37 1;
+#X connect 37 0 6 0;
+#X connect 37 0 4 0;
+#X connect 38 0 26 1;
 #X connect 39 0 26 1;
-#X connect 40 0 26 1;
-#X connect 44 0 33 0;
-#X connect 45 0 15 0;
-#X connect 46 0 45 0;
-#X connect 46 1 15 1;
+#X connect 43 0 33 0;
+#X connect 44 0 15 0;
+#X connect 45 0 44 0;
+#X connect 45 1 15 1;
