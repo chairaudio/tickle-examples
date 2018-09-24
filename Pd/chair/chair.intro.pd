@@ -1,42 +1,54 @@
-#N canvas 196 132 840 878 10;
-#X obj 13 77 chair.chrismoore-reverb~;
-#X text 198 78 Reverb modelled by Tom Erbe. It's used in the examples
-;
+#N canvas 285 185 803 679 10;
+#X obj 17 576 chair.chrismoore-reverb~;
 #X text 13 16 An index of the abstractions made for the Tickle instrument
 by The Center for Haptic Audio Interaction Research (CHAIR).;
-#X obj 13 116 chair.DC-offset~;
-#X obj 13 163 chair.distance;
-#X text 194 160 Calculates the distance between two points in an euclidian
-space.;
-#X text 198 110 Makes the DC offset of a source signal available as
-a separate signal to control filters etc.;
-#X obj 13 212 chair.feedback-cancellation~;
-#X text 196 212 Removes feedback in realtime by frequency-shifting
-a signal;
-#X obj 18 260 chair.gain~;
-#X text 201 263 Gain control in dB;
-#X obj 23 360 chair.hex-mapping;
-#X text 203 358 Maps the x \, y coordinates to the hexagon pads;
-#X obj 25 404 chair.hex-tuning;
-#X text 202 400 Reads a textfile containing a tuning to match the hexpads
-to different MIDI notes.;
-#X obj 27 458 chair.peak-hold~;
-#X text 202 458 Generate an enveolope signal from a sound input without
-latency;
-#X obj 22 511 chair.rotary-limit-range;
-#X text 206 507 Map the rotary encoders to 0-1 with selectable amount
-of steps.;
-#X obj 25 551 chair.stereogain~;
-#X text 204 559 Gain control in dB \, stereo version;
-#X obj 25 609 chair.transpose-oct;
-#X text 202 619 Transpose MIDI notes up or down an octave;
-#X obj 25 679 chair.vfreeverb~;
-#X text 206 678 Vanilla Freeverb implementation by Katja Vetter;
-#X obj 30 730 faketickle~;
-#X obj 30 796 record_tickle;
-#X text 208 788 Patch to create recordings with the Tickle and to be
-played back by faketickle~;
-#X text 206 727 Replace [tickle~] with this abstraction if hardware
-is currently unavailable;
-#X obj 21 320 chair.gesture;
-#X text 205 319 Lets you add (simple) gestures on the trackpad.;
+#X obj 17 94 chair.distance;
+#X obj 15 327 chair.feedback-cancellation~;
+#X obj 16 369 chair.gain~;
+#X obj 17 177 chair.hex-mapping;
+#X obj 17 156 chair.hex-tuning;
+#X obj 16 347 chair.peak-hold~;
+#X obj 17 248 chair.rotary-limit-range;
+#X obj 17 408 chair.stereogain~;
+#X obj 17 198 chair.transpose-oct;
+#X obj 17 596 chair.vfreeverb~;
+#X obj 18 458 faketickle~;
+#X obj 17 115 chair.gesture;
+#X obj 15 307 chair.dc-offset~;
+#X text 11 55 --------------- MESSAGE ----------------;
+#X text 193 349 - Generate an enveolope signal from a sound input without
+latency, f 67;
+#X text 185 248 - Map the rotary encoders to 0-1 with selectable amount
+of steps., f 67;
+#X text 198 577 - Reverb modelled by Tom Erbe. It's used in the examples
+;
+#X text 195 305 - Makes the DC offset of a source signal available
+as a separate signal to control filters etc., f 96;
+#X text 183 94 - Calculates the distance between two points in an euclidian
+space., f 70;
+#X obj 17 73 chair.angle;
+#X text 182 74 - Calculates the angle between two points in an euclidian
+space., f 70;
+#X text 192 327 - Removes feedback in realtime by frequency-shifting
+a signal, f 63;
+#X obj 17 135 chair.cleanposdata;
+#X text 183 135 - Filter individual inplausible touchpad data out,
+f 70;
+#X text 183 114 - Lets you add (simple) gestures on the trackpad.;
+#X text 184 155 - Reads a textfile containing a tuning to match the
+hexpads to different MIDI notes., f 85;
+#X text 184 175 - Maps the x \, y coordinates to the hexagon pads;
+#X text 184 208 - Transpose MIDI notes up or down an octave;
+#X text 192 416 - Gain control in dB \, stereo version;
+#X text 194 596 - Vanilla Freeverb implementation by Katja Vetter;
+#X text 190 455 - Replace [tickle~] with this abstraction if hardware
+is currently unavailable, f 79;
+#X text 190 479 - Patch to create recordings with the Tickle and to
+be played back by faketickle~, f 83;
+#X obj 17 482 record_tickle~;
+#X text 13 283 --------------- AUDIO ----------------;
+#X text 16 554 --------------- AUDIO FILTERS ----------------;
+#X text 193 372 - Gain control in dB with clipping indicator;
+#X obj 17 505 chair.mtocv~;
+#X text 194 507 - MIDI to (Virtual) Control Voltage converter, f 67
+;
