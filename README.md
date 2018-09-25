@@ -4,7 +4,7 @@ They serve to showcase what's possible with the Tickle and to help you to get st
 If you have questions, suggestions, issues, amendments, bug reports, feature- or even pull-requests, please don't hesitate to contact us using email or the gitlab/github functions to do so. We would love to get feedback and contributions.
 
 This git lives at
-https://gitlab.chair.audio/chair-audio/tickle-examples
+https://gitlab.chair.audio/chair-audio/tickle-examples (private)
 
 and is pushed automatically to 
 https://github.com/chairaudio/tickle-examples
