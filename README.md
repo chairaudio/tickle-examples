@@ -9,3 +9,7 @@ https://gitlab.chair.audio/chair-audio/tickle-examples (private)
 and is pushed automatically to 
 https://github.com/chairaudio/tickle-examples
 
+These examples are copyright 2018 The Center for Haptic Audio Interaction Research (CHAIR).
+They are licensed under a MIT licence.
+
+The CHAIR name and logo are registered trademarks and may not be used unauthorized.
