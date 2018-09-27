@@ -1,7 +1,7 @@
 #N canvas 737 670 762 364 10;
 #X obj 27 11 inlet~;
 #X obj 28 234 outlet~;
-#X obj 86 72 hilbert~;
+#X obj 85 72 hilbert~;
 #X obj 85 100 complex-mod~;
 #X obj 189 50 inlet;
 #X text 280 179 hilbert~ and complex-mod~ are abstractions which come
@@ -51,8 +51,9 @@ the Tickle and sometimes issues with feedback occur.;
 #X connect 12 0 10 0;
 #X connect 13 0 10 0;
 #X restore 120 11 pd arguments;
-#X connect 0 0 2 0;
+#X obj 85 46 hip~ 4;
 #X connect 0 0 14 0;
+#X connect 0 0 18 0;
 #X connect 2 0 3 0;
 #X connect 2 1 3 1;
 #X connect 3 0 10 0;
@@ -69,3 +70,4 @@ the Tickle and sometimes issues with feedback occur.;
 #X connect 16 0 15 0;
 #X connect 17 0 11 0;
 #X connect 17 1 3 2;
+#X connect 18 0 2 0;
