@@ -9,6 +9,8 @@ https://puredata.info/
 About these examples:
 
 A__. contain synthesis examples for vanilla Pd (without the use of any externals.
+F__. make use of the faustgen~ FAUST DSP language loader for Pd.
+C__. Concatenative synthesis with timbreID.
 P__. use the physical modelling provided by the pmpd~ external.
 T__. tools and utilities like adaptors to other applications.
 V__. contain examples for the visualization with different externals.
