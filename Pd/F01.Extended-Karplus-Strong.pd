@@ -1,7 +1,7 @@
-#N canvas 2066 481 747 680 10;
+#N canvas 806 399 747 680 10;
 #X declare -path chair;
 #X declare -path abstractions;
-#X obj 66 31 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 66 31 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 66 91 tickle~;
 #X msg 102 59 info;
@@ -10,7 +10,7 @@
 #X obj 272 93 declare -path abstractions;
 #X obj 65 219 chair.gain~;
 #X obj 380 453 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3100 1;
+-1 -1 0 1;
 #X msg 247 357 freq \$1;
 #X obj 107 119 route pos rotary touch;
 #X obj 107 146 route 0;
@@ -19,10 +19,10 @@
 #X obj 247 252 chair.transpose-oct;
 #X msg 377 477 pick_angle \$1;
 #X obj 377 403 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4400 1;
+-1 -1 0 1;
 #X msg 374 427 pick_position \$1;
 #X obj 374 352 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9200 1;
+-1 -1 0 1;
 #X msg 372 376 brightness \$1;
 #X obj 66 538 chair.gain~;
 #X obj 65 625 dac~;
@@ -34,7 +34,7 @@
 #X obj 90 368 line~;
 #X obj 248 319 mtof;
 #X obj 66 281 chair.feedback-cancellation~;
-#X obj 185 257 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 185 257 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
