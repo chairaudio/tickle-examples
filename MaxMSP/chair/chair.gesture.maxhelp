@@ -2,14 +2,15 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 5,
+			"major" : 8,
+			"minor" : 0,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 692.0, -825.0, 640.0, 690.0 ],
+		"classnamespace" : "box",
+		"rect" : [ 439.0, 306.0, 640.0, 690.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,13 +39,83 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 205.0, 496.0, 51.0, 20.0 ],
+					"text" : "x-offset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 234.5, 457.0, 51.0, 20.0 ],
+					"text" : "y-offset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 250.0, 425.0, 67.0, 20.0 ],
+					"presentation_linecount" : 2,
+					"text" : "distance"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 259.0, 395.0, 51.0, 20.0 ],
+					"text" : "angle"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-17",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 310.0, 366.0, 51.0, 20.0 ],
+					"text" : "speed"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "speed",
+					"format" : 6,
+					"id" : "obj-4",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 253.0, 364.0, 50.0, 22.0 ],
+					"varname" : "speed"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-8",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
 					"patching_rect" : [ 279.0, 230.0, 57.0, 22.0 ],
-					"style" : "",
 					"text" : "trigger i i"
 				}
 
@@ -57,7 +128,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 242.0, 319.0, 47.0, 22.0 ],
-					"style" : "",
 					"text" : "0 0 0 0"
 				}
 
@@ -70,7 +140,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 242.0, 282.0, 36.0, 22.0 ],
-					"style" : "",
 					"text" : "sel 0"
 				}
 
@@ -84,8 +153,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 388.0, 381.0, 50.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 388.0, 381.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -98,8 +166,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 450.0, 381.0, 50.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 450.0, 381.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -111,7 +178,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "float" ],
 					"patching_rect" : [ 402.0, 315.0, 63.0, 22.0 ],
-					"style" : "",
 					"text" : "unpack f f"
 				}
 
@@ -122,8 +188,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 61.0, 393.0, 45.0, 45.0 ],
-					"style" : ""
+					"patching_rect" : [ 61.0, 393.0, 45.0, 45.0 ]
 				}
 
 			}
@@ -136,8 +201,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 138.0, 494.0, 50.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 138.0, 494.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -150,8 +214,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 159.5, 455.0, 50.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 159.5, 455.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -164,8 +227,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 181.0, 425.0, 50.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 181.0, 425.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -178,8 +240,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 198.0, 393.0, 50.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 198.0, 393.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -191,7 +252,6 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "float", "float", "float", "float" ],
 					"patching_rect" : [ 138.0, 358.0, 76.0, 22.0 ],
-					"style" : "",
 					"text" : "unpack f f f f"
 				}
 
@@ -204,7 +264,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 138.0, 237.0, 48.0, 22.0 ],
-					"style" : "",
 					"text" : "route 0"
 				}
 
@@ -214,10 +273,9 @@
 					"id" : "obj-9",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 138.0, 310.0, 79.0, 22.0 ],
-					"style" : "",
 					"text" : "chair.gesture"
 				}
 
@@ -230,7 +288,6 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 138.0, 191.0, 93.0, 22.0 ],
-					"style" : "",
 					"text" : "route pos touch"
 				}
 
@@ -243,7 +300,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 133.0, 75.0, 30.0, 22.0 ],
-					"style" : "",
 					"text" : "info"
 				}
 
@@ -254,9 +310,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "signal", "" ],
+					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 87.0, 153.0, 45.0, 22.0 ],
-					"style" : "",
 					"text" : "tickle~"
 				}
 
@@ -269,8 +324,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 89.0, 56.0, 24.0, 24.0 ],
-					"style" : ""
+					"patching_rect" : [ 89.0, 56.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -407,6 +461,13 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-9", 1 ]
+				}
+
+			}
  ],
 		"dependency_cache" : [ 			{
 				"name" : "chair.gesture.maxpat",
@@ -423,8 +484,11 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "tickle~.mxe64",
-				"type" : "mx64"
+				"name" : "chair.speed.maxpat",
+				"bootpath" : "C:/chair/tickle-examples/MaxMSP/chair",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
 			}
  ],
 		"autosave" : 0
