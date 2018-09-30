@@ -17,7 +17,7 @@ import("effect.lib");   // stereopanner
 // standard MIDI voice parameters:
 // NOTE: The labels MUST be "freq", "gain", and "gate" for faust2pd
 freq = nentry("freq", 440, 20, 7040, 1);  // Hz
-gain = nentry("gain", 1, 0, 10, 0.01);    // 0 to 1
+gain = nentry("gain", 1, 0, 10, 0.01);    // 0 to 10
 gate = button("gate");                    // 0 or 1
 
 // Additional parameters (MIDI "controllers"):
@@ -26,14 +26,14 @@ gate = button("gate");                    // 0 or 1
 pickangle = 0.9 * hslider("pick_angle",0,0,0.9,0.1);
 
 // Normalized pick-position in [0,0.5]:
-beta = hslider("pick_position [midi: ctrl 0x81]", 0.13, 0.02, 0.5, 0.01);
+beta = hslider("pick_position", 0.13, 0.02, 0.5, 0.01);
     // MIDI Control 0x81 often "highpass filter frequency"
 
 // String decay time in seconds:
-t60 = hslider("decaytime_T60", 4, 0, 10, 0.01);  // -60db decay time (sec)
+t60 = hslider("decaytime", 4, 0, 10, 0.01);  // -60db decay time (sec)
 
 // Normalized brightness in [0,1]:
-B = hslider("brightness [midi:ctrl 0x74]", 0.5, 0, 1, 0.01);// 0-1
+B = hslider("brightness", 0.5, 0, 1, 0.01);// 0-1
     // MIDI Controller 0x74 is often "brightness"
     // (or VCF lowpass cutoff freq)
 
@@ -42,8 +42,8 @@ L = hslider("dynamic_level", -10, -60, 0, 1) : db2linear;
 // Note: A lively clavier is obtained by tying L to gain (MIDI velocity).
 
 // Spatial "width" (not in original EKS, but only costs "one tap"):
-W = hslider("center-panned spatial width", 0.5, 0, 1, 0.01);
-A = hslider("pan angle", 0.5, 0, 1, 0.01);
+W = hslider("center-panned_spatial_width", 0.5, 0, 1, 0.01);
+A = hslider("pan_angle", 0.5, 0, 1, 0.01);
 
 
 //==================== SIGNAL PROCESSING ================
@@ -91,7 +91,7 @@ stringloop = (+ : fdelay4(Pmax, P-2)) ~ (loopfilter);
 widthdelay = delay(Pmax,W*P/2);
 
 // Assumes an optionally spatialized mono signal, centrally panned:
-//stereopanner(A) = _,_ : *(1.0-A), *(A);
+stereopanner(A) = _,_ : *(1.0-A), *(A);
 
 //process = filtered_excitation : stringloop <: _,_ : widthdelay : stereopanner(A);
-process = filtered_excitation : stringloop : widthdelay;
+process = filtered_excitation : stringloop <: _,_ : (widthdelay,widthdelay) : stereopanner(A);
