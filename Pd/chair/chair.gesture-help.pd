@@ -1,8 +1,8 @@
-#N canvas 362 109 1473 835 10;
+#N canvas 92 223 1611 835 10;
 #X declare -path chair;
-#X obj 822 7 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 823 7 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
-#X floatatom 932 412 5 0 0 0 - - -, f 5;
+#X floatatom 932 412 5 0 0 0 - - -;
 #X obj 861 194 route 0;
 #X msg 841 33 info;
 #X obj 822 309 lop~ 10000;
@@ -51,14 +51,14 @@
 #X obj 987 310 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 822 334 chair.feedback-cancellation~;
-#X floatatom 932 468 5 0 0 0 - - -, f 5;
+#X floatatom 932 468 5 0 0 0 - - -;
 #X obj 920 445 chair.hex-tuning;
 #X msg 1013 406 g_major;
 #X obj 825 741 chair.gain~;
 #X msg 1074 407 b_minor;
 #X obj 920 590 mtof;
 #X obj 920 537 change;
-#X obj 267 173 bng 25 250 50 0 empty to_digit empty 17 7 0 10 -262140
+#X obj 486 385 bng 25 250 50 0 empty to_digit empty 17 7 0 10 -262140
 -53251 -262144;
 #X obj 1165 674 pack f f;
 #X obj 1165 545 r \$0-xy;
@@ -81,23 +81,43 @@
 #X obj 920 558 t f f;
 #X obj 857 614 osc~;
 #X obj 823 649 *~;
-#X obj 1226 174 r \$0-touch;
-#X floatatom 1205 308 5 0 0 1 distance - -, f 5;
-#X floatatom 1178 335 5 0 0 1 y-offset - -, f 5;
-#X floatatom 1151 362 5 0 0 1 x-offset - -, f 5;
+#X obj 1226 144 r \$0-touch;
+#X floatatom 1205 308 5 0 0 1 distance - -;
+#X floatatom 1178 335 5 0 0 1 y-offset - -;
+#X floatatom 1151 362 5 0 0 1 x-offset - -;
 #X obj 920 501 - 24;
-#X obj 1151 163 r \$0-xy;
+#X obj 1151 133 r \$0-xy;
 #X msg 1164 700 \; to_digit pos \$1 \$2;
 #X text 1144 86 Touch-gestures to give additional control;
 #X msg 1164 499 \; to_digit color \$1 \$2 \$3;
 #X obj 1151 252 unpack f f f f;
 #X text 1155 109 outlet: X-offset \, Y-offset \, distance \, angle
 ;
-#X floatatom 1232 281 5 0 0 1 angle - -, f 5;
+#X floatatom 1232 281 5 0 0 1 angle - -;
 #X obj 823 96 tickle~;
-#X obj 1151 206 chair.gesture;
-#X obj 1238 206 sel 0;
-#X msg 1238 227 0 0 0 0;
+#X obj 1151 176 chair.gesture;
+#X obj 1249 175 sel 0;
+#X msg 1249 196 0 0 0 0;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array \$0-speed 100 float 4;
+#X coords 0 1 99 0 200 140 1 0 0;
+#X restore 1351 278 graph;
+#N canvas 752 881 358 241 plot-speed 0;
+#X obj 57 107 list;
+#X obj 57 156 list trim;
+#X obj 57 129 list prepend 0;
+#X obj 80 76 list split 100;
+#X obj 57 30 inlet;
+#X obj 57 182 s \$0-speed;
+#X connect 0 0 2 0;
+#X connect 0 0 3 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 1;
+#X connect 3 2 0 1;
+#X connect 4 0 0 0;
+#X restore 1253 243 pd plot-speed;
+#X floatatom 1253 222 5 0 0 1 speed - -;
 #X connect 0 0 60 0;
 #X connect 2 0 6 0;
 #X connect 3 0 60 0;
@@ -158,5 +178,7 @@
 #X connect 60 0 16 0;
 #X connect 60 1 42 0;
 #X connect 61 0 57 0;
+#X connect 61 1 66 0;
 #X connect 62 0 63 0;
 #X connect 63 0 57 0;
+#X connect 66 0 65 0;
