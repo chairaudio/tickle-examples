@@ -8,9 +8,9 @@
 #X obj 272 71 declare -path chair;
 #X obj 272 93 declare -path abstractions;
 #X obj 280 322 hsl 128 15 0 0.9 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 10400 1;
+-1 -1 12700 1;
 #X obj 281 271 hsl 128 15 0.02 0.5 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 5200 1;
+-262144 -1 -1 6800 1;
 #X obj 65 694 dac~;
 #X obj 65 659 hip~ 4;
 #X obj 107 209 s \$0-touch;
@@ -29,12 +29,12 @@
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3400 1;
+-1 -1 2975 1;
 #X obj 103 30 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3400 1;
+-1 -1 2125 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1700 1;
+-1 -1 1275 1;
 #X obj 103 73 chair.rotary-limit-range 24;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X obj 465 73 chair.rotary-limit-range 24;
@@ -113,14 +113,14 @@ changed., f 34;
 #X obj 149 188 s \$0-updown;
 #X obj 192 145 route 0;
 #X obj 66 605 chair.stereogain~;
-#X obj 110 659 hip~ 4;
+#X obj 108 660 hip~ 4;
 #X text 277 223 Dynamic-level \, Decay \, Brightness;
 #X obj 65 256 *~ 2.5;
 #X obj 278 374 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2500 1;
+-1 -1 11600 1;
 #X obj 276 393 s \$0-center-panned_spatial_width;
 #X obj 277 428 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 400 1;
+-1 -1 6300 1;
 #X obj 275 447 s \$0-pan_angle;
 #X obj 65 569 clone eks-faustgen 14 \$0;
 #X connect 0 0 1 0;
