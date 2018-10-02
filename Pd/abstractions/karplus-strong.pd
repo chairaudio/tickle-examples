@@ -11,8 +11,8 @@
 #X obj 205 241 * 1;
 #X obj 488 443 hsl 101 15 0 10000 0 1 empty empty lop 4100 5 8 0 10
 -262144 -1 -1 4100 1;
-#X obj 488 460 hsl 101 15 0 10000 0 1 empty empty bp 2000 5 8 0 10
--262144 -1 -1 2000 1;
+#X obj 488 460 hsl 101 15 0 10000 0 1 empty empty bp 1625 5 8 0 10
+-262144 -1 -1 1625 1;
 #X obj 488 477 hsl 101 15 1 100 1 1 empty empty Q 14.4544 5 8 0 10
 -262144 -1 -1 5800 1;
 #X obj 372 14 inlet;
@@ -22,7 +22,7 @@
 0 10 -262144 -1 -1 3700 1;
 #X obj 205 130 int;
 #X obj 205 154 change;
-#X obj 364 502 sqrt;
+#X obj 314 455 sqrt;
 #X obj 205 555 outlet~;
 #N canvas 462 164 450 300 zd 0;
 #X obj 135 79 inlet~;
@@ -50,7 +50,7 @@
 #X text 445 585 (c) Liam Goodacre 2016 \, liam.goodacre@gmail.com;
 #X obj 36 230 inlet~;
 #X floatatom 641 332 5 0 0 0 - - -;
-#X obj 363 444 r \$2-feedback;
+#X obj 314 429 r \$2-feedback;
 #X obj 322 303 r \$2-fm-amount;
 #X floatatom 330 340 5 0 0 0 - - -;
 #X obj 35 454 *~;
