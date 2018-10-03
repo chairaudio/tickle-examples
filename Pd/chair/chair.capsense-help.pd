@@ -1,4 +1,4 @@
-#N canvas 127 471 657 292 10;
+#N canvas 152 202 657 292 10;
 #X obj 61 129 chair.capsense;
 #X floatatom 61 170 5 0 0 0 touch - -;
 #X obj 142 170 unpack f f;
@@ -7,7 +7,8 @@
 #X msg 61 93 0 \$1 \$2;
 #X msg 114 42 0.4 0.8;
 #X msg 46 27 -1 -1;
-#X text 272 51 comment;
+#X text 272 51 This abstraction generates a touch message 0 1 from
+the position data and removes the -1 -1 from it.;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 2 0 4 0;
