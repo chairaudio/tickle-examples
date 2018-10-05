@@ -1,4 +1,4 @@
-#N canvas 125 194 1473 870 10;
+#N canvas 2180 158 1473 955 10;
 #X declare -path chair;
 #X declare -lib tkwidgets;
 #X declare -lib moonlib;
@@ -44,7 +44,7 @@
 #X connect 13 0 11 0;
 #X connect 13 0 10 0;
 #X restore 853 65 pd LED;
-#X obj 822 835 dac~;
+#X obj 822 865 dac~;
 #X obj 920 304 chair.hex-mapping;
 #X obj 822 338 *~;
 #X obj 838 269 r \$0-touch;
@@ -53,15 +53,15 @@
 #X floatatom 932 390 5 0 0 0 - - -;
 #X obj 920 367 chair.hex-tuning;
 #X msg 1013 328 g_major;
-#X obj 822 731 chair.gain~;
+#X obj 822 761 chair.gain~;
 #X msg 1074 329 b_minor;
 #X obj 920 459 change;
 #X obj 1150 33 declare -lib tkwidgets;
 #X obj 401 323 moonlib/image tickle.gif 0;
 #X obj 1151 55 declare -lib moonlib;
 #X obj 1151 78 declare -lib ggee;
-#X obj 98 500 bng 25 250 50 0 empty digit empty 17 7 0 10 -262140 -53251
--262144;
+#X obj 310 443 bng 25 250 50 0 empty digit empty 17 7 0 10 -168128
+-53251 -262144;
 #X msg 1271 696 \; digit pos \$1 \$2;
 #X obj 1271 670 pack f f;
 #X obj 1271 541 r \$0-xy;
@@ -95,12 +95,12 @@ the patcher window. An updated version of [image] is in moonlib.;
 #X obj 467 169 s \$0-led2;
 #X obj 110 169 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1700 1;
+-1 -1 1224 1;
 #X obj 102 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1496 1;
+-1 -1 2482 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1632 1;
+-1 -1 816 1;
 #X obj 287 16 loadbang;
 #X msg 288 45 0.5;
 #X obj 103 232 * 60;
@@ -139,9 +139,9 @@ the patcher window. An updated version of [image] is in moonlib.;
 #X coords 0 -1 1 1 85 60 1 100 100;
 #X restore 993 150 pd rotaries;
 #X obj 961 546 nbx 5 14 1 1e+37 0 0 empty \$0-osc empty 0 -8 0 10 -262144
--1 -1 31 256;
+-1 -1 22.6 256;
 #X obj 1028 546 nbx 5 14 1 1e+37 0 0 empty \$0-mult empty 0 -8 0 10
--262144 -1 -1 441 256;
+-262144 -1 -1 731 256;
 #X obj 1015 599 + 1;
 #X obj 980 725 delwrite~ \$0-del 2480;
 #X obj 961 646 delread4~ \$0-del 2480;
@@ -154,11 +154,12 @@ the patcher window. An updated version of [image] is in moonlib.;
 #X obj 920 481 mtof;
 #X obj 823 522 chair.feedback-cancellation~ 50 1;
 #X obj 1101 546 nbx 5 14 1 1e+37 0 0 empty \$0-phasor empty 0 -8 0
-10 -262144 -1 -1 44.2 256;
-#X obj 822 779 chair.chrismoore-reverb~;
+10 -262144 -1 -1 22.6 256;
+#X obj 822 809 chair.chrismoore-reverb~;
 #X obj 921 501 - 50;
-#X obj 823 805 hip~ 4;
-#X obj 870 805 hip~ 4;
+#X obj 823 835 hip~ 4;
+#X obj 870 835 hip~ 4;
+#X obj 846 720 hip~ 4;
 #X connect 0 0 1 0;
 #X connect 1 0 15 0;
 #X connect 1 1 51 0;
@@ -194,7 +195,7 @@ the patcher window. An updated version of [image] is in moonlib.;
 #X connect 42 0 41 1;
 #X connect 44 0 5 0;
 #X connect 44 1 4 0;
-#X connect 45 0 19 0;
+#X connect 45 0 71 0;
 #X connect 46 0 47 0;
 #X connect 47 0 48 0;
 #X connect 48 0 57 0;
@@ -227,3 +228,4 @@ the patcher window. An updated version of [image] is in moonlib.;
 #X connect 68 0 65 1;
 #X connect 69 0 10 0;
 #X connect 70 0 10 1;
+#X connect 71 0 19 0;

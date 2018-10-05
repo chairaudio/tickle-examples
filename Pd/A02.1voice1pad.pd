@@ -4,7 +4,7 @@
 #X obj 31 35 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X floatatom 497 301 5 0 0 0 - - -;
-#N canvas 1024 175 664 838 rotaries 0;
+#N canvas 1024 181 664 365 rotaries 1;
 #X obj 103 25 inlet;
 #X floatatom 136 275 5 0 0 0 - - -;
 #X obj 286 192 sqrt;
@@ -24,18 +24,20 @@
 #X obj 103 298 s \$0-fm-amount;
 #X obj 103 232 * 2;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 142 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2975 1;
+-1 -1 1842 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 850 1;
+-1 -1 142 1;
 #X obj 468 306 s \$0-timbre;
-#X obj 442 9 loadbang;
+#X obj 278 7 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
-#X msg 442 44 12;
+#X msg 322 38 12;
 #X obj 103 73 chair.rotary-limit-range 24;
 #X obj 465 73 chair.rotary-limit-range 24;
+#X msg 278 37 1;
+#X msg 379 38 10;
 #X connect 0 0 19 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
@@ -59,10 +61,14 @@
 #X connect 21 0 10 0;
 #X connect 21 0 13 0;
 #X connect 23 0 25 0;
+#X connect 23 0 28 0;
+#X connect 23 0 29 0;
 #X connect 24 0 20 0;
 #X connect 25 0 24 1;
 #X connect 26 0 18 0;
 #X connect 27 0 21 0;
+#X connect 28 0 26 1;
+#X connect 29 0 27 1;
 #X coords 0 -1 1 1 85 60 1 100 100;
 #X restore 70 210 pd rotaries;
 #X msg 50 61 info;
@@ -103,7 +109,7 @@
 #X text 511 145 In this variation we have one voice per pad (14 in
 total) each voice keeps its tuning as long as the scale or octave isn't
 changed., f 34;
-#X obj 226 365 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 226 365 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 310 313 until;
 #X msg 310 290 14;

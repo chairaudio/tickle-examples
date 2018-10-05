@@ -1,10 +1,10 @@
-#N canvas 880 237 853 859 10;
+#N canvas 888 263 853 859 10;
 #X declare -lib Gem;
 #X declare -path chair;
 #X declare -path /usr/local/lib/pd/extra/;
 #X floatatom 313 304 5 0 0 0 x - -;
 #X floatatom 370 304 5 0 0 0 y - -;
-#X obj 22 28 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 22 28 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 681 36 declare -lib Gem;
 #X msg 403 39 0 \, destroy;
@@ -20,7 +20,7 @@
 #X obj 297 353 - 4.998;
 #X floatatom 429 287 5 0 0 0 - - -;
 #X obj 297 270 unpack f f;
-#X obj 24 830 dac~;
+#X obj 23 830 dac~;
 #X obj 194 451 env~;
 #X floatatom 434 340 5 0 0 0 - - -;
 #X floatatom 433 412 5 0 0 0 - - -;
@@ -66,13 +66,13 @@
 ;
 #X obj 417 203 r \$0-xy;
 #X obj 417 436 s \$0-midinote;
-#N canvas 2443 546 362 505 hexpad-viz 0;
+#N canvas 3287 577 362 505 hexpad-viz 0;
 #X obj 136 60 inlet;
 #X obj 44 393 alpha;
 #X obj 44 358 translateXYZ -4.97 1.56 0;
 #X obj 92 319 +;
 #X obj 44 252 t a b;
-#X msg 92 285 -4.96;
+#X msg 92 285 -3.72;
 #X obj 136 109 moses 5;
 #X obj 175 139 moses 9;
 #X msg 172 252 set -3.72;
@@ -140,12 +140,12 @@ If you can't install Gem \, skip to the next example., f 40;
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1558 1;
+-1 -1 0 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2267 1;
+-1 -1 0 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2975 1;
+-1 -1 0 1;
 #X obj 598 9 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X obj 53 302 outlet;
