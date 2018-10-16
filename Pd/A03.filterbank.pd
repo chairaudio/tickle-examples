@@ -1,4 +1,4 @@
-#N canvas 568 181 741 756 10;
+#N canvas 896 232 741 756 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X obj 31 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
@@ -10,12 +10,12 @@
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1417 1;
+-1 -1 992 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2125 1;
+-1 -1 708 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1417 1;
+-1 -1 1275 1;
 #X obj 289 11 loadbang;
 #X msg 289 40 0.5;
 #X obj 103 73 chair.rotary-limit-range 24;
@@ -46,7 +46,7 @@
 #X coords 0 -1 1 1 85 60 1 100 100;
 #X restore 70 220 pd rotaries;
 #X msg 50 41 info;
-#X obj 31 683 hip~ 4;
+#X obj 32 683 hip~ 4;
 #X obj 261 177 s \$0-xy;
 #X obj 180 178 s \$0-touch;
 #X obj 315 184 r \$0-xy;
@@ -73,13 +73,13 @@
 #X connect 8 0 5 0;
 #X connect 9 0 6 0;
 #X restore 62 73 pd LED;
-#X obj 31 711 dac~;
+#X obj 32 711 dac~;
 #X obj 315 206 chair.hex-mapping;
 #X obj 31 460 *~;
 #X obj 47 391 r \$0-touch;
 #X obj 47 437 line~;
 #X obj 32 306 chair.gain~;
-#X obj 227 326 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 227 326 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 327 292 5 0 0 0 - - -;
 #X obj 315 269 chair.hex-tuning;
@@ -233,29 +233,29 @@
 #X obj 32 568 clone filterbank-reson 50 \$0;
 #X text 130 285 Vibrato \, Q-End \, Fade;
 #X text 68 284 Rotaries:;
-#X obj 83 683 hip~ 4;
+#X obj 84 683 hip~ 4;
 #X obj 212 499 line~;
 #X msg 212 478 \$1 5;
 #X obj 212 521 *~ 100;
-#X obj 32 598 chair.vfreeverb~;
-#X obj 31 625 chair.stereogain~;
+#X obj 33 652 chair.vfreeverb~;
 #X msg 457 250 chromatic;
 #X obj 31 104 tickle~;
 #X obj 32 349 chair.feedback-cancellation~ 50 0;
 #X obj 180 156 chair.capsense;
 #X obj 70 131 route rotary button position;
-#X connect 0 0 65 0;
-#X connect 3 0 65 0;
+#X obj 32 598 chair.gain~;
+#X connect 0 0 64 0;
+#X connect 3 0 64 0;
 #X connect 4 0 11 0;
 #X connect 7 0 12 0;
-#X connect 10 0 65 0;
+#X connect 10 0 64 0;
 #X connect 12 0 1 0;
 #X connect 12 0 19 0;
 #X connect 13 0 55 0;
 #X connect 14 0 50 0;
 #X connect 15 0 13 1;
-#X connect 16 0 66 0;
-#X connect 17 0 66 2;
+#X connect 16 0 65 0;
+#X connect 17 0 65 2;
 #X connect 19 0 18 0;
 #X connect 19 0 51 0;
 #X connect 20 0 19 1;
@@ -289,23 +289,22 @@
 #X connect 51 0 53 0;
 #X connect 52 0 51 1;
 #X connect 53 0 49 0;
-#X connect 55 0 62 0;
-#X connect 55 0 62 1;
+#X connect 55 0 68 0;
 #X connect 58 0 11 1;
 #X connect 59 0 33 1;
 #X connect 59 0 61 0;
 #X connect 60 0 59 0;
 #X connect 61 0 34 1;
-#X connect 62 0 63 0;
-#X connect 62 1 63 1;
-#X connect 63 0 4 0;
-#X connect 63 1 58 0;
-#X connect 64 0 19 1;
-#X connect 65 0 16 0;
-#X connect 65 1 68 0;
-#X connect 66 0 13 0;
-#X connect 67 0 6 0;
-#X connect 67 1 5 0;
-#X connect 68 0 2 0;
-#X connect 68 1 8 0;
-#X connect 68 2 67 0;
+#X connect 62 0 4 0;
+#X connect 62 1 58 0;
+#X connect 63 0 19 1;
+#X connect 64 0 16 0;
+#X connect 64 1 67 0;
+#X connect 65 0 13 0;
+#X connect 66 0 6 0;
+#X connect 66 1 5 0;
+#X connect 67 0 2 0;
+#X connect 67 1 8 0;
+#X connect 67 2 66 0;
+#X connect 68 0 62 0;
+#X connect 68 0 62 1;
