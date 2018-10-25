@@ -24,12 +24,12 @@
 #X obj 103 298 s \$0-fm-amount;
 #X obj 103 232 * 2;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 425 1;
+-1 -1 0 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1983 1;
-#X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 1700 1;
+#X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2550 1;
 #X obj 468 306 s \$0-timbre;
 #X obj 278 7 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
