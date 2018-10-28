@@ -1,0 +1,198 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 8,
+			"minor" : 0,
+			"revision" : 1,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "dsp.gen",
+		"rect" : [ 977.0, 258.0, 909.0, 711.0 ],
+		"bglocked" : 0,
+		"openinpresentation" : 0,
+		"default_fontsize" : 12.0,
+		"default_fontface" : 0,
+		"default_fontname" : "Arial",
+		"gridonopen" : 1,
+		"gridsize" : [ 15.0, 15.0 ],
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
+		"statusbarvisible" : 2,
+		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
+		"boxanimatetime" : 200,
+		"enablehscroll" : 1,
+		"enablevscroll" : 1,
+		"devicewidth" : 0.0,
+		"description" : "",
+		"digest" : "",
+		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
+		"boxes" : [ 			{
+				"box" : 				{
+					"annotation" : "modulation depth (modulation index)",
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 382.70001220703125, 43.0, 153.0, 22.0 ],
+					"text" : "in 4 @comment mod depth"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "modulator input",
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 270.29998779296875, 14.0, 149.0, 22.0 ],
+					"text" : "in 3 @comment modulator"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "decay [0-500]",
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 495.100006103515625, 14.0, 183.0, 22.0 ],
+					"text" : "in 5 @comment decay @min 0.1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 607.5, 43.0, 88.0, 22.0 ],
+					"text" : "SAMPLERATE"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "base frequency",
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 157.899993896484375, 43.0, 178.0, 22.0 ],
+					"text" : "in 2 @comment base frequency"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"code" : "\r\nresonator(input, f,  R, samplerate) {\r\n\t\r\n\tHistory im, re, output;\r\n\tR = R/(1+abs(R));\r\n\tth = f/samplerate*(2*pi);\r\n\tre2 = re;\r\n\r\n\r\n\tre = input + R * cos(th) * re2 - R * sin(th) * im;\r\n\r\n\tim = R * sin(th) * re2 + R * cos(th) * im;\r\n\t\r\n\toutput \t= im;\r\n\t\r\n\t\r\n\treturn output;\r\n}\r\r\nexcitation\t= in1;\r\nbase_freq  \t= in2;\r\nmodulator  \t= in3;\r\nmod_depth  \t= in4;\r\nsamplerate \t= in6;\r\nmod_freq \t= base_freq + mod_depth*base_freq * modulator;\r\ndecay\t\t= 100*in5;\r\n\r\nout1 = resonator(excitation, mod_freq, decay, samplerate);\r\n",
+					"fontface" : 0,
+					"fontname" : "Menlo",
+					"fontsize" : 12.0,
+					"id" : "obj-5",
+					"maxclass" : "codebox",
+					"numinlets" : 6,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 45.5, 74.0, 581.0, 388.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "excitation input",
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 45.5, 14.0, 147.0, 22.0 ],
+					"text" : "in 1 @comment excitation",
+					"varname" : "excitation"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 50.0, 609.0, 35.0, 22.0 ],
+					"text" : "out 1"
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 4 ],
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 3 ],
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 1 ],
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 5 ],
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 2 ],
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+ ],
+		"autosave" : 0
+	}
+
+}

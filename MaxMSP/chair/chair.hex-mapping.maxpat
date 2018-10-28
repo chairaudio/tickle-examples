@@ -53,7 +53,7 @@
 				"box" : 				{
 					"comment" : "hexagon index number",
 					"id" : "obj-58",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -269,8 +269,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 383.0, 499.0, 64.0, 22.0 ],
-					"text" : "0.750.875"
+					"patching_rect" : [ 383.0, 499.0, 65.0, 22.0 ],
+					"text" : "0.75 0.875"
 				}
 
 			}
@@ -293,8 +293,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 224.0, 499.0, 64.0, 22.0 ],
-					"text" : "0.250.875"
+					"patching_rect" : [ 224.0, 499.0, 65.0, 22.0 ],
+					"text" : "0.25 0.875"
 				}
 
 			}
@@ -527,7 +527,7 @@
 				"box" : 				{
 					"comment" : "x+y  float position",
 					"id" : "obj-1",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -919,16 +919,7 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "chair.distance.maxpat",
-				"bootpath" : "~/Workspace/tickle-examples/MaxMSP/chair",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
