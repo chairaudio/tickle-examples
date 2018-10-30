@@ -1,7 +1,7 @@
-#N canvas 813 294 717 801 10;
+#N canvas 797 300 717 801 10;
 #X declare -path chair;
 #X declare -path abstractions;
-#X obj 31 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 31 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 31 104 tickle~;
 #X msg 50 41 info;
@@ -123,12 +123,12 @@
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1275 1;
+-1 -1 2692 1;
 #X obj 103 30 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1417 1;
+-1 -1 850 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1275 1;
+-1 -1 992 1;
 #X obj 103 73 chair.rotary-limit-range 24;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X obj 465 73 chair.rotary-limit-range 24;
@@ -184,6 +184,7 @@
 #X obj 31 438 chair.touchgate~ 1 30;
 #X text 342 118 In this example we ignore the hexagon pads and create
 one continuous surface for sonic exploration.;
+#X obj 506 400 chair.dc-offset~;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
 #X connect 1 1 42 0;
