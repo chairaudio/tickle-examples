@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "dsp.gen",
-		"rect" : [ 634.0, 448.0, 600.0, 450.0 ],
+		"rect" : [ 978.0, 326.0, 600.0, 450.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,54 +39,28 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-13",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 246.0, 68.0, 49.0, 22.0 ],
-					"text" : "dcblock"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 329.0, 414.0, 35.0, 22.0 ],
-					"text" : "out 2"
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 470.0, 29.0, 68.0, 22.0 ],
+					"text" : "samplerate"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"code" : "History x1, y1;\r\ny = in1 - x1 + y1*0.99995;\r\nx1 = in1; y1 = y;\r\nout1 = 200000*(in1-y); ",
+					"code" : "//https://cycling74.com/forums/signal-integrator-with-biquad~-or-gen~\r\nHistory x1, y1;\r\n\r\nhalf_sample_time = (1/in2)/2;\r\ny = half_sample_time*(in1 + x1) + 0.99999999999*y1;\r\ny1 = y;\r\nout = 200*y;\r\n",
 					"fontface" : 0,
 					"fontname" : "Menlo",
 					"fontsize" : 12.0,
 					"id" : "obj-6",
 					"maxclass" : "codebox",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 333.0, 161.0, 315.0, 211.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"code" : "History x1, y1;\r\ny = in1 - x1 + y1*0.9;\r\nx1 = in1; y1 = y;\r\nout1 = y; ",
-					"fontface" : 0,
-					"fontname" : "Menlo",
-					"fontsize" : 12.0,
-					"id" : "obj-5",
-					"maxclass" : "codebox",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 0.0, 172.0, 240.0, 121.0 ]
+					"patching_rect" : [ 78.0, 91.0, 455.0, 241.0 ]
 				}
 
 			}
@@ -97,7 +71,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 50.0, 14.0, 30.0, 22.0 ],
+					"patching_rect" : [ 50.0, 14.0, 28.0, 22.0 ],
 					"text" : "in 1"
 				}
 
@@ -108,7 +82,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 176.0, 418.0, 37.0, 22.0 ],
+					"patching_rect" : [ 176.0, 418.0, 35.0, 22.0 ],
 					"text" : "out 1"
 				}
 
@@ -116,43 +90,26 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-13", 0 ],
-					"order" : 0,
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-5", 0 ],
-					"order" : 1,
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
-					"source" : [ "obj-13", 0 ]
+					"source" : [ "obj-1", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
-					"source" : [ "obj-5", 0 ]
+					"source" : [ "obj-6", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-7", 0 ],
-					"source" : [ "obj-6", 0 ]
+					"destination" : [ "obj-6", 1 ],
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}
- ],
-		"editing_bgcolor" : [ 0.9, 0.9, 0.9, 1.0 ]
+ ]
 	}
 
 }

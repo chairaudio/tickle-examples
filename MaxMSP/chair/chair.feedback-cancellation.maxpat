@@ -39,13 +39,13 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"comment" : "activate",
+					"comment" : "frequency in",
 					"id" : "obj-15",
 					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 280.0, 28.0, 30.0, 30.0 ]
 				}
 
@@ -166,7 +166,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 419.0, 36.0, 30.0, 30.0 ]
 				}
 
