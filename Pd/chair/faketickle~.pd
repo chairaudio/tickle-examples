@@ -1,25 +1,25 @@
-#N canvas 575 173 476 752 10;
+#N canvas 575 181 476 752 10;
 #X declare -path chair;
 #X obj 272 53 declare -path chair;
 #X obj 47 693 outlet~;
 #X obj 99 693 outlet;
 #X obj 99 635 pack f f;
-#X msg 48 198 open tickle_recording_with_data.wav \, 1;
+#X msg 48 233 open tickle_recording_with_data.wav \, 1;
 #X obj 48 52 inlet;
 #X obj 48 138 sel 1 0;
-#X msg 295 198 stop;
-#X obj 117 131 print faketickle~;
-#X msg 117 104 fake tickle for testing;
+#X msg 295 233 stop;
+#X obj 103 139 print faketickle~;
+#X msg 103 112 fake tickle for testing;
 #X obj 48 76 route float info;
-#X obj 161 473 metro 1;
-#X obj 161 409 loadbang;
-#X msg 161 431 1;
-#X obj 161 454 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 161 479 metro 1;
+#X obj 161 415 loadbang;
+#X msg 161 437 1;
+#X obj 161 460 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 99 572 snapshot~;
 #X obj 161 573 snapshot~;
 #X obj 99 605 change;
-#X obj 161 606 change;
+#X obj 161 603 change;
 #X obj 48 480 readsf~ 3;
 #X msg 99 662 position 0 \$1 \$2;
 #X connect 3 0 20 0;
