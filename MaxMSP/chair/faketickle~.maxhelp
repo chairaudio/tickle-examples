@@ -2,13 +2,14 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 5,
+			"major" : 8,
+			"minor" : 0,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
+		"classnamespace" : "box",
 		"rect" : [ 100.0, 100.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -38,12 +39,23 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 222.0, 232.0, 89.0, 22.0 ],
+					"text" : "chair.capsense"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 331.0, 45.0, 45.0 ],
-					"style" : ""
+					"patching_rect" : [ 107.0, 331.0, 45.0, 45.0 ]
 				}
 
 			}
@@ -56,8 +68,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 321.0, 320.0, 50.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 354.0, 320.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -70,8 +81,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 259.0, 320.0, 50.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 292.0, 320.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -82,22 +92,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "float" ],
-					"patching_rect" : [ 259.0, 273.0, 63.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 292.0, 273.0, 63.0, 22.0 ],
 					"text" : "unpack f f"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-10",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 259.0, 238.0, 48.0, 22.0 ],
-					"style" : "",
-					"text" : "route 0"
 				}
 
 			}
@@ -109,8 +105,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 222.0, 354.0, 50.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 222.0, 354.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -118,12 +113,11 @@
 				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 222.0, 197.0, 93.0, 22.0 ],
-					"style" : "",
-					"text" : "route touch pos"
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 222.0, 197.0, 81.0, 22.0 ],
+					"text" : "route position"
 				}
 
 			}
@@ -135,7 +129,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 152.0, 94.0, 30.0, 22.0 ],
-					"style" : "",
 					"text" : "info"
 				}
 
@@ -148,8 +141,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 107.0, 60.0, 24.0, 24.0 ],
-					"style" : ""
+					"patching_rect" : [ 107.0, 60.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -161,7 +153,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
 					"patching_rect" : [ 107.0, 139.0, 68.0, 22.0 ],
-					"style" : "",
 					"text" : "faketickle~"
 				}
 
@@ -192,13 +183,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
-					"source" : [ "obj-10", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
 					"source" : [ "obj-11", 0 ]
 				}
@@ -208,6 +192,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
 					"source" : [ "obj-11", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-2", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}
@@ -227,14 +225,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-10", 0 ],
-					"source" : [ "obj-7", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -242,6 +233,13 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "faketickle~.maxpat",
+				"bootpath" : "C:/chair/tickle-examples/MaxMSP/chair",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "chair.capsense.maxpat",
 				"bootpath" : "C:/chair/tickle-examples/MaxMSP/chair",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
