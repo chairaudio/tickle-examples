@@ -1,25 +1,27 @@
-#N canvas 491 461 779 329 10;
-#X obj 67 186 chair.hex-tuning;
+#N canvas 194 572 779 329 10;
 #X text 231 15 Converts from hexagon ID to a tuning defined in a textfile
 ;
+#X text 232 31 This allows you to define mappings to the hexagon pattern
+;
+#X text 269 149 starts at MIDI note 60;
+#X text 279 175 incomplete isomorphic keyboard \, middle C left bottom
+;
+#X obj 56 182 cnv 15 120 25 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 67 186 chair.hex-tuning;
 #X msg 61 129 0;
 #X msg 91 130 1;
 #X msg 122 130 12;
 #X floatatom 67 220 5 0 0 0 - - -;
-#X text 232 31 This allows you to define mappings to the hexagon pattern
-;
 #X msg 160 99 g_major;
 #X msg 198 124 b_minor;
 #X msg 206 149 chromatic;
-#X text 269 149 starts at MIDI note 60;
 #X msg 210 175 isomorphic;
-#X text 279 175 incomplete isomorphic keyboard \, middle C left bottom
-;
-#X connect 0 0 5 0;
-#X connect 2 0 0 0;
-#X connect 3 0 0 0;
-#X connect 4 0 0 0;
-#X connect 7 0 0 1;
-#X connect 8 0 0 1;
-#X connect 9 0 0 1;
-#X connect 11 0 0 1;
+#X connect 5 0 9 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 10 0 5 1;
+#X connect 11 0 5 1;
+#X connect 12 0 5 1;
+#X connect 13 0 5 1;
