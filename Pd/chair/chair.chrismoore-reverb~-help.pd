@@ -1,4 +1,4 @@
-#N canvas 135 336 926 709 10;
+#N canvas 120 392 926 709 10;
 #X obj 93 345 chair.chrismoore-reverb~;
 #X obj 92 431 dac~;
 #X obj 92 376 chair.stereogain~;
@@ -22,6 +22,8 @@
 #X floatatom 432 277 5 0 0 0 - - -, f 5;
 #X text 421 433 Chris Moore reverb;
 #X text 425 458 Pd Vanilla implementation by Tom Erbe \, 2016;
+#X text 264 346 Arguments work too;
+#X text 263 360 Defaults to 13000 8 13000 8 2.4 0.5;
 #X connect 0 0 2 0;
 #X connect 0 1 2 1;
 #X connect 2 0 1 0;
