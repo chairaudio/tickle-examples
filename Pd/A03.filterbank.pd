@@ -10,12 +10,12 @@
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 708 1;
+-1 -1 0 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2125 1;
+-1 -1 1700 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 992 1;
+-1 -1 0 1;
 #X obj 289 11 loadbang;
 #X msg 289 40 0.5;
 #X obj 103 73 chair.rotary-limit-range 24;
@@ -77,8 +77,8 @@
 #X obj 315 206 chair.hex-mapping;
 #X obj 47 376 r \$0-touch;
 #X obj 32 306 chair.gain~;
-#X obj 227 326 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 227 326 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
+-1 1 1;
 #X floatatom 327 292 5 0 0 0 - - -;
 #X obj 315 269 chair.hex-tuning;
 #X msg 431 205 g_major;
@@ -220,7 +220,7 @@
 #X obj 156 447 line~;
 #X msg 156 425 \$1 10;
 #X obj 156 381 r \$0-vibrato;
-#X text 321 89 Here we have 50 parallel filters shaping the sound.
+#X text 318 119 Here we have 50 parallel filters shaping the sound.
 ;
 #X obj 315 389 change;
 #X obj 444 287 r \$0-updown;
@@ -243,6 +243,13 @@
 #X obj 315 313 chair.transpose-oct -2;
 #X obj 32 349 chair.feedback-cancellation~ 50 1;
 #X obj 32 425 chair.dc-offset~;
+#N canvas 4 181 450 300 init 0;
+#X obj 88 38 loadbang;
+#X msg 88 61 1;
+#X obj 88 84 s \$0-active;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 468 73 pd init;
 #X connect 0 0 60 0;
 #X connect 3 0 60 0;
 #X connect 4 0 11 0;
