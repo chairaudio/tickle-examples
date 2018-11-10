@@ -5,8 +5,8 @@
 ;
 #X obj 44 87 tickle~;
 #X msg 68 39 info;
-#X obj 250 67 declare -path chair;
-#X obj 250 89 declare -path abstractions;
+#X obj 349 38 declare -path chair;
+#X obj 349 60 declare -path abstractions;
 #X obj 43 215 chair.gain~;
 #X obj 43 605 chair.gain~;
 #X obj 42 692 dac~;
@@ -14,8 +14,8 @@
 #X obj 325 259 s \$0-touch;
 #X obj 166 309 r \$0-touch;
 #X obj 44 277 chair.feedback-cancellation~;
-#X obj 209 254 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 209 254 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
+-1 1 1;
 #X obj 406 295 unpack f f;
 #X obj 222 484 line~;
 #X msg 222 462 \$1 20;
@@ -133,12 +133,12 @@ of Nested Comb Filters for Inharmonic Resonator Effects. ICMC 2013
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3196 1;
+-1 -1 3264 1;
 #X obj 103 43 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3332 1;
+-1 -1 3196 1;
 #X obj 160 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2108 1;
+-1 -1 3400 1;
 #X obj 435 0 loadbang;
 #X obj 103 298 outlet;
 #X obj 103 73 chair.rotary-limit-range 50;
@@ -178,30 +178,31 @@ of Nested Comb Filters for Inharmonic Resonator Effects. ICMC 2013
 #X obj 433 348 t f f, f 10;
 #X text 180 128 Rotaries: coefficient1 \, coefficient2 \, delay-length-multiplicator
 ;
-#N canvas 2698 771 676 343 LED 0;
+#N canvas 1104 738 676 343 LED 0;
 #X obj 69 185 outlet;
-#X obj 35 14 r \$0-led0;
-#X obj 144 14 r \$0-led1;
-#X obj 243 9 r \$0-led2;
-#X msg 35 68 led 0 \$1 0 0;
-#X msg 144 71 led 1 0 \$1 0;
-#X msg 243 71 led 2 0 0 \$1;
-#X obj 35 40 change;
-#X obj 144 40 change;
-#X obj 243 39 change;
-#X connect 1 0 7 0;
-#X connect 2 0 8 0;
-#X connect 3 0 9 0;
+#X obj 35 33 r \$0-led0;
+#X obj 144 33 r \$0-led1;
+#X obj 243 28 r \$0-led2;
+#X msg 35 68 led 0 \$1 0 \$1;
+#X msg 243 71 led 2 \$1 \$1 0;
+#X msg 144 71 led 1 0 \$1 \$1;
+#X connect 1 0 4 0;
+#X connect 2 0 6 0;
+#X connect 3 0 5 0;
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
-#X connect 7 0 4 0;
-#X connect 8 0 5 0;
-#X connect 9 0 6 0;
 #X restore 73 60 pd LED;
 #X obj 264 212 route rotary position;
 #X obj 325 238 chair.capsense;
 #X obj 43 336 chair.touchgate~ 1 30;
+#N canvas 1202 590 450 300 init 0;
+#X obj 82 37 loadbang;
+#X msg 82 60 1;
+#X obj 82 83 s \$0-active;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 350 83 pd init;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 1 1 35 0;

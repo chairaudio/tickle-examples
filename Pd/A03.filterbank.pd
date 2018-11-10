@@ -10,12 +10,12 @@
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 283 1;
+-1 -1 2267 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2550 1;
+-1 -1 2125 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1983 1;
+-1 -1 2267 1;
 #X obj 289 11 loadbang;
 #X msg 289 40 0.5;
 #X obj 103 73 chair.rotary-limit-range 24;
@@ -52,7 +52,7 @@
 #X obj 315 184 r \$0-xy;
 #X obj 125 199 s \$0-updown;
 #X obj 468 29 declare -path chair;
-#N canvas 1163 756 676 343 LED 1;
+#N canvas 1163 756 444 232 LED 0;
 #X obj 35 133 outlet;
 #X obj 35 14 r \$0-led0;
 #X obj 144 14 r \$0-led1;

@@ -1,4 +1,4 @@
-#N canvas 204 220 700 886 10;
+#N canvas 795 218 700 886 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X obj 36 29 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
@@ -13,12 +13,12 @@
 #X obj 467 169 s \$0-led2;
 #X obj 110 169 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2196 1;
+-1 -1 2550 1;
 #X obj 102 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1700 1;
+-1 -1 567 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2408 1;
+-1 -1 2550 1;
 #X obj 354 7 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X obj 465 73 chair.rotary-limit-range 24;

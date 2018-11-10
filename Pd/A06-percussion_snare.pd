@@ -1,7 +1,7 @@
-#N canvas 449 474 879 449 10;
+#N canvas 665 507 879 449 10;
 #X declare -path ./abstractions;
 #X declare -path ./chair;
-#X obj 38 64 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 38 11 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 38 87 tickle~;
 #X obj 39 293 chair.dynamics~;
@@ -42,20 +42,26 @@
 -1 -1 0 1;
 #X obj 103 340 s \$0-param-1;
 #X obj 103 237 * 100;
-#X obj 180 238 * 100;
-#X obj 288 238 * 100;
+#X obj 237 238 * 100;
+#X obj 406 239 * 100;
 #X obj 241 340 s \$0-param-2;
 #X obj 400 334 s \$0-param-3;
 #X obj 103 73 chair.rotary-limit-range 96;
 #X obj 283 73 chair.rotary-limit-range 48;
 #X obj 466 73 chair.rotary-limit-range 48;
+#X obj 216 179 s \$0-led1;
+#X obj 405 178 s \$0-led2;
+#X obj 112 173 s \$0-led0;
 #X connect 0 0 2 0;
 #X connect 1 0 6 0;
+#X connect 1 0 16 0;
 #X connect 2 0 11 0;
 #X connect 2 1 12 0;
 #X connect 2 2 13 0;
 #X connect 3 0 7 0;
+#X connect 3 0 14 0;
 #X connect 4 0 8 0;
+#X connect 4 0 15 0;
 #X connect 6 0 5 0;
 #X connect 7 0 9 0;
 #X connect 8 0 10 0;
@@ -243,7 +249,23 @@
 #X obj 413 57 declare -path ./chair;
 #X obj 39 239 chair.feedback-cancellation~;
 #X obj 204 218 tgl 15 0 empty \$0-activate empty 17 7 0 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
+#X msg 50 41 info;
+#N canvas 1168 731 676 343 LED 0;
+#X obj 69 185 outlet;
+#X obj 35 33 r \$0-led0;
+#X obj 144 33 r \$0-led1;
+#X obj 243 28 r \$0-led2;
+#X msg 35 68 led 0 \$1 0 \$1;
+#X msg 243 71 led 2 \$1 \$1 0;
+#X msg 144 71 led 1 0 \$1 \$1;
+#X connect 1 0 4 0;
+#X connect 2 0 6 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X restore 60 64 pd LED;
 #X connect 0 0 1 0;
 #X connect 1 0 17 0;
 #X connect 1 1 7 0;
@@ -258,3 +280,5 @@
 #X connect 12 0 9 0;
 #X connect 17 0 2 0;
 #X connect 18 0 17 2;
+#X connect 19 0 1 0;
+#X connect 20 0 1 0;
