@@ -1,24 +1,24 @@
-#N canvas 520 154 917 901 10;
+#N canvas 520 181 917 901 10;
 #X declare -path chair;
 #X declare -path abstractions;
-#X obj 35 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 36 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
-#X floatatom 366 208 5 0 0 0 - - -, f 5;
+#X floatatom 366 208 5 0 0 0 - - -;
 #N canvas 75 683 664 369 rotaries 0;
 #X obj 102 25 inlet;
-#X floatatom 114 264 5 0 0 0 - - -, f 5;
+#X floatatom 114 264 5 0 0 0 - - -;
 #X obj 283 195 * 9000;
-#X floatatom 294 237 5 0 0 0 - - -, f 5;
+#X floatatom 294 237 5 0 0 0 - - -;
 #X obj 285 168 s \$0-led1;
 #X obj 467 169 s \$0-led2;
 #X obj 110 169 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 283 1;
+-1 -1 2692 1;
 #X obj 102 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2975 1;
+-1 -1 425 1;
 #X obj 159 120 vsl 15 35 0.01 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1540 1;
+-1 -1 1683 1;
 #X obj 354 7 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X obj 465 73 chair.rotary-limit-range 24;
@@ -31,7 +31,7 @@
 #X obj 283 304 s \$0-lp;
 #X obj 467 301 s \$0-timbre;
 #X obj 104 300 s \$0-fb;
-#X floatatom 490 266 5 0 0 0 - - -, f 5;
+#X floatatom 490 266 5 0 0 0 - - -;
 #X obj 467 220 * 2;
 #X connect 0 0 8 0;
 #X connect 2 0 18 0;
@@ -62,8 +62,8 @@
 #X coords 0 -1 1 1 85 60 1 100 100;
 #X restore 130 195 pd rotaries;
 #X obj 438 331 s \$0-midinote;
-#X floatatom 455 237 5 0 0 0 - - -, f 5;
-#X floatatom 454 307 5 0 0 0 - - -, f 5;
+#X floatatom 455 237 5 0 0 0 - - -;
+#X floatatom 454 307 5 0 0 0 - - -;
 #X msg 55 55 info;
 #X obj 38 633 hip~ 4;
 #X obj 156 325 s \$0-xy;
@@ -132,14 +132,18 @@
 #X array \$0-scope 1024 float 0;
 #X coords 0 -1 1023 1 200 140 1 0 0;
 #X restore 395 428 graph;
-#X obj 401 655 tabwrite~ \$0-scope;
-#X obj 401 631 metro 150;
-#X obj 401 609 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
--1 1 1;
+#X obj 403 682 tabwrite~ \$0-scope;
+#X obj 403 658 metro 150;
+#X obj 403 636 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
+-1 0 1;
 #X msg 483 173 chromatic;
 #X obj 483 146 loadbang;
 #X obj 390 376 mtof;
 #X obj 38 514 clone simple-2D-waveguide 1 \$0;
+#X obj 501 601 r \$0-touch;
+#X obj 501 624 sel 1;
+#X obj 501 650 del 10;
+#X floatatom 579 636 5 0 0 0 - - -;
 #X connect 0 0 32 0;
 #X connect 6 0 32 0;
 #X connect 7 0 14 0;
@@ -151,8 +155,7 @@
 #X connect 17 0 30 1;
 #X connect 18 0 30 0;
 #X connect 20 0 42 0;
-#X connect 20 0 7 0;
-#X connect 20 0 36 0;
+#X connect 20 0 38 0;
 #X connect 21 0 22 1;
 #X connect 22 0 5 0;
 #X connect 22 0 3 0;
@@ -175,6 +178,7 @@
 #X connect 34 1 15 0;
 #X connect 36 0 14 1;
 #X connect 37 0 31 0;
+#X connect 38 0 7 0;
 #X connect 38 1 36 0;
 #X connect 40 0 19 0;
 #X connect 43 0 42 0;
@@ -183,3 +187,7 @@
 #X connect 46 0 45 0;
 #X connect 47 0 37 1;
 #X connect 48 0 20 0;
+#X connect 49 0 50 0;
+#X connect 50 0 51 0;
+#X connect 51 0 42 0;
+#X connect 52 0 51 1;
