@@ -14,6 +14,17 @@ https://gitlab.chair.audio/chair-audio/tickle-examples (private)
 and is pushed automatically to 
 https://github.com/chairaudio/tickle-examples
 
+
+## What's included
+
+Currently we ship Pure Data, Max/MSP, Max4Live and Faust (via Pd) examples.
+
+
+## To do
+
+We are continuously extending the examples and welcome contributions very much. We also would like to support more Platforms like SuperCollider, VCV Rack and more. 
+
+
 ## License
 
 These examples are copyright 2018 The Center for Haptic Audio Interaction Research (CHAIR).

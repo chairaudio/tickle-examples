@@ -4,7 +4,7 @@
 #X obj 79 541 outlet~;
 #X obj 201 82 == \$1;
 #X obj 201 50 r \$2-current;
-#X obj 330 17 inlet;
+#X obj 329 17 inlet;
 #X obj 364 95 r \$2-decaytime;
 #X obj 361 157 r \$2-brightness;
 #X obj 362 214 r \$2-pick_position;
