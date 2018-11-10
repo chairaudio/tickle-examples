@@ -1,54 +1,63 @@
-#N canvas 285 185 803 679 10;
-#X obj 17 576 chair.chrismoore-reverb~;
+#N canvas 865 207 803 774 10;
+#X obj 18 617 chair.chrismoore-reverb~;
 #X text 13 16 An index of the abstractions made for the Tickle instrument
 by The Center for Haptic Audio Interaction Research (CHAIR).;
 #X obj 17 94 chair.distance;
-#X obj 15 327 chair.feedback-cancellation~;
-#X obj 16 369 chair.gain~;
-#X obj 17 177 chair.hex-mapping;
-#X obj 17 156 chair.hex-tuning;
-#X obj 16 347 chair.peak-hold~;
-#X obj 17 248 chair.rotary-limit-range;
-#X obj 17 408 chair.stereogain~;
-#X obj 17 198 chair.transpose-oct;
-#X obj 17 596 chair.vfreeverb~;
-#X obj 18 458 faketickle~;
+#X obj 16 368 chair.feedback-cancellation~;
+#X obj 17 410 chair.gain~;
+#X obj 17 204 chair.hex-mapping;
+#X obj 17 183 chair.hex-tuning;
+#X obj 17 388 chair.peak-hold~;
+#X obj 17 265 chair.rotary-limit-range;
+#X obj 18 449 chair.stereogain~;
+#X obj 17 225 chair.transpose-oct;
+#X obj 18 637 chair.vfreeverb~;
+#X obj 19 499 faketickle~;
 #X obj 17 115 chair.gesture;
-#X obj 15 307 chair.dc-offset~;
+#X obj 16 348 chair.dc-offset~;
 #X text 11 55 --------------- MESSAGE ----------------;
-#X text 193 349 - Generate an enveolope signal from a sound input without
+#X text 194 390 - Generate an enveolope signal from a sound input without
 latency, f 67;
-#X text 185 248 - Map the rotary encoders to 0-1 with selectable amount
-of steps., f 67;
-#X text 198 577 - Reverb modelled by Tom Erbe. It's used in the examples
+#X text 199 618 - Reverb modelled by Tom Erbe. It's used in the examples
 ;
-#X text 195 305 - Makes the DC offset of a source signal available
+#X text 196 346 - Makes the DC offset of a source signal available
 as a separate signal to control filters etc., f 96;
-#X text 183 94 - Calculates the distance between two points in an euclidian
+#X text 192 94 - Calculates the distance between two points in an euclidian
 space., f 70;
 #X obj 17 73 chair.angle;
-#X text 182 74 - Calculates the angle between two points in an euclidian
+#X text 191 74 - Calculates the angle between two points in an euclidian
 space., f 70;
-#X text 192 327 - Removes feedback in realtime by frequency-shifting
+#X text 193 368 - Removes feedback in realtime by frequency-shifting
 a signal, f 63;
-#X obj 17 135 chair.cleanposdata;
-#X text 183 135 - Filter individual inplausible touchpad data out,
+#X obj 17 162 chair.cleanposdata;
+#X text 192 162 - Filter individual inplausible touchpad data out,
 f 70;
-#X text 183 114 - Lets you add (simple) gestures on the trackpad.;
-#X text 184 155 - Reads a textfile containing a tuning to match the
+#X text 192 114 - Lets you add (simple) gestures on the trackpad.;
+#X text 193 182 - Reads a textfile containing a tuning to match the
 hexpads to different MIDI notes., f 85;
-#X text 184 175 - Maps the x \, y coordinates to the hexagon pads;
-#X text 184 208 - Transpose MIDI notes up or down an octave;
-#X text 192 416 - Gain control in dB \, stereo version;
-#X text 194 596 - Vanilla Freeverb implementation by Katja Vetter;
-#X text 190 455 - Replace [tickle~] with this abstraction if hardware
+#X text 193 202 - Maps the x \, y coordinates to the hexagon pads;
+#X text 193 235 - Transpose MIDI notes up or down an octave;
+#X text 199 637 - Vanilla Freeverb implementation by Katja Vetter;
+#X text 191 496 - Replace [tickle~] with this abstraction if hardware
 is currently unavailable, f 79;
-#X text 190 479 - Patch to create recordings with the Tickle and to
+#X text 191 520 - Patch to create recordings with the Tickle and to
 be played back by faketickle~, f 83;
-#X obj 17 482 record_tickle~;
-#X text 13 283 --------------- AUDIO ----------------;
-#X text 16 554 --------------- AUDIO FILTERS ----------------;
-#X text 193 372 - Gain control in dB with clipping indicator;
-#X obj 17 505 chair.mtocv~;
-#X text 194 507 - MIDI to (Virtual) Control Voltage converter, f 67
+#X obj 18 523 record_tickle~;
+#X text 14 324 --------------- AUDIO ----------------;
+#X text 17 595 --------------- AUDIO FILTERS ----------------;
+#X text 194 413 - Gain control in dB with clipping indicator;
+#X obj 18 546 chair.mtocv~;
+#X text 195 548 - MIDI to (Virtual) Control Voltage converter, f 67
 ;
+#X text 193 457 - stereo version;
+#X obj 18 658 chair.dynamics~;
+#X text 199 657 - Compressor \, expander \, gate and limiter by Phillip
+Schmalfuß, f 80;
+#X obj 17 287 chair.modifier;
+#X text 194 265 - Map the rotary encoders to 0-1 with selectable amount
+of steps, f 67;
+#X text 194 286 - Check if both buttons (up and down) are pressed simultaneously
+, f 67;
+#X obj 18 138 chair.capsense;
+#X text 193 138 - Generate a touch message from the X \, Y data, f
+70;

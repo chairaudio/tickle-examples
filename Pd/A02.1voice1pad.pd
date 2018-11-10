@@ -1,9 +1,9 @@
-#N canvas 795 218 700 886 10;
+#N canvas 362 149 700 835 10;
 #X declare -path chair;
 #X declare -path abstractions;
-#X obj 36 29 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 36 23 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
-#X floatatom 366 208 5 0 0 0 - - -;
+#X floatatom 366 202 5 0 0 0 - - -;
 #N canvas 75 683 664 369 rotaries 0;
 #X obj 102 25 inlet;
 #X floatatom 136 275 5 0 0 0 - - -;
@@ -13,12 +13,12 @@
 #X obj 467 169 s \$0-led2;
 #X obj 110 169 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2550 1;
+-1 -1 142 1;
 #X obj 102 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 567 1;
+-1 -1 2975 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2550 1;
+-1 -1 1558 1;
 #X obj 354 7 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X obj 465 73 chair.rotary-limit-range 24;
@@ -58,17 +58,17 @@
 #X connect 21 0 1 0;
 #X connect 21 0 17 0;
 #X coords 0 -1 1 1 85 60 1 100 100;
-#X restore 130 195 pd rotaries;
-#X obj 438 331 s \$0-midinote;
-#X floatatom 455 237 5 0 0 0 - - -;
-#X floatatom 454 307 5 0 0 0 - - -;
-#X msg 55 55 info;
-#X obj 40 665 hip~ 4;
-#X obj 156 325 s \$0-xy;
-#X obj 75 325 s \$0-touch;
-#X obj 356 130 r \$0-xy;
-#X obj 185 173 s \$0-updown;
-#X obj 384 22 declare -path chair;
+#X restore 130 189 pd rotaries;
+#X obj 438 325 s \$0-midinote;
+#X floatatom 455 231 5 0 0 0 - - -;
+#X floatatom 454 301 5 0 0 0 - - -;
+#X msg 55 49 info;
+#X obj 40 659 hip~ 4;
+#X obj 156 319 s \$0-xy;
+#X obj 75 319 s \$0-touch;
+#X obj 356 124 r \$0-xy;
+#X obj 185 167 s \$0-updown;
+#X obj 384 16 declare -path chair;
 #N canvas 941 662 464 257 LED 0;
 #X obj 69 185 outlet;
 #X obj 35 33 r \$0-led0;
@@ -83,22 +83,22 @@
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
-#X restore 67 87 pd LED;
-#X obj 39 702 dac~;
-#X obj 438 211 chair.hex-tuning;
-#X obj 356 152 chair.hex-mapping;
-#X obj 131 386 r \$0-touch;
-#X obj 37 360 chair.gain~;
-#X obj 356 234 s \$0-current;
-#X obj 41 552 chair.gain~;
-#X obj 567 236 r \$0-updown;
-#X obj 438 259 chair.transpose-oct -2;
-#X msg 551 173 g_major;
-#X msg 607 173 b_minor;
-#X obj 384 43 declare -path abstractions;
-#X text 124 259 Rotaries:;
-#X obj 75 145 route position rotary button;
-#X obj 75 297 chair.capsense;
+#X restore 67 81 pd LED;
+#X obj 39 696 dac~;
+#X obj 438 205 chair.hex-tuning;
+#X obj 356 146 chair.hex-mapping;
+#X obj 131 380 r \$0-touch;
+#X obj 37 354 chair.gain~;
+#X obj 356 228 s \$0-current;
+#X obj 41 546 chair.gain~;
+#X obj 567 230 r \$0-updown;
+#X obj 438 253 chair.transpose-oct -2;
+#X msg 551 167 g_major;
+#X msg 607 167 b_minor;
+#X obj 384 37 declare -path abstractions;
+#X text 124 253 Rotaries:;
+#X obj 75 139 route position rotary button;
+#X obj 75 291 chair.capsense;
 #N canvas 354 244 463 284 instance-iteration 0;
 #X obj 42 165 outlet;
 #X obj 134 55 r \$0-midinote;
@@ -107,34 +107,34 @@
 #X connect 1 0 3 1;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;
-#X restore 168 492 pd instance-iteration;
-#X obj 38 412 chair.touchgate~;
-#X obj 36 118 tickle~;
-#X obj 234 418 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
+#X restore 169 486 pd instance-iteration;
+#X obj 38 406 chair.touchgate~;
+#X obj 36 112 tickle~;
+#X obj 234 412 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
 -1 1 1;
-#X obj 356 184 t f f;
+#X obj 356 178 t f f;
 #N canvas 864 596 450 300 init 0;
 #X obj 95 66 loadbang;
 #X msg 96 93 1;
 #X obj 96 116 s \$0-active;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X restore 385 66 pd init;
-#X obj 94 668 hip~ 4;
-#X obj 39 443 chair.feedback-cancellation~ 50 1;
+#X restore 385 60 pd init;
+#X obj 94 662 hip~ 4;
+#X obj 39 437 chair.feedback-cancellation~ 50 1;
 #N canvas 0 50 450 300 (subpatch) 0;
 #X array \$0-scope 1024 float 0;
 #X coords 0 -1 1023 1 200 140 1 0 0;
-#X restore 338 472 graph;
-#X obj 130 607 tabwrite~ \$0-scope;
-#X obj 130 583 metro 150;
-#X obj 130 561 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
+#X restore 338 466 graph;
+#X obj 130 601 tabwrite~ \$0-scope;
+#X obj 130 577 metro 150;
+#X obj 130 555 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
 -1 1 1;
-#X obj 40 631 chair.chrismoore-reverb~ 2368 2368 2467 0.921 0.018;
-#X obj 40 517 clone fm-karplus 14 \$0;
-#X obj 471 147 loadbang;
-#X msg 471 173 chromatic;
-#X text 123 274 FM-amount \, Cut-off \, Fm-Freq;
+#X obj 40 625 chair.chrismoore-reverb~ 2368 2368 2467 0.921 0.018;
+#X obj 40 511 clone fm-karplus 14 \$0;
+#X obj 471 141 loadbang;
+#X msg 471 167 chromatic;
+#X text 123 268 FM-amount \, Cut-off \, Fm-Freq;
 #X connect 0 0 31 0;
 #X connect 6 0 31 0;
 #X connect 7 0 14 0;
@@ -174,4 +174,4 @@
 #X connect 42 0 20 0;
 #X connect 43 0 44 0;
 #X connect 44 0 15 1;
-#X coords 0 886 1 885 85 60 0;
+#X coords 0 835 1 834 85 60 0;
