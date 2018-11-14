@@ -1,7 +1,7 @@
-#N canvas 564 174 916 901 10;
+#N canvas 570 168 916 901 10;
 #X declare -path chair;
 #X declare -path abstractions;
-#X obj 36 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 36 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X floatatom 366 208 5 0 0 0 - - -;
 #N canvas 75 683 664 369 rotaries 0;
@@ -13,12 +13,12 @@
 #X obj 467 169 s \$0-led2;
 #X obj 110 169 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 283 1;
+-1 -1 425 1;
 #X obj 102 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2975 1;
+-1 -1 2833 1;
 #X obj 159 120 vsl 15 35 0.01 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1540 1;
+-1 -1 1683 1;
 #X obj 354 7 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X obj 465 73 chair.rotary-limit-range 24;
@@ -144,10 +144,6 @@
 #X obj 501 650 del 10;
 #X floatatom 579 636 5 0 0 0 - - -;
 #X obj 39 588 clone karplus-dispersion 1 \$0;
-#X obj 63 554 click~;
-#X obj 62 528 metro 1000;
-#X obj 61 495 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
 #X floatatom 331 340 5 0 0 0 - - -;
 #X text 151 48 ----- under construction -----;
 #X connect 0 0 32 0;
@@ -175,6 +171,7 @@
 #X connect 28 1 8 0;
 #X connect 29 0 52 1;
 #X connect 30 0 37 0;
+#X connect 31 0 52 0;
 #X connect 32 0 18 0;
 #X connect 32 1 27 0;
 #X connect 33 0 37 2;
@@ -196,7 +193,4 @@
 #X connect 50 0 42 0;
 #X connect 51 0 50 1;
 #X connect 52 0 20 0;
-#X connect 53 0 52 0;
-#X connect 54 0 53 0;
-#X connect 55 0 54 0;
-#X connect 56 0 3 0;
+#X connect 53 0 3 0;
