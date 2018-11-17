@@ -1,4 +1,4 @@
-#N canvas 194 572 779 329 10;
+#N canvas 606 479 779 329 10;
 #X text 231 15 Converts from hexagon ID to a tuning defined in a textfile
 ;
 #X text 232 31 This allows you to define mappings to the hexagon pattern
@@ -17,6 +17,8 @@
 #X msg 198 124 b_minor;
 #X msg 206 149 chromatic;
 #X msg 210 175 isomorphic;
+#X msg 211 202 ratios;
+#X text 264 203 layout based on integer ratios;
 #X connect 5 0 9 0;
 #X connect 6 0 5 0;
 #X connect 7 0 5 0;
@@ -25,3 +27,4 @@
 #X connect 11 0 5 1;
 #X connect 12 0 5 1;
 #X connect 13 0 5 1;
+#X connect 14 0 5 1;

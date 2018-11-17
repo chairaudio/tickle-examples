@@ -1,11 +1,11 @@
-#N canvas 306 638 584 258 10;
+#N canvas 734 501 584 258 10;
 #X obj 203 28 loadbang;
 #X obj 203 50 t b b;
 #X obj 25 208 outlet;
 #X obj 25 28 inlet;
 #X msg 230 75 resize 14;
 #X obj 25 121 array get \$0-tuning 0 1;
-#X obj 203 213 array define \$0-tuning;
+#X obj 203 232 array define \$0-tuning;
 #X obj 426 87 inlet;
 #X msg 426 179 read \$1;
 #X obj 426 156 makefilename %s.txt;
@@ -14,7 +14,8 @@
 #X msg 203 105 read g_major.txt;
 #X msg 233 130 read b_minor.txt;
 #X msg 244 155 read chromatic.txt;
-#X msg 251 179 read isomorphic.txt;
+#X msg 252 178 read isomorphic.txt;
+#X msg 262 200 read isomorphic.txt;
 #X connect 0 0 1 0;
 #X connect 1 0 12 0;
 #X connect 1 1 4 0;
@@ -30,3 +31,4 @@
 #X connect 13 0 6 0;
 #X connect 14 0 6 0;
 #X connect 15 0 6 0;
+#X connect 16 0 6 0;
