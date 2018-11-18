@@ -1,21 +1,21 @@
 #N canvas 414 219 741 756 10;
 #X declare -path chair;
 #X declare -path abstractions;
-#X obj 31 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 31 15 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X floatatom 327 236 5 0 0 0 - - -;
-#N canvas 1252 181 664 838 rotaries 0;
+#N canvas 1127 229 658 388 rotaries 0;
 #X obj 103 25 inlet;
 #X obj 285 180 s \$0-led1;
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2267 1;
+-1 -1 0 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2125 1;
+-1 -1 1700 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2267 1;
+-1 -1 0 1;
 #X obj 289 11 loadbang;
 #X msg 289 40 0.5;
 #X obj 103 73 chair.rotary-limit-range 24;

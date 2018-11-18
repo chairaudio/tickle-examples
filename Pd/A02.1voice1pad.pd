@@ -1,4 +1,4 @@
-#N canvas 362 149 700 835 10;
+#N canvas 362 181 700 835 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X obj 36 23 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
@@ -99,7 +99,7 @@
 #X text 124 253 Rotaries:;
 #X obj 75 139 route position rotary button;
 #X obj 75 291 chair.capsense;
-#N canvas 354 244 463 284 instance-iteration 0;
+#N canvas 354 244 406 282 instance-iteration 0;
 #X obj 42 165 outlet;
 #X obj 134 55 r \$0-midinote;
 #X obj 42 56 r \$0-current;

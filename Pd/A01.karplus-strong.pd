@@ -121,7 +121,7 @@ to the next voice even when the hit is on the same pad., f 38;
 of the same note., f 38;
 #X obj 70 151 route position rotary button;
 #X obj 70 303 chair.capsense;
-#N canvas 394 276 450 712 instance-iteration 0;
+#N canvas 394 276 323 306 instance-iteration 1;
 #X obj 42 230 outlet;
 #X obj 134 55 r \$0-midinote;
 #X obj 42 56 r \$0-current;

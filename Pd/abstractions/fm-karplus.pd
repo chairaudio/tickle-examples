@@ -1,4 +1,4 @@
-#N canvas 2000 410 902 688 10;
+#N canvas 630 409 902 688 10;
 #X declare -path ./chair;
 #X declare -path abstractions;
 #X obj 313 200 /;
@@ -33,7 +33,7 @@
 #X array \$0-mod 1024 float 4;
 #X coords 0 7 1023 0 200 140 1 0 0;
 #X restore 601 345 graph;
-#X obj 496 388 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 496 388 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 457 437 tabwrite~ \$0-osc;
 #X obj 494 409 metro 200;

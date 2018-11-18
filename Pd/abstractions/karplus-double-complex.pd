@@ -1,4 +1,4 @@
-#N canvas 2019 168 855 801 10;
+#N canvas 730 268 855 801 10;
 #X obj 729 71 block~ 1;
 #X obj 35 455 inlet~;
 #X obj 421 268 lop~ 2000;
