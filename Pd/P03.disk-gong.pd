@@ -14,12 +14,12 @@
 #X obj 467 169 s \$0-led2;
 #X obj 110 169 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1842 1;
+-1 -1 1983 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 567 1;
+-1 -1 708 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 142 1;
 #X obj 441 10 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X obj 103 73 chair.rotary-limit-range 24;
@@ -132,6 +132,7 @@ damping (decay) \, but is only updated when rebuilding the network.
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 467 96 pd init;
+#X msg 438 379 ratios;
 #X connect 2 0 3 0;
 #X connect 3 0 37 0;
 #X connect 3 1 45 0;
@@ -174,3 +175,4 @@ damping (decay) \, but is only updated when rebuilding the network.
 #X connect 46 0 9 0;
 #X connect 46 1 8 0;
 #X connect 47 0 44 0;
+#X connect 49 0 27 1;

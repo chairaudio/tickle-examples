@@ -1,7 +1,7 @@
 #N canvas 767 214 728 783 10;
 #X declare -path chair;
 #X declare -path abstractions;
-#X obj 36 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 36 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X floatatom 366 208 5 0 0 0 - - -;
 #N canvas 75 683 664 369 rotaries 0;
@@ -15,9 +15,9 @@
 -1 -1 2408 1;
 #X obj 103 49 route 0 1 2;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2267 1;
+-1 -1 2975 1;
 #X obj 159 120 vsl 15 35 0.01 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1719 1;
+-1 -1 359 1;
 #X obj 354 7 loadbang;
 #X obj 283 73 chair.rotary-limit-range 24;
 #X msg 361 37 20;
@@ -133,12 +133,12 @@
 #X obj 154 643 metro 150;
 #X obj 154 621 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
 -1 1 1;
-#X msg 483 173 chromatic;
 #X obj 483 146 loadbang;
 #X obj 136 471 mtof;
 #X obj 136 449 r \$0-midinote;
 #X obj 356 244 % 5;
 #X obj 38 569 clone 2D-waveguide-allpass 5 \$0;
+#X msg 483 173 ratios;
 #X connect 0 0 32 0;
 #X connect 6 0 32 0;
 #X connect 7 0 14 0;
@@ -162,21 +162,21 @@
 #X connect 27 2 11 0;
 #X connect 28 0 9 0;
 #X connect 28 1 8 0;
-#X connect 29 0 47 1;
+#X connect 29 0 46 1;
 #X connect 30 0 36 0;
-#X connect 31 0 47 0;
+#X connect 31 0 46 0;
 #X connect 32 0 18 0;
 #X connect 32 1 27 0;
 #X connect 33 0 36 2;
 #X connect 34 0 1 0;
-#X connect 34 0 46 0;
+#X connect 34 0 45 0;
 #X connect 34 1 15 0;
 #X connect 36 0 31 0;
 #X connect 40 0 39 0;
 #X connect 41 0 40 0;
-#X connect 42 0 15 1;
-#X connect 43 0 42 0;
-#X connect 44 0 36 1;
-#X connect 45 0 44 0;
-#X connect 46 0 19 0;
-#X connect 47 0 20 0;
+#X connect 42 0 47 0;
+#X connect 43 0 36 1;
+#X connect 44 0 43 0;
+#X connect 45 0 19 0;
+#X connect 46 0 20 0;
+#X connect 47 0 15 1;

@@ -1,6 +1,6 @@
-#N canvas 92 205 1611 835 10;
+#N canvas 129 256 1611 835 10;
 #X declare -path chair;
-#X obj 823 7 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 823 7 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X floatatom 932 434 5 0 0 0 - - -;
 #X msg 841 33 info;
@@ -55,7 +55,7 @@
 #X msg 1074 434 b_minor;
 #X obj 920 590 mtof;
 #X obj 920 537 change;
-#X obj 486 385 bng 25 250 50 0 empty to_digit empty 17 7 0 10 -262140
+#X obj 107 155 bng 25 250 50 0 empty to_digit empty 17 7 0 10 -262140
 -53251 -262144;
 #X obj 1165 674 pack f f;
 #X obj 1165 545 r \$0-xy;
