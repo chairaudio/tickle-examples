@@ -1,4 +1,4 @@
-#N canvas 2966 517 683 504 10;
+#N canvas 1032 452 683 504 10;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-display 4800 float 3;
 #A 0 -0.177979 -0.216797 -0.242065 -0.251953 -0.244263 -0.221191 -0.187866
@@ -1427,45 +1427,45 @@
 0.00320777 0.00319258 0.00317747;
 #X coords 0 1 4800 0 300 140 1 0 0;
 #X restore 337 312 graph;
-#X text 189 46 The peak-hold envelope generator takes the audio signal
-and forms an envelope from it. You can set the decay rate in the second
-inlet.;
 #X text 40 440 Arguments:;
 #X text 63 457 \$1 Decay rate. Defaults to 0.995;
 #X obj 33 344 cnv 15 120 25 empty empty empty 20 12 0 14 -262130 -66577
 0;
-#X obj 199 192 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 199 192 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 188 246 tabwrite~ \$0-display;
-#X obj 42 347 chair.peak-hold~;
 #X obj 199 145 loadbang;
 #X msg 199 168 1;
 #X obj 199 406 tabwrite~ \$0-envelope;
 #X obj 65 221 vsl 15 95 0.99 0.9999 0 0 empty empty empty 0 -9 0 10
--262144 -1 -1 5000 1;
+-262144 -1 -1 0 1;
 #X floatatom 65 324 7 0 0 0 - - -;
 #X obj 43 60 tickle~;
-#X obj 43 37 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 43 37 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 43 118 *~ 12;
 #X obj 199 214 metro 200;
 #X obj 83 82 route position;
 #X obj 83 105 chair.capsense;
 #X obj 83 128 sel 1;
-#X connect 6 0 17 0;
-#X connect 8 0 11 0;
-#X connect 9 0 10 0;
-#X connect 10 0 6 0;
-#X connect 12 0 8 1;
-#X connect 12 0 13 0;
-#X connect 14 0 16 0;
-#X connect 14 1 18 0;
-#X connect 15 0 14 0;
-#X connect 16 0 8 0;
-#X connect 16 0 7 0;
-#X connect 17 0 7 0;
-#X connect 17 0 11 0;
-#X connect 18 0 19 0;
-#X connect 19 0 20 0;
-#X connect 20 0 7 0;
-#X connect 20 0 11 0;
+#X obj 42 347 chair.peak-env~;
+#X text 189 46 The peak-envelope generator takes the audio signal and
+forms an envelope from it. You can set the decay rate in the second
+inlet.;
+#X connect 5 0 15 0;
+#X connect 7 0 8 0;
+#X connect 8 0 5 0;
+#X connect 10 0 11 0;
+#X connect 10 0 19 1;
+#X connect 12 0 14 0;
+#X connect 12 1 16 0;
+#X connect 13 0 12 0;
+#X connect 14 0 6 0;
+#X connect 14 0 19 0;
+#X connect 15 0 6 0;
+#X connect 15 0 9 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 6 0;
+#X connect 18 0 9 0;
+#X connect 19 0 9 0;

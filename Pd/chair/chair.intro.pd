@@ -7,7 +7,6 @@ by The Center for Haptic Audio Interaction Research (CHAIR).;
 #X obj 17 410 chair.gain~;
 #X obj 17 204 chair.hex-mapping;
 #X obj 17 183 chair.hex-tuning;
-#X obj 17 388 chair.peak-hold~;
 #X obj 17 265 chair.rotary-limit-range;
 #X obj 18 449 chair.stereogain~;
 #X obj 17 225 chair.transpose-oct;
@@ -61,3 +60,4 @@ of steps, f 67;
 #X obj 18 138 chair.capsense;
 #X text 193 138 - Generate a touch message from the X \, Y data, f
 70;
+#X obj 17 388 chair.peak-env~;
