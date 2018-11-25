@@ -269,10 +269,10 @@
 #X obj 446 253 ez.loadImage \$0-mask;
 #X obj 266 349 ez.drawImage \$0-tickle 0 0 -0.001;
 #X obj 265 441 ez.drawImage \$0-mask 0 0 0;
-#X floatatom 646 276 5 0 0 0 - - -;
-#X text 686 277 0: fail \, 1: success.;
-#X obj 646 255 ez.loadImage \$0-knob;
-#X msg 646 234 load knob.tiff;
+#X floatatom 624 276 5 0 0 0 - - -;
+#X text 664 277 0: fail \, 1: success.;
+#X obj 624 255 ez.loadImage \$0-knob;
+#X msg 624 234 load knob.tiff;
 #X obj 266 323 of.draw 30;
 #X obj 265 387 of.draw 50;
 #X msg 18 27 setPosition 30 100 \, setSize 791 650 \, title CHAIR \,
