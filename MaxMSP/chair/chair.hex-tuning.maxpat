@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 801.0, 274.0, 640.0, 480.0 ],
+		"rect" : [ 864.0, 461.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,13 +39,13 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-11",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 218.0, 204.0, 65.0, 22.0 ],
-					"text" : "read ratios"
+					"id" : "obj-12",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 224.0, 271.0, 257.0, 60.0 ],
+					"text" : "Note:\nThe table object in Max only stores integers, so Max users unfortunately can't use microtuning scales using this abstraction."
 				}
 
 			}
@@ -125,7 +125,7 @@
 				"box" : 				{
 					"comment" : "set mapping",
 					"id" : "obj-4",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -136,7 +136,7 @@
 			}
 , 			{
 				"box" : 				{
-					"editor_rect" : [ 100.0, 100.0, 300.0, 300.0 ],
+					"editor_rect" : [ 100.0, 100.0, 601.0, 326.0 ],
 					"embed" : 0,
 					"id" : "obj-3",
 					"maxclass" : "newobj",
@@ -146,15 +146,15 @@
 					"patching_rect" : [ 41.0, 277.0, 102.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
-						"name" : "1004-tuning",
+						"name" : "#0-tuning",
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
 						"range" : 128,
 						"showeditor" : 0,
-						"size" : 14
+						"size" : 19
 					}
 ,
-					"showeditor" : 0,
+					"showeditor" : 1,
 					"text" : "table #0-tuning"
 				}
 
@@ -163,7 +163,7 @@
 				"box" : 				{
 					"comment" : "",
 					"id" : "obj-2",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -175,7 +175,7 @@
 				"box" : 				{
 					"comment" : "MIDI note number",
 					"id" : "obj-1",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -196,13 +196,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-10", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-3", 0 ],
-					"source" : [ "obj-11", 0 ]
 				}
 
 			}
@@ -255,7 +248,16 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "g_major",
+				"bootpath" : "C:/chair/tickle-examples/MaxMSP/chair",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0
 	}
 
 }
