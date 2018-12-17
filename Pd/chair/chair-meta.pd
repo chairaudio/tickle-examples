@@ -1,7 +1,5 @@
-#N canvas 964 61 803 774 10;
-#X obj 17 646 chair.chrismoore-reverb~;
-#X text 13 16 An index of the abstractions made for the Tickle instrument
-by The Center for Haptic Audio Interaction Research (CHAIR).;
+#N canvas 221 247 834 838 10;
+#X obj 18 668 chair.chrismoore-reverb~;
 #X obj 17 94 chair.distance;
 #X obj 15 388 chair.feedback-cancellation~;
 #X obj 15 451 chair.gain~;
@@ -10,16 +8,16 @@ by The Center for Haptic Audio Interaction Research (CHAIR).;
 #X obj 16 285 chair.rotary-limit-range;
 #X obj 16 490 chair.stereogain~;
 #X obj 16 245 chair.transpose-oct;
-#X obj 17 666 chair.vfreeverb~;
-#X obj 17 540 faketickle~;
+#X obj 18 688 chair.vfreeverb~;
+#X obj 18 562 faketickle~;
 #X obj 17 115 chair.gesture;
 #X obj 15 368 chair.dc-offset~;
 #X text 11 55 --------------- MESSAGE ----------------;
 #X text 193 410 - Generate an enveolope signal from a sound input without
 latency, f 67;
-#X text 198 647 - Reverb modelled by Tom Erbe. It's used in the examples
+#X text 199 669 - Reverb modelled by Tom Erbe. It's used in the examples
 ;
-#X text 195 366 - Makes the DC offset of a source signal available
+#X text 192 366 - Makes the DC offset of a source signal available
 as a separate signal to control filters etc., f 96;
 #X obj 17 73 chair.angle;
 #X text 192 388 - Removes feedback in realtime by frequency-shifting
@@ -29,21 +27,21 @@ a signal, f 63;
 f 70;
 #X text 192 222 - Maps the x \, y coordinates to the hexagon pads;
 #X text 192 255 - Transpose MIDI notes up or down an octave;
-#X text 198 666 - Vanilla Freeverb implementation by Katja Vetter;
-#X text 190 537 - Replace [tickle~] with this abstraction if hardware
+#X text 199 688 - Vanilla Freeverb implementation by Katja Vetter;
+#X text 191 559 - Replace [tickle~] with this abstraction if hardware
 is currently unavailable, f 79;
-#X text 190 561 - Patch to create recordings with the Tickle and to
+#X text 191 583 - Patch to create recordings with the Tickle and to
 be played back by faketickle~, f 83;
-#X obj 16 564 record_tickle~;
+#X obj 17 586 record_tickle~;
 #X text 13 344 --------------- AUDIO ----------------;
-#X text 16 624 --------------- AUDIO FILTERS ----------------;
+#X text 17 646 --------------- AUDIO FILTERS ----------------;
 #X text 193 454 - Gain control in dB with clipping indicator;
-#X obj 16 587 chair.mtocv~;
-#X text 194 589 - MIDI to (Virtual) Control Voltage converter, f 67
+#X obj 17 609 chair.mtocv~;
+#X text 195 611 - MIDI to (Virtual) Control Voltage converter, f 67
 ;
 #X text 192 498 - stereo version;
-#X obj 17 687 chair.dynamics~;
-#X text 198 686 - Compressor \, expander \, gate and limiter by Phillip
+#X obj 18 709 chair.dynamics~;
+#X text 199 708 - Compressor \, expander \, gate and limiter by Phillip
 Schmalfuß, f 80;
 #X obj 16 307 chair.modifier;
 #X text 193 285 - Map the rotary encoders to 0-1 with selectable amount
@@ -57,7 +55,6 @@ of steps, f 67;
 #X obj 15 430 chair.touchgate~;
 #X text 193 431 - Gate a signal (fade in/out times settable), f 67
 ;
-#X text 192 114 - Lets you add (simple) gestures on the trackpad;
 #X text 192 94 - Calculates the distance between two points in an euclidian
 space, f 70;
 #X text 191 74 - Calculates the angle between two points in an euclidian
@@ -66,3 +63,10 @@ space, f 70;
 hexpads to different MIDI notes, f 85;
 #X obj 17 136 chair.gesture;
 #X text 192 135 - Measure speed of gesture;
+#X text 192 114 - Lets you add (simple) gestures on the instrument
+surface;
+#X obj 17 537 tickle~;
+#X text 189 531 - External to communicate with the Tickle hardware
+, f 79;
+#X text 13 16 An index of the objects made for the Tickle instrument
+by The Center for Haptic Audio Interaction Research (CHAIR).;
