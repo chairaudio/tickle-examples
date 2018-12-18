@@ -1,59 +1,59 @@
-#N canvas 221 247 834 838 10;
-#X obj 18 668 chair.chrismoore-reverb~;
+#N canvas 1047 180 834 838 10;
+#X obj 18 680 chair.chrismoore-reverb~;
 #X obj 17 94 chair.distance;
-#X obj 15 388 chair.feedback-cancellation~;
-#X obj 15 451 chair.gain~;
+#X obj 15 400 chair.feedback-cancellation~;
+#X obj 15 463 chair.gain~;
 #X obj 16 224 chair.hex-mapping;
 #X obj 16 203 chair.hex-tuning;
-#X obj 16 285 chair.rotary-limit-range;
-#X obj 16 490 chair.stereogain~;
-#X obj 16 245 chair.transpose-oct;
-#X obj 18 688 chair.vfreeverb~;
-#X obj 18 562 faketickle~;
+#X obj 16 306 chair.rotary-limit-range;
+#X obj 16 502 chair.stereogain~;
+#X obj 16 266 chair.transpose-oct;
+#X obj 18 700 chair.vfreeverb~;
+#X obj 18 574 faketickle~;
 #X obj 17 115 chair.gesture;
-#X obj 15 368 chair.dc-offset~;
+#X obj 15 380 chair.dc-offset~;
 #X text 11 55 --------------- MESSAGE ----------------;
-#X text 193 410 - Generate an enveolope signal from a sound input without
+#X text 193 422 - Generate an enveolope signal from a sound input without
 latency, f 67;
-#X text 199 669 - Reverb modelled by Tom Erbe. It's used in the examples
+#X text 199 681 - Reverb modelled by Tom Erbe. It's used in the examples
 ;
-#X text 192 366 - Makes the DC offset of a source signal available
+#X text 192 378 - Makes the DC offset of a source signal available
 as a separate signal to control filters etc., f 96;
 #X obj 17 73 chair.angle;
-#X text 192 388 - Removes feedback in realtime by frequency-shifting
+#X text 192 400 - Removes feedback in realtime by frequency-shifting
 a signal, f 63;
 #X obj 16 182 chair.cleanposdata;
 #X text 191 182 - Filter individual inplausible touchpad data out,
 f 70;
 #X text 192 222 - Maps the x \, y coordinates to the hexagon pads;
-#X text 192 255 - Transpose MIDI notes up or down an octave;
-#X text 199 688 - Vanilla Freeverb implementation by Katja Vetter;
-#X text 191 559 - Replace [tickle~] with this abstraction if hardware
+#X text 192 276 - Transpose MIDI notes up or down an octave;
+#X text 199 700 - Vanilla Freeverb implementation by Katja Vetter;
+#X text 191 571 - Replace [tickle~] with this abstraction if hardware
 is currently unavailable, f 79;
-#X text 191 583 - Patch to create recordings with the Tickle and to
+#X text 191 595 - Patch to create recordings with the Tickle and to
 be played back by faketickle~, f 83;
-#X obj 17 586 record_tickle~;
-#X text 13 344 --------------- AUDIO ----------------;
-#X text 17 646 --------------- AUDIO FILTERS ----------------;
-#X text 193 454 - Gain control in dB with clipping indicator;
-#X obj 17 609 chair.mtocv~;
-#X text 195 611 - MIDI to (Virtual) Control Voltage converter, f 67
+#X obj 17 598 record_tickle~;
+#X text 13 356 --------------- AUDIO ----------------;
+#X text 17 658 --------------- AUDIO FILTERS ----------------;
+#X text 193 466 - Gain control in dB with clipping indicator;
+#X obj 17 621 chair.mtocv~;
+#X text 195 623 - MIDI to (Virtual) Control Voltage converter, f 67
 ;
-#X text 192 498 - stereo version;
-#X obj 18 709 chair.dynamics~;
-#X text 199 708 - Compressor \, expander \, gate and limiter by Phillip
+#X text 192 510 - stereo version;
+#X obj 18 721 chair.dynamics~;
+#X text 199 720 - Compressor \, expander \, gate and limiter by Phillip
 Schmalfuß, f 80;
-#X obj 16 307 chair.modifier;
-#X text 193 285 - Map the rotary encoders to 0-1 with selectable amount
+#X obj 16 328 chair.modifier;
+#X text 193 306 - Map the rotary encoders to 0-1 with selectable amount
 of steps, f 67;
-#X text 193 306 - Check if both buttons (up and down) are pressed simultaneously
+#X text 193 327 - Check if both buttons (up and down) are pressed simultaneously
 , f 67;
 #X obj 17 158 chair.capsense;
 #X text 192 158 - Generate a touch message from the X \, Y data, f
 70;
-#X obj 15 408 chair.peak-env~;
-#X obj 15 430 chair.touchgate~;
-#X text 193 431 - Gate a signal (fade in/out times settable), f 67
+#X obj 15 420 chair.peak-env~;
+#X obj 15 442 chair.touchgate~;
+#X text 193 443 - Gate a signal (fade in/out times settable), f 67
 ;
 #X text 192 94 - Calculates the distance between two points in an euclidian
 space, f 70;
@@ -65,8 +65,11 @@ hexpads to different MIDI notes, f 85;
 #X text 192 135 - Measure speed of gesture;
 #X text 192 114 - Lets you add (simple) gestures on the instrument
 surface;
-#X obj 17 537 tickle~;
-#X text 189 531 - External to communicate with the Tickle hardware
+#X obj 17 549 tickle~;
+#X text 189 543 - External to communicate with the Tickle hardware
 , f 79;
 #X text 13 16 An index of the objects made for the Tickle instrument
 by The Center for Haptic Audio Interaction Research (CHAIR).;
+#X obj 16 245 chair.hex-hold;
+#X text 192 245 - Blocks note changes when no new touch is detected
+to allow larger gestures, f 77;
