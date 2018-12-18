@@ -1,4 +1,4 @@
-#N canvas 2005 507 608 520 10;
+#N canvas 2161 512 768 576 10;
 #X obj 25 243 outlet;
 #X obj 25 28 inlet;
 #X obj 118 30 inlet;
@@ -25,8 +25,15 @@
 #X msg 184 109 chromatic;
 #X msg 173 84 b_minor;
 #X msg 159 58 g_major;
-#X obj 31 447 text define -k custom;
+#X obj 371 335 text define -k custom1;
 #A set;
+#X obj 231 335 text define -k custom0;
+#A set;
+#X obj 511 335 text define -k custom2;
+#A set;
+#X obj 231 311 r custom-hex-tuning-0;
+#X obj 371 310 r custom-hex-tuning-1;
+#X obj 511 309 r custom-hex-tuning-2;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 3;
@@ -36,3 +43,6 @@
 #X connect 12 0 3 0;
 #X connect 13 0 3 0;
 #X connect 14 0 3 0;
+#X connect 18 0 16 0;
+#X connect 19 0 15 0;
+#X connect 20 0 17 0;
