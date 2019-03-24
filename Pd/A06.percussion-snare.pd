@@ -1,13 +1,13 @@
-#N canvas 61 139 879 449 10;
+#N canvas 61 139 478 478 10;
 #X declare -path ./abstractions;
 #X declare -path ./chair;
 #N canvas 417 210 646 397 rotaries 0;
 #X obj 103 119 vsl 15 35 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3400 1;
+-1 -1 1660 1;
 #X obj 130 119 vsl 15 35 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2222 1;
+-1 -1 2517 1;
 #X obj 159 119 vsl 15 35 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1392 1;
+-1 -1 1928 1;
 #X obj 40 240 s \$0-param-1;
 #X obj 142 241 s \$0-param-2;
 #X obj 244 241 s \$0-param-3;
@@ -21,10 +21,10 @@
 #X connect 7 0 1 0;
 #X connect 8 0 2 0;
 #X coords 0 -1 1 1 85 60 1 100 100;
-#X restore 145 308 pd rotaries;
+#X restore 40 89 pd rotaries;
 #X obj 39 308 chair.gain~;
 #X obj 39 401 dac~;
-#N canvas 545 23 679 855 snare 1;
+#N canvas 545 23 679 855 snare 0;
 #X obj 45 26 inlet~;
 #X obj 163 785 *~ 0.98;
 #X obj 46 806 +~;
@@ -190,11 +190,11 @@
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
 #X connect 6 0 5 0;
-#X restore 412 79 pd init;
-#X text 199 194 rotaries: 1: drumhead tuning \, 2: snare carpet \,
-3: filter;
-#X obj 413 36 declare -path ./abstractions;
-#X obj 413 57 declare -path ./chair;
+#X restore 189 128 pd init;
+#X text 37 163 rotaries: 1: drumhead tuning \, 2: snare carpet \, 3:
+filter;
+#X obj 190 85 declare -path ./abstractions;
+#X obj 190 106 declare -path ./chair;
 #X obj 39 239 chair.feedback-cancellation~;
 #X obj 204 218 tgl 15 0 empty \$0-activate empty 17 7 0 10 -262144
 -1 -1 1 1;
@@ -207,7 +207,7 @@
 #X connect 1 0 3 0;
 #X connect 2 0 3 1;
 #X connect 3 0 0 0;
-#X restore 249 110 pd position;
+#X restore 39 54 pd position;
 #X connect 1 0 2 0;
 #X connect 1 0 2 1;
 #X connect 3 0 1 0;
