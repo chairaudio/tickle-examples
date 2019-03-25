@@ -11,13 +11,13 @@
 #X obj 31 709 dac~;
 #X obj 33 658 chair.vfreeverb~;
 #X obj 77 680 hip~ 4;
-#N canvas 462 236 646 397 rotaries 1;
+#N canvas 462 236 646 397 rotaries 0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3400 1;
+-1 -1 482 1;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3400 1;
+-1 -1 134 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3400 1;
+-1 -1 161 1;
 #X obj 241 340 s \$0-roomsize;
 #X obj 400 334 s \$0-subharmonics;
 #X obj 103 340 s \$0-fundamental;

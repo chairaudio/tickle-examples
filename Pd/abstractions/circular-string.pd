@@ -1,4 +1,4 @@
-#N canvas 2407 177 674 871 10;
+#N canvas 766 23 674 855 10;
 #X obj 33 658 pmpd~ 1 1;
 #X msg 407 620 reset;
 #X obj 222 467 + 1;
@@ -40,7 +40,7 @@
 #X obj 419 462 r \$2-damping;
 #X text 250 31 We need \$0 from the parent patch passed into the abstraction
 via the \$2 argument.;
-#X msg 98 383 1 1;
+#X msg 98 383 1 5;
 #X connect 0 0 31 0;
 #X connect 1 0 0 0;
 #X connect 2 0 19 0;
