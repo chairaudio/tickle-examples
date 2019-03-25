@@ -1,13 +1,13 @@
-#N canvas 61 139 478 478 10;
+#N canvas 814 203 478 478 10;
 #X declare -path ./abstractions;
 #X declare -path ./chair;
 #N canvas 417 210 646 397 rotaries 0;
 #X obj 103 119 vsl 15 35 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1660 1;
+-1 -1 0 1;
 #X obj 130 119 vsl 15 35 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2517 1;
+-1 -1 0 1;
 #X obj 159 119 vsl 15 35 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1928 1;
+-1 -1 0 1;
 #X obj 40 240 s \$0-param-1;
 #X obj 142 241 s \$0-param-2;
 #X obj 244 241 s \$0-param-3;
@@ -199,14 +199,18 @@ filter;
 #X obj 204 218 tgl 15 0 empty \$0-activate empty 17 7 0 10 -262144
 -1 -1 1 1;
 #X obj 39 206 adc~;
-#N canvas 0 23 450 300 position 0;
+#N canvas 0 23 450 300 position 1;
 #X obj 47 121 s \$0-xy;
-#X obj 36 63 ctlin 12;
-#X obj 107 63 ctlin 13;
+#X obj 36 36 ctlin 12;
+#X obj 107 36 ctlin 13;
 #X obj 46 96 pack 0 0;
-#X connect 1 0 3 0;
-#X connect 2 0 3 1;
+#X obj 44 67 / 127;
+#X obj 103 67 / 127;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
 #X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
 #X restore 39 54 pd position;
 #X connect 1 0 2 0;
 #X connect 1 0 2 1;

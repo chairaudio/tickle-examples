@@ -1,4 +1,4 @@
-#N canvas 210 152 699 726 10;
+#N canvas 652 243 699 726 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #N canvas 203 461 664 369 rotaries 0;
@@ -17,11 +17,11 @@
 #X obj 103 298 s \$0-fm-amount;
 #X obj 103 232 * 2;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 937 1;
+-1 -1 535 1;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1499 1;
+-1 -1 1794 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1580 1;
+-1 -1 2302 1;
 #X obj 468 306 s \$0-timbre;
 #X obj 86 29 ctlin 14 1;
 #X obj 154 29 ctlin 15 1;
@@ -111,8 +111,8 @@ of the same note., f 38;
 #X connect 21 0 8 0;
 #X connect 22 0 25 0;
 #X connect 22 1 25 1;
+#X connect 22 1 27 0;
 #X connect 23 0 3 0;
 #X connect 25 0 1 0;
-#X connect 25 0 27 0;
 #X connect 26 0 24 0;
 #X connect 27 0 26 0;
