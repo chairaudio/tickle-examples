@@ -2,12 +2,12 @@
 #X declare -path ./abstractions;
 #X declare -path ./chair;
 #X obj 451 69 hsl 128 15 0 300 0 0 empty \$0-param-4 empty -2 -8 0
-10 -262144 -1 -1 5976 1;
+10 -262144 -1 -1 6350 1;
 #X obj 448 111 s \$0-lowdamp;
 #X floatatom 448 89 5 0 0 0 - - -;
 #X obj 450 178 s \$0-highdamp;
 #X obj 453 132 hsl 128 15 6000 200 0 0 empty \$0-param-5 empty -2 -8
-0 10 -262144 -1 -1 2540 1;
+0 10 -262144 -1 -1 5080 1;
 #X floatatom 450 152 5 0 0 0 - - -;
 #X obj 453 199 hsl 128 15 70 99.9 0 0 empty \$0-param-6 empty -2 -8
 0 10 -262144 -1 -1 12065 1;
@@ -181,11 +181,11 @@
 #X obj 29 344 chair.feedback-cancellation~;
 #X obj 196 325 tgl 15 0 empty \$0-activate empty 17 7 0 10 -262144
 -1 -1 1 1;
-#N canvas 277 285 646 397 rotaries2 1;
+#N canvas 277 285 646 397 rotaries2 0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1600 1;
+-1 -1 1700 1;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 680 1;
+-1 -1 1360 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 3230 1;
 #X obj 216 179 s \$0-led1;
@@ -224,11 +224,11 @@
 #X restore 123 187 pd rotaries2;
 #N canvas 346 390 646 397 rotaries1 0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3400 1;
+-1 -1 1392 1;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1046 1;
+-1 -1 2302 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2750 1;
+-1 -1 2061 1;
 #X obj 103 340 s \$0-param-1;
 #X obj 103 237 * 100;
 #X obj 180 238 * 100;
@@ -261,7 +261,6 @@
 #X connect 17 0 2 0;
 #X coords 0 -1 1 1 85 60 1 100 100;
 #X restore 30 188 pd rotaries1;
-#X obj 29 300 adc~;
 #N canvas 0 23 450 300 position 0;
 #X obj 47 121 s \$0-xy;
 #X obj 36 36 ctlin 12;
@@ -275,6 +274,7 @@
 #X connect 4 0 3 0;
 #X connect 5 0 3 1;
 #X restore 34 143 pd position;
+#X obj 29 300 adc~ 1;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X connect 4 0 5 0;
@@ -290,4 +290,4 @@
 #X connect 20 0 22 0;
 #X connect 26 0 9 0;
 #X connect 27 0 26 2;
-#X connect 30 0 26 0;
+#X connect 31 0 26 0;
