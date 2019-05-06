@@ -1,4 +1,4 @@
-#N canvas 351 71 741 756 10;
+#N canvas 674 270 741 756 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #N canvas 439 224 658 388 rotaries 0;
@@ -6,11 +6,11 @@
 #X obj 474 179 s \$0-led2;
 #X obj 112 173 s \$0-led0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1499 1;
+-1 -1 241 1;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3400 1;
+-1 -1 3025 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3373 1;
+-1 -1 2811 1;
 #X obj 289 11 loadbang;
 #X msg 289 40 0.5;
 #X obj 286 256 * 50;
@@ -45,15 +45,15 @@
 #X obj 32 683 hip~ 4;
 #X obj 468 29 declare -path chair;
 #X obj 32 711 dac~;
-#X obj 32 306 chair.gain~;
-#X obj 227 326 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
+#X obj 32 263 chair.gain~;
+#X obj 227 283 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
 -1 1 1;
-#X obj 347 478 s \$0-start-freq;
-#X obj 368 422 s \$0-end-freq;
-#X obj 543 317 s \$0-q-start;
-#X floatatom 543 297 5 0 0 0 - - -;
-#X msg 389 342 50;
-#X msg 427 342 100;
+#X obj 293 451 s \$0-start-freq;
+#X obj 313 424 s \$0-end-freq;
+#X obj 439 317 s \$0-q-start;
+#X floatatom 439 297 5 0 0 0 - - -;
+#X msg 334 362 50;
+#X msg 372 362 100;
 #X obj 113 543 +~;
 #X obj 197 546 +~;
 #X obj 112 448 osc~ 5;
@@ -169,10 +169,10 @@
 0.735715;
 #X coords 0 1 50 0 200 140 1 0 0;
 #X restore 929 257 graph;
-#X restore 547 358 pd tables;
-#X obj 368 379 * 50;
-#X obj 543 255 loadbang;
-#X msg 543 276 3;
+#X restore 443 358 pd tables;
+#X obj 313 399 * 50;
+#X obj 439 255 loadbang;
+#X msg 439 276 3;
 #X obj 155 468 lop~ 10;
 #X obj 156 402 * 30;
 #X obj 156 447 line~;
@@ -186,12 +186,12 @@
 #X text 29 144 Rotaries:;
 #X obj 84 683 hip~ 4;
 #X obj 214 472 line~;
-#X msg 214 438 \$1 5;
-#X obj 211 525 *~ 100;
+#X msg 214 449 \$1 5;
+#X obj 212 522 *~ 100;
 #X obj 33 652 chair.vfreeverb~;
 #X obj 32 598 chair.gain~;
-#X obj 32 349 chair.feedback-cancellation~ 50 1;
-#X obj 32 425 chair.dc-offset~;
+#X obj 32 306 chair.feedback-cancellation~ 50 1;
+#X obj 32 337 chair.dc-offset~;
 #N canvas 4 181 450 300 init 0;
 #X obj 88 38 loadbang;
 #X msg 88 61 1;
@@ -199,16 +199,17 @@
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 468 73 pd init;
-#X obj 346 246 notein 1;
-#X obj 346 339 mtof;
-#X obj 346 279 stripnote;
-#X obj 272 441 bendin;
-#X obj 272 516 sig~;
-#X obj 272 491 * 300;
+#X obj 274 252 notein 1;
+#X obj 274 311 mtof;
+#X obj 274 285 stripnote;
+#X obj 59 451 bendin;
+#X obj 59 526 sig~;
+#X obj 59 501 * 300;
 #X obj 32 208 adc~ 1;
-#X obj 208 503 +~;
-#X floatatom 317 388 5 0 0 0 - - -;
-#X obj 272 466 / 16383;
+#X obj 213 498 +~;
+#X floatatom 314 329 5 0 0 0 - - -;
+#X obj 59 476 / 16383;
+#X obj 274 374 t f f f;
 #X connect 1 0 3 0;
 #X connect 4 0 36 0;
 #X connect 5 0 36 2;
@@ -241,10 +242,8 @@
 #X connect 37 0 27 0;
 #X connect 39 0 41 0;
 #X connect 39 1 41 1;
-#X connect 40 0 17 0;
-#X connect 40 0 6 0;
-#X connect 40 0 32 0;
 #X connect 40 0 47 0;
+#X connect 40 0 49 0;
 #X connect 41 0 40 0;
 #X connect 42 0 48 0;
 #X connect 43 0 12 0;
@@ -254,3 +253,6 @@
 #X connect 46 0 33 0;
 #X connect 46 0 12 1;
 #X connect 48 0 44 0;
+#X connect 49 0 32 0;
+#X connect 49 1 6 0;
+#X connect 49 2 17 0;

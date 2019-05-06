@@ -1,16 +1,16 @@
-#N canvas 111 68 897 742 10;
+#N canvas 709 285 897 742 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X declare -lib pmpd;
-#X obj 468 29 declare -path chair;
-#X obj 468 51 declare -path abstractions;
+#X obj 436 21 declare -path chair;
+#X obj 436 43 declare -path abstractions;
 #N canvas 366 406 652 389 rotaries 0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1633 1;
+-1 -1 0 1;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 696 1;
+-1 -1 321 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2008 1;
+-1 -1 80 1;
 #X obj 441 10 loadbang;
 #X obj 103 298 s \$0-invol;
 #X obj 103 232 * 60;
@@ -45,53 +45,53 @@
 #X connect 17 0 15 0;
 #X connect 18 0 16 0;
 #X coords 0 -1 1 1 85 60 1 100 100;
-#X restore 50 100 pd rotaries;
-#X obj 31 641 hip~ 4;
-#X obj 30 675 dac~;
-#X obj 196 401 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
+#X restore 37 76 pd rotaries;
+#X obj 32 570 hip~ 4;
+#X obj 31 604 dac~;
+#X obj 197 330 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
 -1 1 1;
-#X obj 31 425 chair.feedback-cancellation~;
-#X obj 96 324 r \$0-invol;
-#X obj 468 74 declare -lib pmpd;
-#X text 470 208 In this example we are using the Physical Modelling
+#X obj 32 354 chair.feedback-cancellation~;
+#X obj 97 253 r \$0-invol;
+#X obj 436 66 declare -lib pmpd;
+#X text 433 226 In this example we are using the Physical Modelling
 for Pure Data (pmpd) library \, and in particular the pmpd~-object
 to create pysical simulations of resonators.;
-#X text 468 354 The right rotary has no function in this patch.;
-#X obj 32 346 chair.gain~;
-#X text 472 307 First rotary is input volume \, second rotary is the
+#X text 431 342 The right rotary has no function in this patch.;
+#X obj 33 275 chair.gain~;
+#X text 430 299 First rotary is input volume \, second rotary is the
 damping (decay) \, but is only updated when rebuilding the network.
 ;
-#X text 46 163 Rotaries:;
-#X text 45 179 Volume \, Damping \, NONE;
-#X obj 31 586 chair.stereogain~;
-#X obj 75 641 hip~ 4;
-#X obj 32 547 clone disk-gong 14 \$0;
+#X text 33 139 Rotaries:;
+#X text 32 155 Volume \, Damping \, NONE;
+#X obj 32 515 chair.stereogain~;
+#X obj 76 570 hip~ 4;
+#X obj 33 476 clone disk-gong 14 \$0;
 #N canvas 1234 749 450 300 init 0;
 #X obj 68 16 loadbang;
 #X msg 68 39 1;
 #X obj 68 62 s \$0-active;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X restore 467 96 pd init;
-#X obj 287 170 s \$0-touch;
-#X obj 287 139 > 0;
-#X obj 242 101 notein 1;
-#X obj 242 225 s \$0-current;
-#X obj 242 139 change;
-#X obj 242 197 % 14;
-#X obj 256 378 until;
-#X msg 256 355 14;
-#X obj 256 408 f;
-#X obj 287 408 + 1;
-#X obj 256 324 t b b;
-#X msg 312 365 0;
-#X obj 256 559 pack f f;
-#X obj 256 438 t f f;
-#X obj 256 281 loadbang;
-#X msg 280 303 bang;
-#X obj 32 312 adc~ 1;
-#X obj 242 170 - 36;
-#X obj 288 486 + 36;
+#X restore 435 88 pd init;
+#X obj 303 100 s \$0-touch;
+#X obj 303 69 > 0;
+#X obj 258 42 notein 1;
+#X obj 258 155 s \$0-current;
+#X obj 258 69 change;
+#X obj 258 127 % 14;
+#X obj 257 307 until;
+#X msg 257 284 14;
+#X obj 257 337 f;
+#X obj 288 337 + 1;
+#X obj 257 253 t b b;
+#X msg 313 294 0;
+#X obj 257 427 pack f f;
+#X obj 257 367 t f f;
+#X obj 257 210 loadbang;
+#X msg 281 232 bang;
+#X obj 33 241 adc~ 1;
+#X obj 258 100 - 36;
+#X obj 284 394 + 36;
 #X connect 3 0 4 0;
 #X connect 5 0 6 2;
 #X connect 6 0 17 0;
