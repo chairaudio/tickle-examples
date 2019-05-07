@@ -1,19 +1,19 @@
-#N canvas 221 37 1003 765 10;
+#N canvas 158 305 1003 765 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X declare -lib pmpd;
 #X obj 468 29 declare -path chair;
 #X obj 468 51 declare -path abstractions;
-#X floatatom 613 487 5 2 100 0 - - -;
-#X obj 595 431 loadbang;
-#X msg 613 462 25;
-#N canvas 568 281 652 389 rotaries 1;
+#X floatatom 475 502 5 2 100 0 - - -;
+#X obj 457 446 loadbang;
+#X msg 475 477 25;
+#N canvas 157 512 652 389 rotaries 0;
 #X obj 103 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 482 1;
+-1 -1 2142 1;
 #X obj 130 119 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 134 1;
+-1 -1 187 1;
 #X obj 159 120 vsl 15 35 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 161 1;
+-1 -1 1954 1;
 #X obj 466 306 s \$0-drywet;
 #X obj 279 304 s \$0-feedback-gain;
 #X obj 281 230 * 3;
@@ -59,24 +59,24 @@
 #X coords 0 -1 1 1 85 60 1 100 100;
 #X restore 70 234 pd rotaries;
 #X obj 31 718 dac~;
-#X obj 196 398 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 196 398 tgl 15 0 empty \$0-active empty 17 7 0 10 -262144 -1
+-1 1 1;
 #X obj 31 422 chair.feedback-cancellation~;
-#X obj 613 511 s \$0-masses;
+#X obj 475 526 s \$0-masses;
 #X obj 32 350 chair.gain~;
 #X obj 32 546 clone circular-string 14 \$0;
-#X obj 611 645 s \$0-damping;
-#X floatatom 611 617 5 2 100 0 - - -;
-#X obj 614 594 hsl 128 15 0.0001 0.5 0 0 empty empty empty -2 -8 0
-10 -262144 -1 -1 1268 1;
-#X msg 595 568 0.05;
+#X obj 473 660 s \$0-damping;
+#X floatatom 473 632 5 2 100 0 - - -;
+#X obj 476 609 hsl 128 15 0.0001 0.5 0 0 empty empty empty -2 -8 0
+10 -262144 -1 -1 2568 1;
+#X msg 457 583 0.05;
 #X obj 468 74 declare -lib pmpd;
-#X text 606 159 In this example we are using the Physical Modelling
+#X text 470 156 In this example we are using the Physical Modelling
 for Pure Data (pmpd) library \, and in particular the pmpd~-object
 to create pysical simulations of resonators.;
-#X text 606 212 It is also possible to create simulations which are
+#X text 470 209 It is also possible to create simulations which are
 impossible in reality \, such as a circular string.;
-#X text 608 267 Only the left rotary has a function in this patch.
+#X text 472 264 Only the left rotary has a function in this patch.
 ;
 #X text 69 300 Rotaries:;
 #X obj 31 689 hip~ 4;
@@ -87,44 +87,35 @@ impossible in reality \, such as a circular string.;
 #X obj 32 650 chair.stereogain~;
 #X obj 54 582 r \$0-lop;
 #X text 67 316 Lowpass \, Feedback \, Reverb;
-#X text 727 508 You may change these parameters \, but they will only
+#X text 589 523 You may change these parameters \, but they will only
 have an effect if the networks in the pmpd~ objects are rebuild.,
 f 38;
 #X obj 31 113 adc~ 1;
-#N canvas 0 23 450 300 position 0;
-#X obj 47 121 s \$0-xy;
-#X obj 36 17 ctlin 12;
-#X obj 107 17 ctlin 13;
-#X obj 46 96 pack 0 0;
-#X obj 103 74 t b f;
-#X obj 36 49 / 127;
-#X obj 107 48 / 127;
-#X connect 1 0 5 0;
-#X connect 2 0 6 0;
-#X connect 3 0 0 0;
-#X connect 4 0 3 0;
-#X connect 4 1 3 1;
-#X connect 5 0 3 0;
-#X connect 6 0 4 0;
-#X restore 69 189 pd position;
-#X obj 256 183 s \$0-touch;
-#X obj 256 152 > 0;
 #X obj 211 114 notein 1;
-#X obj 211 238 s \$0-current;
-#X obj 211 152 change;
-#X obj 211 210 % 14;
-#X obj 338 341 until;
-#X msg 338 318 14;
-#X obj 338 371 f;
-#X obj 369 371 + 1;
-#X obj 338 287 t b b;
-#X msg 394 328 0;
-#X obj 338 522 pack f f;
-#X obj 338 401 t f f;
-#X obj 349 244 loadbang;
-#X msg 362 266 bang;
+#X obj 211 250 s \$0-current;
+#X obj 323 338 until;
+#X msg 323 315 14;
+#X obj 323 368 f;
+#X obj 354 368 + 1;
+#X obj 323 284 t b b;
+#X msg 379 325 0;
+#X obj 323 519 pack f f;
+#X obj 323 398 t f f;
+#X obj 323 234 loadbang;
+#X msg 336 256 bang;
 #X obj 211 183 - 48;
-#X obj 370 449 + 48;
+#X obj 355 446 + 48;
+#X obj 211 148 stripnote;
+#X floatatom 272 193 5 0 0 0 - - -;
+#X floatatom 257 231 5 0 0 0 - - -;
+#X obj 211 210 mod 14;
+#N canvas 4 121 450 300 init 0;
+#X obj 206 111 loadbang;
+#X msg 206 134 1;
+#X obj 206 157 s \$0-active;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 468 97 pd init;
 #X connect 2 0 9 0;
 #X connect 3 0 4 0;
 #X connect 3 0 15 0;
@@ -147,23 +138,24 @@ f 38;
 #X connect 27 0 22 1;
 #X connect 27 0 22 3;
 #X connect 30 0 10 0;
-#X connect 33 0 32 0;
-#X connect 34 0 36 0;
-#X connect 34 1 33 0;
-#X connect 36 0 48 0;
-#X connect 37 0 35 0;
-#X connect 38 0 40 0;
-#X connect 39 0 38 0;
-#X connect 40 0 41 0;
-#X connect 40 0 45 0;
-#X connect 41 0 40 1;
-#X connect 42 0 39 0;
-#X connect 42 1 43 0;
-#X connect 43 0 40 1;
-#X connect 44 0 11 1;
-#X connect 45 0 44 0;
-#X connect 45 1 49 0;
-#X connect 46 0 42 0;
-#X connect 47 0 42 0;
-#X connect 48 0 37 0;
-#X connect 49 0 44 1;
+#X connect 31 0 45 0;
+#X connect 31 1 45 1;
+#X connect 33 0 35 0;
+#X connect 34 0 33 0;
+#X connect 35 0 36 0;
+#X connect 35 0 40 0;
+#X connect 36 0 35 1;
+#X connect 37 0 34 0;
+#X connect 37 1 38 0;
+#X connect 38 0 35 1;
+#X connect 39 0 11 1;
+#X connect 40 0 39 0;
+#X connect 40 1 44 0;
+#X connect 41 0 37 0;
+#X connect 42 0 37 0;
+#X connect 43 0 48 0;
+#X connect 44 0 39 1;
+#X connect 45 0 43 0;
+#X connect 45 0 46 0;
+#X connect 48 0 32 0;
+#X connect 48 0 47 0;

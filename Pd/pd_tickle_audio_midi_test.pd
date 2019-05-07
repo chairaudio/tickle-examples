@@ -6,7 +6,6 @@
 #X floatatom 278 233 3 0 0 0 - - -;
 #X obj 97 246 bng 20 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 184 385 adc~;
 #X obj 180 422 dac~;
 #X obj 278 208 ctlin 1;
 #X floatatom 279 324 3 0 0 0 - - -;
@@ -37,19 +36,20 @@
 #X text 91 73 make sure to activate DSP \, such that the tickle sends
 audio and calculates the envelope and velocity data. With audio off
 \, the tickle will only send static Midi data from the touchpad!;
+#X obj 184 385 adc~ 1;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
 #X connect 2 0 3 0;
 #X connect 2 1 0 0;
 #X connect 3 0 5 0;
-#X connect 6 0 7 0;
-#X connect 6 0 7 1;
-#X connect 8 0 4 0;
-#X connect 10 0 9 0;
-#X connect 12 0 11 0;
-#X connect 14 0 13 0;
-#X connect 16 0 15 0;
-#X connect 18 0 19 0;
-#X connect 19 0 17 0;
-#X connect 21 0 20 0;
-#X connect 32 0 28 0;
+#X connect 7 0 4 0;
+#X connect 9 0 8 0;
+#X connect 11 0 10 0;
+#X connect 13 0 12 0;
+#X connect 15 0 14 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 20 0 19 0;
+#X connect 31 0 27 0;
+#X connect 33 0 6 0;
+#X connect 33 0 6 1;

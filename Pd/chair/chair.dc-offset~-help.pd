@@ -1,7 +1,7 @@
 #N canvas 683 395 582 697 10;
 #X obj 22 93 tickle~;
 #X obj 21 246 chair.gain~;
-#X obj 22 28 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 22 28 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X msg 45 55 info;
 #X obj 23 616 dac~;
@@ -9,7 +9,7 @@
 #X obj 22 566 chair.gain~;
 #X obj 221 386 +;
 #X obj 114 359 * 100;
-#X obj 187 394 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 187 394 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 1 681 450 300 (subpatch) 0;
 #X array \$0-offset 250 float 4;
@@ -70,6 +70,7 @@ in the center of the Tickle wherere the piezo microphone is located.
 #X obj 61 117 route position button;
 #X obj 61 165 chair.capsense;
 #X obj 21 527 chair.touchgate~;
+#X text 201 32 -- DEPRECATED --;
 #X connect 0 0 1 0;
 #X connect 0 1 31 0;
 #X connect 1 0 30 0;
