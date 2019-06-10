@@ -1,0 +1,3 @@
+[credential "https://gitlab.chair.audio"]
+    username = philipp@chair.audio
+    helper = store 

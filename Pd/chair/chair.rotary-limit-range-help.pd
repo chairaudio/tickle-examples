@@ -1,8 +1,8 @@
-#N canvas 2425 661 664 427 10;
+#N canvas 425 661 664 250 10;
 #X obj 71 151 chair.rotary-limit-range 24;
 #X msg 66 114 -1;
 #X msg 100 114 1;
-#X floatatom 71 187 5 0 0 0 - - -, f 5;
+#X floatatom 71 187 5 0 0 0 - - -;
 #X text 259 194 Output normalized float 0-1;
 #X text 102 31 Useful abstraction for the rotary encoders.;
 #X text 102 49 Increments to minimum/maximum;
