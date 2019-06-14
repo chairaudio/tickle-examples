@@ -1,0 +1,34 @@
+#N canvas 392 671 762 298 10;
+#X text 330 148 It performs a uniform frequency shift (not a pitch
+shift) which is efficiently removing feedback.;
+#X text 328 64 The audio output through speakers may be picked up by
+the Tickle and sometimes issues with feedback occur.;
+#X text 332 191 Arguments: \$1 frequency shift in Hz;
+#X text 398 209 \$2 1: on (default) \, 0: off;
+#X text 329 105 If there is acoustc feedback \, activate this abstraction
+by sending a 1 to the rightmost inlet.;
+#X obj 629 217 loadbang;
+#X msg 629 240 1;
+#X obj 629 262 s \$0-active;
+#X obj 33 115 cnv 15 215 25 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 236 90 tgl 15 0 empty empty active 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 42 176 dac~;
+#X obj 42 36 adc~;
+#X floatatom 113 40 5 0 0 1 Hz - -, f 5;
+#X floatatom 164 42 5 0 0 1 Hz - -, f 5;
+#X obj 164 62 sig~;
+#X obj 41 119 chair.feedback-cancellation~ 50 1;
+#X text 104 18 accepts messages or signals (but not both at the same
+time!);
+#X text 159 78 connect for signal, f 7;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 9 0 15 2;
+#X connect 11 0 15 0;
+#X connect 11 1 15 0;
+#X connect 12 0 15 1;
+#X connect 13 0 14 0;
+#X connect 15 0 10 0;
+#X connect 15 0 10 1;

@@ -1,0 +1,31 @@
+#N canvas 245 498 518 470 10;
+#X declare -path chair;
+#X obj 272 102 declare -path chair;
+#X text 82 28 Provides a test input if no Tickle device is present.
+;
+#X obj 37 133 cnv 15 85 25 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 45 72 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X floatatom 189 242 5 0 0 0 x - -;
+#X floatatom 246 242 5 0 0 0 y - -;
+#X msg 65 98 info;
+#X obj 189 219 unpack f f;
+#X obj 44 307 chair.gain~;
+#X obj 45 376 dac~;
+#X obj 45 136 faketickle~;
+#X obj 108 168 route position;
+#X obj 108 196 chair.capsense;
+#X obj 108 242 tgl 15 0 empty empty touch 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 3 0 10 0;
+#X connect 6 0 10 0;
+#X connect 7 0 4 0;
+#X connect 7 1 5 0;
+#X connect 8 0 9 0;
+#X connect 8 0 9 1;
+#X connect 10 0 8 0;
+#X connect 10 1 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 12 1 7 0;

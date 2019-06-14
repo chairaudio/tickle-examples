@@ -1,0 +1,29 @@
+#N canvas 507 490 634 367 10;
+#X obj 43 136 chair.gain~;
+#X floatatom 115 80 5 0 0 0 - - -;
+#X obj 118 44 hsl 128 15 -30 30 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 42 264 dac~;
+#X text 188 138 Gain control in Decibel with integrated clipping warner.
+;
+#X text 188 154 Range: -30 to +30 Decibel.;
+#X floatatom 85 211 5 0 0 0 - - -;
+#X obj 119 187 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 186 171 -30 is assumed to be an amplitude of 0 (safety switch).
+;
+#X obj 44 43 osc~ 260;
+#X text 189 193 Arguments:;
+#X text 209 214 \$1 Default amplitude in dB.;
+#X text 208 232 If no argument is given: Default amplification is 0.1
+(-20 dB)., f 47;
+#X text 186 273 Outlets:;
+#X text 208 293 Audio \, amplification factor \, clipping;
+#X connect 0 0 3 0;
+#X connect 0 0 3 1;
+#X connect 0 1 6 0;
+#X connect 0 2 7 0;
+#X connect 1 0 0 1;
+#X connect 2 0 1 0;
+#X connect 9 0 0 0;
+#X coords 0 367 1 366 71 33 0;
