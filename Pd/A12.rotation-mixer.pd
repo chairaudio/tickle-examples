@@ -11,10 +11,10 @@
 10 -262144 -1 -1 12548 1;
 #X obj 345 32 ctlin 15;
 #X obj 520 31 ctlin 16;
-#X obj 187 98 hsl 128 15 0.01 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 191 101 hsl 128 15 0.01 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 10478 1;
-#X obj 184 69 / 127;
-#X obj 184 34 ctlin 14;
+#X obj 188 72 / 127;
+#X obj 188 37 ctlin 14;
 #X obj 520 66 / 64;
 #X text 254 31 lowpass;
 #X text 578 34 rotation/timbre;
