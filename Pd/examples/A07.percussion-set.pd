@@ -1,6 +1,6 @@
 #N canvas 63 481 812 517 10;
-#X declare -path ./abs;
 #X declare -path ./chair;
+#X declare -path abstractions;
 #N canvas 37 155 1240 686 rotaries 0;
 #X obj 103 119 vsl 15 35 0 1 0 0 \$0-hsl1 \$0-hsl1r empty 0 -9 0 10
 -262144 -1 -1 0 1;
@@ -171,7 +171,6 @@
 #X connect 3 0 4 0;
 #X connect 6 0 5 0;
 #X restore 412 79 pd init;
-#X obj 413 36 declare -path ./abs;
 #X obj 413 58 declare -path ./chair;
 #X obj 49 279 chair.gain~;
 #N canvas 2 72 1359 611 instruments 0;
@@ -332,14 +331,15 @@ gain 18.1818 \, dry/wet 0 \, lookahead 64 \, peak \,;
 -1 -1;
 #X obj 267 221 s \$0-reset;
 #X obj 50 63 adc~ 1;
+#X obj 413 36 declare -path abstractions;
+#X connect 3 0 4 0;
 #X connect 4 0 5 0;
+#X connect 4 1 5 1;
 #X connect 5 0 6 0;
 #X connect 5 1 6 1;
 #X connect 6 0 7 0;
 #X connect 6 1 7 1;
-#X connect 7 0 8 0;
-#X connect 7 1 8 1;
-#X connect 9 0 4 0;
-#X connect 10 0 9 1;
-#X connect 11 0 12 0;
-#X connect 13 0 9 0;
+#X connect 8 0 3 0;
+#X connect 9 0 8 1;
+#X connect 10 0 11 0;
+#X connect 12 0 8 0;
