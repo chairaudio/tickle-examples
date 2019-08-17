@@ -1,0 +1,12 @@
+#N canvas 1038 355 492 267 10;
+#X text 174 99 Calculator for the angle between 2 vectors in a cartesian
+space. (scalar product) Output in 360 degrees, f 36;
+#X obj 15 105 cnv 15 90 25 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X floatatom 23 146 8 0 0 0 - - -;
+#X msg 104 78 4 3;
+#X obj 23 109 chair.angle;
+#X msg 23 77 1 0;
+#X connect 3 0 4 1;
+#X connect 4 0 2 0;
+#X connect 5 0 4 0;

@@ -1,0 +1,28 @@
+#N canvas 317 538 696 397 10;
+#X obj 53 61 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X msg 72 87 info;
+#X obj 53 150 tickle~;
+#X obj 173 234 s \$0-xy;
+#X obj 92 234 s \$0-touch;
+#X obj 92 206 chair.capsense;
+#X text 288 74 Blocks note changes when no new touch is detected.;
+#X text 289 91 Useful to allow for larger gestures.;
+#X obj 283 263 cnv 15 100 25 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 288 219 chair.hex-mapping;
+#X floatatom 288 294 5 0 0 0 - - -;
+#X obj 288 266 chair.hex-hold;
+#X obj 288 191 r \$0-xy;
+#X obj 369 242 r \$0-touch;
+#X obj 92 177 route position;
+#X connect 0 0 2 0;
+#X connect 1 0 2 0;
+#X connect 2 1 14 0;
+#X connect 5 0 4 0;
+#X connect 5 1 3 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 12 0 9 0;
+#X connect 13 0 11 1;
+#X connect 14 0 5 0;

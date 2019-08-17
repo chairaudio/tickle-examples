@@ -1,0 +1,17 @@
+#N canvas 415 482 602 300 10;
+#X obj 31 29 noise~;
+#X obj 31 52 lop~ 350;
+#X obj 160 79 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 31 142 dac~;
+#X text 207 90 arguments:;
+#X text 181 22 Simple abstraction to gate a signal with fade in and
+out times., f 37;
+#X text 254 113 \$1 fade in time (default 2);
+#X text 254 126 \$2 fade out time (default 5);
+#X obj 31 110 chair.touchgate~;
+#X connect 0 0 1 0;
+#X connect 1 0 8 0;
+#X connect 2 0 8 1;
+#X connect 8 0 3 0;
+#X connect 8 0 3 1;

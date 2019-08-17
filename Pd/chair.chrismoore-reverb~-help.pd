@@ -1,0 +1,42 @@
+#N canvas 120 392 926 709 10;
+#X obj 93 345 chair.chrismoore-reverb~;
+#X obj 92 431 dac~;
+#X obj 92 376 chair.stereogain~;
+#X obj 383 78 hsl 128 15 8 12500 0 1 empty empty in_lowpass 20 8 0
+10 -262144 -260097 -1 1700 0;
+#X floatatom 389 99 5 0 0 0 - - -, f 5;
+#X obj 430 304 hsl 128 15 0 1 0 1 empty empty dry/wet 20 8 0 10 -262144
+-260097 -1 4300 0;
+#X floatatom 439 324 5 0 0 0 - - -, f 5;
+#X obj 392 121 hsl 128 15 8 12500 0 1 empty empty in_highpass 20 8
+0 10 -262144 -260097 -1 1700 0;
+#X floatatom 398 142 5 0 0 0 - - -, f 5;
+#X obj 403 165 hsl 128 15 8 12500 0 1 empty empty feedback_lowpass
+20 8 0 10 -262144 -260097 -1 1700 0;
+#X floatatom 409 186 5 0 0 0 - - -, f 5;
+#X obj 412 208 hsl 128 15 8 12500 0 1 empty empty feedback_highpass
+20 8 0 10 -262144 -260097 -1 1700 0;
+#X floatatom 418 229 5 0 0 0 - - -, f 5;
+#X obj 424 252 hsl 128 15 0 3 0 1 empty empty feedback_gain 20 8 0
+10 -262144 -260097 -1 5100 0;
+#X floatatom 432 277 5 0 0 0 - - -, f 5;
+#X text 421 433 Chris Moore reverb;
+#X text 425 458 Pd Vanilla implementation by Tom Erbe \, 2016;
+#X text 264 346 Arguments work too;
+#X text 263 360 Defaults to 13000 8 13000 8 2.4 0.5;
+#X connect 0 0 2 0;
+#X connect 0 1 2 1;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;
+#X connect 3 0 4 0;
+#X connect 3 0 0 1;
+#X connect 5 0 6 0;
+#X connect 5 0 0 6;
+#X connect 7 0 8 0;
+#X connect 7 0 0 2;
+#X connect 9 0 10 0;
+#X connect 9 0 0 3;
+#X connect 11 0 12 0;
+#X connect 11 0 0 4;
+#X connect 13 0 14 0;
+#X connect 13 0 0 5;

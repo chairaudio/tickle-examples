@@ -1,0 +1,34 @@
+#N canvas 606 479 779 329 10;
+#X text 231 15 Converts from hexagon ID to a tuning defined in a textfile
+;
+#X text 232 31 This allows you to define mappings to the hexagon pattern
+;
+#X text 342 140 starts at MIDI note 60;
+#X text 352 166 incomplete isomorphic keyboard \, middle C left bottom
+;
+#X obj 61 183 cnv 15 160 25 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X msg 61 129 0;
+#X msg 91 130 1;
+#X msg 122 130 12;
+#X floatatom 67 220 5 0 0 0 - - -;
+#X msg 253 89 g_major;
+#X msg 271 115 b_minor;
+#X msg 279 140 chromatic;
+#X msg 283 166 isomorphic;
+#X msg 284 193 ratios;
+#X text 337 194 layout based on integer ratios;
+#X obj 67 186 chair.hex-tuning g_major;
+#X text 314 88 Kalimba inspired G mayor tuning;
+#X text 328 114 Kalimba inspired B minor tuning;
+#X text 61 95 Hexpad-ID;
+#X text 66 248 MIDI-Note;
+#X connect 5 0 15 0;
+#X connect 6 0 15 0;
+#X connect 7 0 15 0;
+#X connect 9 0 15 1;
+#X connect 10 0 15 1;
+#X connect 11 0 15 1;
+#X connect 12 0 15 1;
+#X connect 13 0 15 1;
+#X connect 15 0 8 0;
