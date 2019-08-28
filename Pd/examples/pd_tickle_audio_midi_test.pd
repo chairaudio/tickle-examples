@@ -1,4 +1,4 @@
-#N canvas 2387 111 886 784 10;
+#N canvas 718 151 886 784 10;
 #X floatatom 148 217 3 0 0 0 - - -;
 #X obj 97 157 notein, f 17;
 #X obj 97 189 stripnote;
@@ -104,6 +104,9 @@ audio and calculates the envelope and velocity data. With audio off
 #X obj 568 696 ctlin 19;
 #X obj 633 695 ctlin 20;
 #X obj 705 696 ctlin 21;
+#X floatatom 657 534 3 0 127 0 - - -;
+#X obj 657 568 ctlout 55;
+#X text 652 504 Brightness level;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
 #X connect 2 0 3 0;
@@ -139,3 +142,4 @@ audio and calculates the envelope and velocity data. With audio off
 #X connect 98 0 91 0;
 #X connect 99 0 92 0;
 #X connect 100 0 93 0;
+#X connect 101 0 102 0;

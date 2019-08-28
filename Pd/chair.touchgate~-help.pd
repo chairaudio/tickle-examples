@@ -9,9 +9,14 @@
 out times., f 37;
 #X text 254 113 \$1 fade in time (default 2);
 #X text 254 126 \$2 fade out time (default 5);
-#X obj 31 110 chair.touchgate~;
+#X floatatom 160 138 5 0 0 0 - - -;
+#X obj 31 110 chair.touchgate~ 1 500;
+#X obj 165 207 switch~;
+#X text 164 173 outlet can be used in voices and abstractions to switch
+off dsp processing to save cpu using;
 #X connect 0 0 1 0;
-#X connect 1 0 8 0;
-#X connect 2 0 8 1;
-#X connect 8 0 3 0;
-#X connect 8 0 3 1;
+#X connect 1 0 9 0;
+#X connect 2 0 9 1;
+#X connect 9 0 3 0;
+#X connect 9 0 3 1;
+#X connect 9 1 8 0;
