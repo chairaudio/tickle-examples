@@ -1,0 +1,12 @@
+#N canvas 49 133 778 416 10;
+#X obj 76 71 chair.encoders 0 1 0.5;
+#X obj 76 146 route 0 1 2;
+#X floatatom 76 220 5 0 0 0 - - -;
+#X floatatom 97 198 5 0 0 0 - - -;
+#X floatatom 118 175 5 0 0 0 - - -;
+#X text 251 77 Helper abstracton for the ratary encoders;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
+#X connect 1 2 4 0;
+#X coords 0 416 1 415 130 60 0;
