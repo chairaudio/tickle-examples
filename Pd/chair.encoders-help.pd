@@ -5,6 +5,12 @@
 #X floatatom 97 198 5 0 0 0 - - -;
 #X floatatom 118 175 5 0 0 0 - - -;
 #X text 251 77 Helper abstracton for the ratary encoders;
+#X text 246 124 Arguments:;
+#X text 265 147 \$1 default value encoder 0;
+#X text 266 162 \$2 default value encoder 1;
+#X text 266 177 \$3 default value encoder 2;
+#X text 265 192 \$4 use \$4 to propagate \$0 of the parent patch into
+the abstraction!, f 34;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;

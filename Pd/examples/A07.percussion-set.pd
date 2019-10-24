@@ -1,13 +1,13 @@
-#N canvas 63 481 812 517 10;
+#N canvas 646 312 812 517 10;
 #X declare -path ./chair;
 #X declare -path abstractions;
 #N canvas 37 155 1240 686 rotaries 0;
 #X obj 103 119 vsl 15 35 0 1 0 0 \$0-hsl1 \$0-hsl1r empty 0 -9 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 2231 1;
 #X obj 130 119 vsl 15 35 0 1 0 0 \$0-hsl2 \$0-hsl2r empty 0 -9 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 2762 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 \$0-hsl3 \$0-hsl3r empty 0 -9 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 2975 1;
 #X obj 440 536 list prepend;
 #X obj 440 556 list trim;
 #X obj 349 196 * 64;
@@ -24,7 +24,9 @@
 0 \; 0.184743 0.250919 0.860294 \; 0.6875 0.890625 0.28125 \; -0.00275707
 1.00092 1.00092 \; 0.794118 0.297794 0.235294 \; 0.0441179 1.00092
 0.547794 \; 0.356618 0.891544 0.641544 \; 0.53125 0.984375 0.671875
-\; 0.3125 0.859375 0.671875 \;;
+\; 0.3125 0.859375 0.671875 \; 0.015625 0 0 \; 0.03125 0 0 \; 0.046875
+0 0 \; 0.0625 0 0 \; 0.28125 0 0 \; 0.046875 0 0 \; 0.125 0.328125
+0.28125 \;;
 #X obj 686 61 text get \$0-rotary-states;
 #X obj 686 14 r \$0-fieldn;
 #X obj 686 84 unpack f f f;
@@ -173,7 +175,7 @@
 #X restore 412 79 pd init;
 #X obj 413 58 declare -path ./chair;
 #X obj 49 279 chair.gain~;
-#N canvas 2 72 1359 611 instruments 0;
+#N canvas 4 72 1359 611 instruments 1;
 #X obj 267 321 cowbell~ \$0 5;
 #X obj 615 342 *~ 0.5;
 #X obj 683 341 *~ 0.5;
@@ -245,11 +247,11 @@
 #X connect 22 0 6 0;
 #X connect 22 0 0 0;
 #X connect 22 0 7 0;
+#X connect 22 0 21 0;
+#X connect 22 0 8 0;
 #X connect 22 0 12 0;
 #X connect 22 0 11 0;
 #X connect 22 0 10 0;
-#X connect 22 0 21 0;
-#X connect 22 0 8 0;
 #X connect 22 0 18 0;
 #X connect 22 0 15 0;
 #X connect 22 0 5 0;

@@ -73,6 +73,7 @@
 #X msg 597 18 stop;
 #X obj 570 -6 sel 1, f 13;
 #X obj 16 139 chair.touchgate~ 0.5 5;
+#X obj 645 18 t b;
 #X connect 0 0 1 0;
 #X connect 1 0 2 1;
 #X connect 2 0 37 0;
@@ -145,5 +146,6 @@
 #X connect 71 0 68 0;
 #X connect 72 0 70 0;
 #X connect 72 0 71 0;
-#X connect 72 1 68 0;
+#X connect 72 1 74 0;
 #X connect 73 0 13 0;
+#X connect 74 0 68 0;
