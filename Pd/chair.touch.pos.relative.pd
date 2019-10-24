@@ -1,0 +1,36 @@
+#N canvas 1139 172 646 407 12;
+#X obj 247 71 ctlin 1;
+#X text 242 45 relative Y;
+#X text 451 15 Pitch Bend;
+#X text 242 18 Mod Wheel;
+#X text 451 42 relative X;
+#X obj 456 68 bendin;
+#X floatatom 325 94 3 0 0 0 - - -;
+#X text 320 43 relative Y;
+#X text 320 16 Mod Wheel;
+#X text 391 14 Fine;
+#X obj 326 69 ctlin 33;
+#X obj 110 156 hsl 100 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4952 1;
+#X obj 153 117 vsl 15 100 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 3016 1;
+#X obj 453 111 / 8191;
+#X obj 452 140 - 1;
+#X obj 248 123 / 64;
+#X floatatom 270 197 5 0 0 0 - - -;
+#X obj 249 152 - 1;
+#X obj 230 182 * -1;
+#X obj 171 346 outlet;
+#X obj 238 347 outlet;
+#X connect 0 0 15 0;
+#X connect 0 0 16 0;
+#X connect 5 0 13 0;
+#X connect 10 0 6 0;
+#X connect 13 0 14 0;
+#X connect 14 0 11 0;
+#X connect 14 0 19 0;
+#X connect 15 0 17 0;
+#X connect 17 0 18 0;
+#X connect 17 0 20 0;
+#X connect 18 0 12 0;
+#X coords 0 -1 1 1 120 120 1 100 100;
