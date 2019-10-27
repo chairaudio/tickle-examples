@@ -1,13 +1,13 @@
-#N canvas 646 312 812 517 10;
+#N canvas 2024 984 812 517 10;
 #X declare -path ./chair;
 #X declare -path abstractions;
 #N canvas 37 155 1240 686 rotaries 0;
 #X obj 103 119 vsl 15 35 0 1 0 0 \$0-hsl1 \$0-hsl1r empty 0 -9 0 10
 -262144 -1 -1 2231 1;
 #X obj 130 119 vsl 15 35 0 1 0 0 \$0-hsl2 \$0-hsl2r empty 0 -9 0 10
--262144 -1 -1 2762 1;
+-262144 -1 -1 1806 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 \$0-hsl3 \$0-hsl3r empty 0 -9 0 10
--262144 -1 -1 2975 1;
+-262144 -1 -1 0 1;
 #X obj 440 536 list prepend;
 #X obj 440 556 list trim;
 #X obj 349 196 * 64;
@@ -19,14 +19,15 @@
 #X obj 440 582 s \$0-params-list;
 #X obj 661 506 text set \$0-rotary-states;
 #X obj 662 529 text define -k \$0-rotary-states;
-#A set 0.558824 0.0588235 0.470588 \; 0.456801 0.487135 0.296875 \;
-0.421875 0.875 0.5625 \; 0.65625 0.8125 0.875 \; 0 0.5625 1 \; 0 1
-0 \; 0.184743 0.250919 0.860294 \; 0.6875 0.890625 0.28125 \; -0.00275707
-1.00092 1.00092 \; 0.794118 0.297794 0.235294 \; 0.0441179 1.00092
-0.547794 \; 0.356618 0.891544 0.641544 \; 0.53125 0.984375 0.671875
-\; 0.3125 0.859375 0.671875 \; 0.015625 0 0 \; 0.03125 0 0 \; 0.046875
-0 0 \; 0.0625 0 0 \; 0.28125 0 0 \; 0.046875 0 0 \; 0.125 0.328125
-0.28125 \;;
+#A set 0.558824 0.0588235 0.470588 \; -0.011949 0.487135 0.296875 \;
+0.453125 0.875 0.5625 \; 1 0 0.875 \; 0 0.5625 1 \; -0.015625 1 0 \;
+0.169118 0.563419 -0.014706 \; 0.65625 0.9375 0.296875 \; -0.00275707
+1.00092 1.01655 \; 0.794118 0.297794 0.235294 \; 0.0441179 1.03217
+0.547794 \; 0.356618 0.735294 0.641544 \; 0.078125 0.984375 0.671875
+\; 0.3125 0.859375 0.671875 \; 0.015625 0.015625 0 \; 0.03125 0 0 \;
+0.046875 0 0 \; 0.0625 0 0 \; 0.28125 0.015625 0 \; 0.65625 0.53125
+0 \; 0.125 0.328125 0.71875 \; 0.296875 0 0 \; 0.3125 0 0 \; 0.53125
+0 0 \;;
 #X obj 686 61 text get \$0-rotary-states;
 #X obj 686 14 r \$0-fieldn;
 #X obj 686 84 unpack f f f;
@@ -175,7 +176,7 @@
 #X restore 412 79 pd init;
 #X obj 413 58 declare -path ./chair;
 #X obj 49 279 chair.gain~;
-#N canvas 4 72 1359 611 instruments 1;
+#N canvas 4 473 1359 611 instruments 0;
 #X obj 267 321 cowbell~ \$0 5;
 #X obj 615 342 *~ 0.5;
 #X obj 683 341 *~ 0.5;
@@ -318,7 +319,7 @@ http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f
 #X connect 23 0 17 0;
 #X restore 49 353 pd midside;
 #X obj 50 388 chair.stereogain~;
-#X obj 49 436 dac~;
+#X obj 50 462 dac~;
 #X obj 49 235 chair.dynamics~;
 #N canvas 2 54 590 300 init 0;
 #X obj 213 67 loadbang;
@@ -334,14 +335,18 @@ gain 18.1818 \, dry/wet 0 \, lookahead 64 \, peak \,;
 #X obj 267 221 s \$0-reset;
 #X obj 50 63 adc~ 1;
 #X obj 413 36 declare -path abstractions;
+#X obj 50 435 hip~ 4;
+#X obj 94 435 hip~ 4;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 4 1 5 1;
 #X connect 5 0 6 0;
 #X connect 5 1 6 1;
-#X connect 6 0 7 0;
-#X connect 6 1 7 1;
+#X connect 6 0 14 0;
+#X connect 6 1 15 0;
 #X connect 8 0 3 0;
 #X connect 9 0 8 1;
 #X connect 10 0 11 0;
 #X connect 12 0 8 0;
+#X connect 14 0 7 0;
+#X connect 15 0 7 1;

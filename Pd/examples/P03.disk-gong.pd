@@ -1,8 +1,9 @@
-#N canvas 688 221 897 742 10;
+#N canvas 688 480 897 742 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X declare -lib pmpd;
 #X declare -path ../;
+#X declare -path pmpd;
 #X obj 432 65 declare -path chair;
 #X obj 432 87 declare -path abstractions;
 #X obj 32 570 hip~ 4;
@@ -68,6 +69,7 @@ damping (decay) \, but is only updated when rebuilding the network.
 #X restore 34 110 pd mapping;
 #X obj 432 43 declare -path ../;
 #X obj 34 45 chair.encoders;
+#X obj 544 112 declare -path pmpd;
 #X connect 2 0 3 0;
 #X connect 4 0 5 2;
 #X connect 5 0 16 0;
