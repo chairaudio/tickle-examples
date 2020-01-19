@@ -3,11 +3,11 @@
 #X declare -path chair;
 #N canvas 77 296 1240 686 rotaries 0;
 #X obj 103 119 vsl 15 35 0 1 0 0 \$0-hsl1 \$0-hsl1r empty 0 -9 0 10
--262144 -1 -1 2337 1;
+-262144 -1 -1 0 1;
 #X obj 130 119 vsl 15 35 0 1 0 0 \$0-hsl2 \$0-hsl2r empty 0 -9 0 10
--262144 -1 -1 3028 1;
+-262144 -1 -1 0 1;
 #X obj 159 119 vsl 15 35 0 1 0 0 \$0-hsl3 \$0-hsl3r empty 0 -9 0 10
--262144 -1 -1 956 1;
+-262144 -1 -1 0 1;
 #X obj 440 536 list prepend;
 #X obj 440 556 list trim;
 #X obj 349 196 * 64;
@@ -28,12 +28,12 @@
 0.046875 0 0 \; 0.0625 0 0 \; 0.28125 0.015625 0 \; 0.46875 0.65625
 0.625 \; 0.125 0.328125 0.71875 \; 0.296875 0 0 \; 0.3125 0 0.484375
 \; 0.53125 0 -0.015625 \;;
-#X obj 686 61 text get \$0-rotary-states;
-#X obj 686 14 r \$0-fieldn;
-#X obj 686 84 unpack f f f;
-#X obj 662 122 s \$0-hsl1r;
-#X obj 696 144 s \$0-hsl2r;
-#X obj 731 166 s \$0-hsl3r;
+#X obj 723 51 text get \$0-rotary-states;
+#X obj 723 4 r \$0-fieldn;
+#X obj 723 74 unpack f f f;
+#X obj 699 112 s \$0-hsl1r;
+#X obj 733 134 s \$0-hsl2r;
+#X obj 768 156 s \$0-hsl3r;
 #X obj 264 248 s \$0-hsl1r;
 #X obj 456 250 s \$0-hsl2r;
 #X obj 665 241 s \$0-hsl3r;
@@ -50,7 +50,7 @@
 #X obj 440 446 f;
 #X obj 440 424 del 0;
 #X obj 528 537 r \$0-fieldn;
-#X obj 686 37 t f f;
+#X obj 723 27 t f f;
 #X obj 261 547 s \$0-fieldn;
 #X obj 261 302 notein;
 #X obj 261 326 stripnote;
@@ -77,13 +77,13 @@
 #X obj 858 152 t b b;
 #X msg 891 190 0;
 #X obj 857 101 r \$0-reset;
-#X obj 241 111 ctlin 11;
-#X obj 429 137 ctlin 12;
-#X obj 603 124 ctlin 13;
-#X obj 241 136 ../chair.rotary-relative;
-#X obj 428 165 ../chair.rotary-relative;
-#X obj 604 182 ../chair.rotary-relative;
+#X obj 264 115 ctlin 11;
+#X obj 456 138 ctlin 12;
+#X obj 631 132 ctlin 13;
 #X obj 355 358 ctlin 16;
+#X obj 264 140 chair.rotary-relative;
+#X obj 456 166 chair.rotary-relative;
+#X obj 631 164 chair.rotary-relative;
 #X connect 3 0 4 0;
 #X connect 4 0 11 0;
 #X connect 5 0 26 1;
@@ -144,13 +144,13 @@
 #X connect 54 1 55 0;
 #X connect 55 0 51 1;
 #X connect 56 0 53 0;
-#X connect 57 0 60 0;
-#X connect 58 0 61 0;
-#X connect 59 0 62 0;
-#X connect 60 0 26 0;
-#X connect 61 0 27 0;
-#X connect 62 0 28 0;
-#X connect 63 0 44 1;
+#X connect 57 0 61 0;
+#X connect 58 0 62 0;
+#X connect 59 0 63 0;
+#X connect 60 0 44 1;
+#X connect 61 0 26 0;
+#X connect 62 0 27 0;
+#X connect 63 0 28 0;
 #X coords 0 -1 1 1 85 60 1 100 100;
 #X restore 98 97 pd rotaries;
 #N canvas 4 61 450 300 init 0;
