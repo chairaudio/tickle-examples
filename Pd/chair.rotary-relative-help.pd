@@ -1,0 +1,4 @@
+#N canvas 632 401 730 363 12;
+#X obj 16 149 chair.ratary-relative;
+#X text 207 74 turns a MIDI rotary into a relative controller;
+#X obj 25 70 ctlin 11;
