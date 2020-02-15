@@ -1,0 +1,12 @@
+#N canvas 974 281 769 597 12;
+#X text 304 198 Needs two arguments!;
+#X text 320 221 \$1 MSB (coarse) controller number;
+#X text 321 240 \$2 MIDI Channel;
+#X text 300 275 the LSB (fine) controller will be automatically picked
+according to the MIDI controller specification;
+#X text 104 97 Reads 14 bit MIDI controllers;
+#X obj 107 201 cnv 15 160 25 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 111 203 chair.14bit-ctlin 1 1;
+#X floatatom 111 241 9 0 0 0 - - -;
+#X connect 6 0 7 0;

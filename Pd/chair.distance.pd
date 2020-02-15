@@ -15,7 +15,7 @@
 #X obj 101 81 unpack f f;
 #X obj 101 26 inlet;
 #X text 174 171 a^2 + b^2 = c^2;
-#N canvas 669 229 450 300 arguments 1;
+#N canvas 669 229 450 300 arguments 0;
 #X obj 33 24 loadbang;
 #X obj 162 237 outlet;
 #X msg 33 46 36;

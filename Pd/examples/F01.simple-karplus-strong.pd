@@ -1,4 +1,4 @@
-#N canvas 564 146 985 855 10;
+#N canvas 564 180 527 643 10;
 #X declare -path chair;
 #X declare -path abstractions;
 #X declare -path ../;
