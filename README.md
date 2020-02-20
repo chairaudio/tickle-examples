@@ -27,7 +27,7 @@ We are continuously extending the examples and welcome contributions very much. 
 
 ## License
 
-These examples are copyright 2018 The Center for Haptic Audio Interaction Research (CHAIR).
+These examples are copyright 2020 The Center for Haptic Audio Interaction Research (CHAIR).
 They are licensed under a MIT licence. They may contain bits an pieces from other sources which are given credit where possible.
 
 The CHAIR name and logo are registered trademarks and may not be used unauthorized.
