@@ -1,0 +1,7 @@
+fi = library("filters.lib");
+
+hp_row(1) = fi.highpass(1, 4);
+hp_row(n) = fi.highpass(1, 4) : hp_row(n-1);
+dc_offset = _ <: (_,_): (_, (hp_row(4))): 
+    (_,(_<:(_,_))):
+    ((-:fi.lowpass(1, 100) * 25),_); 
