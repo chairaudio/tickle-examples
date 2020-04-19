@@ -10,6 +10,6 @@ http://faust.grame.fr/
 
 ## About these examples
 
-Here will be some examples, for now look inside the `Pd` folder where you can find an example with FAUST DSP code using `faustgen~` for Pd
+Here will be some examples, for now look inside the `Pd` folder where you can find an example with FAUST DSP code using `faustgen~` for Pd.
 
 If you would like to contribute, please get in touch via the issue tracker on gitlab/github or by email `max@chair.audio`
