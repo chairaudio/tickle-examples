@@ -1,6 +1,7 @@
 fi = library("filters.lib");
+de = library("delays.lib");
+ma = library("maths.lib");
 
-<<<<<<< HEAD
       // as we need lots of filters in a row
       // we make use of fausts rewriting rules
       // to line them up recursively
@@ -15,11 +16,7 @@ dc_offset = _ <: (_,_): (_, (hp_row(4))):
     (_,(_<:(_,_))):
            ((-:fi.lowpass(1, 100) * 25),_);
 
-allp = (_,_,_):((*),_):(-);
-=======
-hp_row(1) = fi.highpass(1, 4);
-hp_row(n) = fi.highpass(1, 4) : hp_row(n-1);
-dc_offset = _ <: (_,_): (_, (hp_row(4))): 
-    (_,(_<:(_,_))):
-    ((-:fi.lowpass(1, 100) * 25),_);
->>>>>>> 64d072da9d1d6d124d24db72b257845123ad82a2
+allp = 
+	(((*),_,_ : (((_,_)<:(!,_,_,!)),_) :
+	de.fdelay4(ma.SR/10),_)   ~_ ) : (!,_);
+	// (_,_,_):((*),_):(-);
