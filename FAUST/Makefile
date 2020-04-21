@@ -8,5 +8,6 @@ jackconsole: 01.percussion-snare.dsp
 svg: 01.percussion-snare.dsp 
 	faust -svg 01.percussion-snare.dsp > /dev/null
 clean:
-	rm *.cpp
-	rm -r *-svg
+	rm -f *.cpp
+	rm -rf *-svg
+	rm -rf *-mdoc

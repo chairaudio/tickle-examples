@@ -3,5 +3,7 @@
 .kdev4/
 *.kdev4
 *-svg/
+*-mdoc/
 FAUST/*.cpp
 FAUST/build/
+FAUST/recordings/
