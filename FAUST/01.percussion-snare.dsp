@@ -5,7 +5,7 @@ fi = library("filters.lib");
 no = library("noises.lib");
 ma = library("maths.lib");
 
-process = 
+pricess = 
 	chair.dc_offset : 
   // 1. DC as an envelope
   // 2. Clean signal
@@ -36,3 +36,7 @@ process =
 	(_,+,_) :
 	//de.fdelay4(ma.SR/5),_) ~ _ : (!,_); 
 	de.delay(ma.SR/5),_) ~ _ : (!,_); 
+
+process = 
+	chair.dc_offset : (_, 4 * ma.SR / 1000, _ ) :
+	(chair.allp);
