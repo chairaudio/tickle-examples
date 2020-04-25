@@ -7,3 +7,4 @@
 FAUST/*.cpp
 FAUST/build/
 FAUST/recordings/
+FAUST/faust.*/
