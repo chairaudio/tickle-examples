@@ -1,7 +1,6 @@
 #sources = *.dsp
 
-#svg : $(sources)
-#	faust -svg $< > /dev/null
+TARGETS = 01.percussion-snare 02.unitary-delay-network 03.decomplexed-network
 
 #jackconsole : %.cpp
 #	faust -a jack-console.cpp -o 01.percussion-snare.cpp 01.percussion-snare.dsp 
@@ -16,10 +15,19 @@
 
 #oldsvg : 01.percussion-snare.dsp 
 #	faust -svg 01.percussion-snare.dsp > /dev/null
-jackconsole : 02.unitary-delay-network
-	faust2jackconsole -midi $<.dsp
+#jackconsole : 01.percussion-snare.dsp 02.unitary-delay-network.dsp 03.decomplexed-network.dsp
+
+.PHONY : all clean
+
+all : $(TARGETS)
 
 clean:
-	rm -f *.cpp
-	rm -rf *-svg
-	rm -rf *-mdoc
+	rm -rf *.cpp *-svg *-mdoc $(TARGETS)
+
+jackconsole :
+	faust2jackconsole -midi $<
+
+svg : $(sources)
+#	faust -svg $< > /dev/null
+	faust2svg $<
+

@@ -1,6 +1,4 @@
-fi = library("filters.lib");
-de = library("delays.lib");
-ma = library("maths.lib");
+import("stdfaust.lib");
 
       // as we need lots of filters in a row
       // we make use of fausts rewriting rules
@@ -17,6 +15,16 @@ dc_offset = _ <: (_,_): (_, (hp_row(4))):
            ((-:fi.lowpass(1, 100) * 25),_);
 
 x = (_,_)<:(!,_,_,!);
+
+g(x) =
+	(x, _, x, _, x, _, x,_) : (*,*,*,*);
+
+mx(psi,damp) = 
+	(cos(psi),_, sin(psi) * (-1),_, sin(psi),_, cos(psi),_) : (*,*,*,*) : g(damp);
+
+udn(deltime, decay, gfactor) = 
+	((_,x,_) : (+,+) : (_,_) <: mx((gfactor * ma.PI),(1-(decay/10))) : (+,+)) ~ 
+	(de.delay(ma.SR/5, deltime*5*ma.SR/1000),de.delay(ma.SR/5, 5*ma.SR/1000)) ;
 
 allp = 
 	(_,_,_) : 
