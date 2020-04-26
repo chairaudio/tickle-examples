@@ -44,5 +44,4 @@ process =
 	//(chair.allp);
 	chair.dc_offset : 
 	chair.udn(delay, decay, _ * psi);
-//process = chair.udn(delay, decay, psi);
 
