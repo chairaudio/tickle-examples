@@ -1,19 +1,32 @@
-SRCS := $(wildcard *.dsp)
-BINS := $(SRCS:%.dsp=%)
-SVGS := $(foreach wrd, $(BINS), $(wrd)-svn)
 
-.PHONY : all clean
+dspsrc  := $(wildcard *.dsp)
+cppsrc  := $(dspsrc:.dsp=.cpp)
+#plugins	:= $(dspsrc:%.dsp=%~.pd_linux)
+svg 	:= $(dspsrc:.dsp=-svg)
+jconsole 	:= $(dspsrc:.dsp=)
+#xml 	:= $(dspsrc:.dsp=.dsp.xml)
+#pd 	:= $(dspsrc:.dsp=.pd)
 
-all : $(BINS)
+all: $(jconsole) $(svg)
 
-clean :
-	rm -rf *.cpp *-svg *-mdoc $(BINS) faust.*
+graphics: $(svg)
+
+standalones: $(jconsole)
+
+clean:
+	rm -Rf *~ $(svg) $(jconsole)
+
+%-svg: %.dsp
+	faust2svg $< 
 
 % : %.dsp
-	faust2jackconsole -midi $<
+	faust2jackconsole $<
 
-svg : $(SVGS)
+#%.cpp %-svg: %.dsp
+#	faust -xml -svg -sd -a puredata.cpp $< -o $@
 
-$(SVGS) : $(SRCS)
-	faust2svg $<
+#%~.pd_linux: %.cpp
+#	g++ -shared -fPIC -Dmydsp=$(@:%~.pd_linux=%) -o $@ $<
 
+#%.pd: %.dsp.xml
+#	faust2pd -s $<
