@@ -14,5 +14,8 @@ mx(psi,damp) =
 	(cos(psi),_, sin(psi) * (-1),_, sin(psi),_, cos(psi),_) : (*,*,*,*) : g(damp);
 
 process = 
-	((_,chair.x,_) : (+,+) : (_,_) <: mx((ctl2 * ma.PI),(1-(ctl1/10))) : (+,+)) ~ 
-	(de.delay(ma.SR/5, ctl0*5*ma.SR/1000),de.delay(ma.SR/5, 5*ma.SR/1000)) ;
+	chair.dc_offset :
+	(((_,chair.x,_) : (+,+) : (_,_) <: mx((ctl2 * ma.PI),(1-(ctl1/10))) : (+,+)) ~ 
+	(de.delay(ma.SR/5, ctl0*5*ma.SR/1000),de.delay(ma.SR/5, 5*ma.SR/1000))) :
+	(fi.allpassn(5, (-0.1,0.1,-0.1,0.1,-0.11)),	fi.allpassn(5, (0.1,-0.1,0.1,-0.1,0.1))) :
+	+ ;
