@@ -20,7 +20,7 @@ clean:
 	faust2svg $< 
 
 % : %.dsp
-	faust2jackconsole $<
+	faust2jackconsole -midi $<
 
 #%.cpp %-svg: %.dsp
 #	faust -xml -svg -sd -a puredata.cpp $< -o $@
