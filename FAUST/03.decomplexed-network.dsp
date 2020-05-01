@@ -13,9 +13,12 @@ ctl2 = hslider("psi[midi:ctrl 13]",0.5,0.0001,1,0.00001) : si.smoo;
 mx(psi,damp) = 
 	(cos(psi),_, sin(psi) * (-1),_, sin(psi),_, cos(psi),_) : (*,*,*,*) : g(damp);
 
-process = 
-	chair.dc_offset :
+allp(dc) = 
+	(_<:(_,_)) :
 	(((_,chair.x,_) : (+,+) : (_,_) <: mx((ctl2 * ma.PI),(1-(ctl1/10))) : (+,+)) ~ 
-	(de.delay(ma.SR/5, ctl0*5*ma.SR/1000),de.delay(ma.SR/5, 5*ma.SR/1000))) :
-	(fi.allpassn(5, (-0.1,0.1,-0.1,0.1,-0.11)),	fi.allpassn(5, (0.1,-0.1,0.1,-0.1,0.1))) :
+	(de.delay(ma.SR/5, dc * 5 * ma.SR/1000), de.delay(ma.SR/5, dc * 5 * ma.SR/1000))) :
+	//(fi.allpassn(5, (-0.1,0.1,-0.1,0.1,-0.11)),	fi.allpassn(5, (0.1,-0.1,0.1,-0.1,0.1))) :
 	+ ;
+
+process = 
+	chair.dc_offset : allp;

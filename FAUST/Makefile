@@ -1,3 +1,4 @@
+DESTDIR=./build
 
 dspsrc  := $(wildcard *.dsp)
 cppsrc  := $(dspsrc:.dsp=.cpp)
@@ -7,7 +8,7 @@ jconsole 	:= $(dspsrc:.dsp=)
 #xml 	:= $(dspsrc:.dsp=.dsp.xml)
 #pd 	:= $(dspsrc:.dsp=.pd)
 
-all: $(jconsole) $(svg)
+all: $(jconsole) $(svg) install
 
 graphics: $(svg)
 
@@ -23,8 +24,8 @@ clean:
 	faust2jackconsole -midi $<
 
 install:
-	install -d build
-	install $(jconsole) build/
+	install -d $(DESTDIR)
+	install $(jconsole) $(DESTDIR) 
 	rm $(jconsole)
 
 #%.cpp %-svg: %.dsp

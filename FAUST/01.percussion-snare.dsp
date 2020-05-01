@@ -19,7 +19,8 @@ pricess =
 	(+ (2.947),_) : 
 
 	// This is where the magic happens.
-	// What is delread in pd is ( ... ~ _ ) this loop in faust.
+	// What is delread in pd is this loop ( ... ~ _ ) in faust
+	// plus a de.delay or its interpolated counterpart de.fdalay.
 	// The opening braces is the beginning of the loop
 	// and the ~-Symbol is forking the signal to feed it back as an additional input to the block.
 	((no.noise:fi.lowpass(1,2000): * (10.5)), (no.noise:fi.lowpass(1,100): + (1) : * (0.75)),_,_) :
