@@ -46,3 +46,5 @@ process =
 	chair.dc_offset : 
 	chair.udn(delay, decay, _ * psi);
 
+prociss = 
+	chair.dc_offset : chair.allp(_, delay, decay, psi);

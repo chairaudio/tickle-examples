@@ -23,10 +23,19 @@ mx(psi,damp) =
 	(cos(psi),_, sin(psi) * (-1),_, sin(psi),_, cos(psi),_) : (*,*,*,*) : g(damp);
 
 udn(deltime, decay, gfactor) = 
+	// Two inputs, one for each of the delaylines.
 	((_,x,_) : (+,+) : (_,_) <: mx((gfactor * ma.PI),(1-(decay/10))) : (+,+)) ~ 
-	(de.delay(ma.SR/5, deltime*5*ma.SR/1000),de.delay(ma.SR/5, 5*ma.SR/1000)) : + ;
+	(de.delay(ma.SR/5, deltime * 5 * ma.SR/1000),de.delay(ma.SR/5, deltime * 5 * ma.SR/1000)) : + ;
 
-allp = 
+allp(decay, gfactor, deltime) = 
+	// Here, the input will go to both delaylines.
+	(_<:(_,_)) :
+	(((_,x,_) : (+,+) : (_,_) <: mx((gfactor * ma.PI),(1-(decay/10))) : (+,+)) ~ 
+	(de.delay(ma.SR/5, deltime * 5 * ma.SR/1000), de.delay(ma.SR/5, deltime * 5 * ma.SR/1000))) :
+	//(fi.allpassn(5, (-0.1,0.1,-0.1,0.1,-0.11)),	fi.allpassn(5, (0.1,-0.1,0.1,-0.1,0.1))) :
+	+ ;
+
+allp0 = 
 	(_,_,_) : 
 	((_<:(_,_)),_,_) : 
 	(((- (0.25)) : ((* (2 * ma.PI)) : cos)),((* (2 * ma.PI)) : cos),_,_) :
