@@ -19,5 +19,3 @@ If you would like to contribute, please get in touch via the issue tracker on gi
 This is the state of the port of Philipps snare drum from pd to faust. At the time the code should easily compile to a jack-console binary by typing 'make' in the console inside the directory.
 
 The executable is installed in a build directory at the same place. So if you don't want, or cannot execute files from that place, you'll have to move it somewhere else.
-
-What is lacking at the moment is the control interface. I want to implement it through midi. I'll dig into it later, most likely tomorrow.

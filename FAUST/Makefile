@@ -22,6 +22,11 @@ clean:
 % : %.dsp
 	faust2jackconsole -midi $<
 
+install:
+	install -d build
+	install $(jconsole) build/
+	rm $(jconsole)
+
 #%.cpp %-svg: %.dsp
 #	faust -xml -svg -sd -a puredata.cpp $< -o $@
 
