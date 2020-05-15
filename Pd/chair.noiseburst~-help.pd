@@ -1,0 +1,9 @@
+#N canvas 1182 351 450 300 12;
+#X obj 113 176 dac~;
+#X obj 112 93 chair.noiseburst~;
+#X obj 112 56 metro 300;
+#X obj 112 29 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
