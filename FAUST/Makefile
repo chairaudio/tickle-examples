@@ -15,7 +15,7 @@ graphics: $(svg)
 standalones: $(jconsole)
 
 clean:
-	rm -Rf *~ $(svg) $(jconsole)
+	rm -Rf *~ $(svg) $(jconsole) faust.*
 
 %-svg: %.dsp
 	faust2svg $< 
