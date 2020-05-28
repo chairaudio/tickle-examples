@@ -26,7 +26,7 @@ clean:
 install:
 	install -d $(DESTDIR)
 	install $(jconsole) $(DESTDIR) 
-	rm $(jconsole)
+#	rm $(jconsole)
 
 #%.cpp %-svg: %.dsp
 #	faust -xml -svg -sd -a puredata.cpp $< -o $@

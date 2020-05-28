@@ -10,31 +10,65 @@ hp_row(n) = fi.highpass(1, 4) : hp_row(n-1);
       // is providing two signals:
       // 1. DC as an envelope
       // 2. Clean signal
-dc_offset = _ <: (_,_): (_, (hp_row(4))): 
-    (_,(_<:(_,_))):
-           ((-:fi.lowpass(1, 100) * 25),_);
+dc_offset = 
+	_ <: (_,_) : 
+	(_, (hp_row(4))) : 
+	(_,(_<:(_,_))) :
+	((- : fi.lowpass(1, 100) * 25),_);
 
 x = (_,_)<:(!,_,_,!);
 
 g(x) =
 	(x, _, x, _, x, _, x,_) : (*,*,*,*);
 
-mx(psi,damp) = 
-	(cos(psi),_, sin(psi) * (-1),_, sin(psi),_, cos(psi),_) : (*,*,*,*) : g(damp);
+mx(theta,damp) = 
+	(cos(theta),_, sin(theta) * (-1),_, sin(theta),_, cos(theta),_) : (*,*,*,*) : g(damp);
 
-udn(deltime, decay, gfactor) = 
+// We need several of these.
+// They differ in the organisation of the inputs and outputs,
+// not in what they are doing.
+mx0(theta,damp) = 
+	(
+		cos(theta * ma.PI * 2),_, 
+		sin(theta * ma.PI * 2),_, 
+		sin(theta * ma.PI * 2) * (-1),_, 
+		cos(theta * ma.PI * 2),_
+	) : (*,*,*,*) : g(damp);
+
+schmalfuss(deltime, theta, gfactor) =
+	// This delayline only processes the "imaginary" part of the signal
+	(_<:(_,_)) : 
+	(((_,x,_) :
+	mx0((theta),(1-(gfactor/10))) : (+,+)) ~
+	(de.delay(ma.SR/5, deltime * 5 * ma.SR/1000) <: (_,_))) : 
+	(!,_);
+
+udn(deltime, theta, gfactor) = 
 	// Two inputs, one for each of the delaylines.
-	((_,x,_) : (+,+) : (_,_) <: mx((gfactor * ma.PI),(1-(decay/10))) : (+,+)) ~ 
+	// This is the unitary delay network as discribed in
+	// "Infuriating nonlinear reverbarator" by Miller Puckette (ICMC 2011)
+	((_,x,_) : (+,+) : (_,_) <: mx((theta * ma.PI),(1-(gfactor/10))) : (+,+)) ~ 
 	(de.delay(ma.SR/5, deltime * 5 * ma.SR/1000),de.delay(ma.SR/5, deltime * 5 * ma.SR/1000)) : + ;
 
-allp(decay, gfactor, deltime) = 
+allp(gfactor, theta, deltime) = 
 	// Here, the input will go to both delaylines.
 	(_<:(_,_)) :
-	(((_,x,_) : (+,+) : (_,_) <: mx((gfactor * ma.PI),(1-(decay/10))) : (+,+)) ~ 
+	(((_,x,_) : (+,+) : (_,_) <: mx((theta * ma.PI),(1-(gfactor/10))) : (+,+)) ~ 
 	(de.delay(ma.SR/5, deltime * 5 * ma.SR/1000), de.delay(ma.SR/5, deltime * 5 * ma.SR/1000))) :
 	//(fi.allpassn(5, (-0.1,0.1,-0.1,0.1,-0.11)),	fi.allpassn(5, (0.1,-0.1,0.1,-0.1,0.1))) :
 	+ ;
 
+allp1d(gfactor, theta, deltime) = 
+	// Here, the input will go to both delaylines
+	// and they are added to one delay
+	// which might not actually make sense :-/
+	(_<:(_,_)) :
+	(((_,x,_) : (+,+) : (_,_) <: mx((theta * ma.PI),(1-(gfactor/10))) : (+,+)) ~ 
+	( + : de.delay(ma.SR/5, deltime * 5 * ma.SR/1000) : (_<:(_,_)))) :
+	//(fi.allpassn(5, (-0.1,0.1,-0.1,0.1,-0.11)),	fi.allpassn(5, (0.1,-0.1,0.1,-0.1,0.1))) :
+	+ ;
+
+// This is still here because it was a lot of work :_(
 allp0 = 
 	(_,_,_) : 
 	((_<:(_,_)),_,_) : 

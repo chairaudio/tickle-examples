@@ -4,6 +4,7 @@
 *.kdev4
 *-svg/
 *-mdoc/
+*.vst/
 FAUST/*.cpp
 FAUST/build/
 FAUST/recordings/
