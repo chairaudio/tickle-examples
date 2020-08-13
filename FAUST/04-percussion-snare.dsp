@@ -33,7 +33,6 @@ most(mainDtime) =
 			chair.schmalfuss(1, 0, noise3) :
 			fi.lowpass(1, 7000) : fi.highpass(1, 200) :
 			(* (-1)) : 
-			max(-1) : min(1) :
 			(* ( mainDecay ))),_ :
 			+
 		) ~ de.delay(ma.SR/5, mainDtime * 5 * ma.SR/10)

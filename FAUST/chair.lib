@@ -22,24 +22,29 @@ g(x) =
 	(x, _, x, _, x, _, x,_) : (*,*,*,*);
 
 mx(theta,damp) = 
-	(cos(theta),_, sin(theta) * (-1),_, sin(theta),_, cos(theta),_) : (*,*,*,*) : g(damp);
+	(
+		cos(theta),_, 
+		sin(theta) * (-1),_, 
+		sin(theta),_, 
+		cos(theta),_
+	) : (*,*,*,*) : g(damp);
 
 // We need several of these.
 // They differ in the organisation of the inputs and outputs,
 // not in what they are doing.
 mx0(theta,damp) = 
 	(
-		cos(theta * ma.PI * 2),_, 
-		sin(theta * ma.PI * 2),_, 
-		sin(theta * ma.PI * 2) * (-1),_, 
-		cos(theta * ma.PI * 2),_
+		cos(theta),_, 
+		sin(theta),_, 
+		sin(theta) * (-1),_, 
+		cos(theta),_
 	) : (*,*,*,*) : g(damp);
 
 schmalfuss(deltime, theta, gfactor) =
 	// This delayline only processes the "imaginary" part of the signal
 	(_<:(_,_)) : 
 	(((_,x,_) :
-	mx0((theta),(1-(gfactor/10))) : (+,+)) ~
+	mx0((theta * ma.PI),(1-(gfactor/10))) : (+,+)) ~
 	(de.delay(ma.SR/5, deltime * 5 * ma.SR/1000) <: (_,_))) : 
 	(!,_);
 
@@ -47,7 +52,8 @@ udn(deltime, theta, gfactor) =
 	// Two inputs, one for each of the delaylines.
 	// This is the unitary delay network as discribed in
 	// "Infuriating nonlinear reverbarator" by Miller Puckette (ICMC 2011)
-	((_,x,_) : (+,+) : (_,_) <: mx((theta * ma.PI),(1-(gfactor/10))) : (+,+)) ~ 
+	((_,x,_) : (+,+) : (_,_) <: 
+	mx((theta * ma.PI),(1-(gfactor/10))) : (+,+)) ~ 
 	(de.delay(ma.SR/5, deltime * 5 * ma.SR/1000),de.delay(ma.SR/5, deltime * 5 * ma.SR/1000)) : + ;
 
 allp(gfactor, theta, deltime) = 
