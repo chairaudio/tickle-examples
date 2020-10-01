@@ -4,7 +4,8 @@ import("stdfaust.lib");
 declare options "[midi:on]";
 
 ctl0 = hslider("delay[midi:ctrl 11]",0.5,0.0000001,1,0.0000001) : si.smoo;
-ctl1 = hslider("decay[midi:ctrl 12]",0.1,0,1,0.001) : si.smoo;
+//ctl1 = hslider("decay[midi:ctrl 12]",0.1,0,1,0.001) : si.smoo;
+ctl1 = 0.01;
 ctl2 = hslider("psi[midi:ctrl 13]",0.5,0.0001,1,0.00001) : si.smoo;
 
 noise1 = 
@@ -27,10 +28,10 @@ most(mainDtime) =
 		( +, _ :
 			(
 			// allp(gfactor, psi, deltime) = 
-			chair.schmalfuss(1, noise2, noise1) :
-			chair.schmalfuss(1, 0.5, 2.2) :
-			chair.schmalfuss(1, 0.12, 2.5) :
-			chair.schmalfuss(1, 0, noise3) :
+			chair.schmalfuss(6.53, noise2, noise1) :
+			chair.schmalfuss(2.2, 0.5, 2.2) :
+			chair.schmalfuss(2.25, 0.12, 2.5) :
+			chair.schmalfuss(4, 0, noise3) :
 			fi.lowpass(1, 7000) : fi.highpass(1, 200) :
 			(* (-1)) : 
 			(* ( mainDecay ))),_ :
@@ -40,6 +41,6 @@ most(mainDtime) =
 
 process = 
 	chair.dc_offset : 
-	((fi.lowpass(1, 20) * 0.5) + 2.5, _) :
+	((fi.lowpass(1, 20) * 0.5) + 2.517, _) :
 	most;
 	
