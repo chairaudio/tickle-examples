@@ -9,9 +9,6 @@ These examples serve to showcase what's possible with the Tickle and to help you
 If you have questions, suggestions, issues, amendments, bug reports, feature- or even pull-requests, please don't hesitate to contact us using email or the gitlab/github functions to do so. We would love to get your feedback and contributions. Something not working as expected? More ideas? Missing connection to your software? Write us.
 
 This git lives at
-https://gitlab.chair.audio/chair-audio/tickle-examples
-
-and is pushed automatically to 
 https://github.com/chairaudio/tickle-examples
 
 
